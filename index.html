@@ -397,7 +397,7 @@
 
         .track-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 12px;
             list-style: none;
             margin-top: 12px;
@@ -406,9 +406,93 @@
         .track-item {
             background-color: var(--bg-card);
             border-left: 4px solid var(--accent-pink);
-            padding: 12px 16px;
             border-radius: 8px;
+        }
+
+        .track-item-btn {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
             font-weight: 700;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .track-item-btn:hover {
+            background-color: #26354D;
+            color: var(--accent-cyan);
+        }
+
+        .jukebox-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 28px 0;
+        }
+
+        .platform-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 14px 0 18px;
+            list-style: none;
+        }
+
+        .platform-btn {
+            flex: 1 1 200px;
+            background-color: #0F172A;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s ease;
+        }
+
+        .platform-btn[aria-pressed="true"] {
+            background-color: var(--accent-cyan);
+            color: #070B14;
+            border-color: #FFFFFF;
+        }
+
+        .platform-btn:hover:not([aria-pressed="true"]) {
+            border-color: var(--accent-cyan);
+        }
+
+        .embed-wrapper {
+            background-color: #070B14;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+
+        .embed-wrapper iframe {
+            display: block;
+            width: 100%;
+            border: 0;
+        }
+
+        .direct-track-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            list-style: none;
+            margin-top: 16px;
         }
 
         .form-group {
@@ -422,6 +506,7 @@
             color: var(--accent-cyan);
         }
 
+        select,
         input[type="text"],
         input[type="email"],
         textarea {
@@ -607,16 +692,112 @@
                 </li>
             </ul>
 
-            <h3 data-i18n="sec1_tracks_heading">主な配信楽曲（ディスコグラフィ）</h3>
+            <!-- Interactive Multi-Platform Embedded Player -->
+            <div class="jukebox-card" role="region" aria-labelledby="heading-player">
+                <h3 id="heading-player" style="margin-top: 0;" data-i18n="player_heading">埋め込み音楽プレイヤー（曲とサービスを選んでその場で再生）</h3>
+                <p data-i18n="player_desc">
+                    聴きたい楽曲と音楽サービス（YouTube・Spotify・Amazon Music）を選ぶと、下の埋め込みプレイヤーと直通リンクが切り替わり、このページ上でそのまま Shinji Sakiyama のアカペラ楽曲を再生できます。
+                </p>
+
+                <div class="form-group" style="margin-top: 16px; margin-bottom: 14px;">
+                    <label for="track-select" data-i18n="player_select_label">① 再生する楽曲を選択：</label>
+                    <select id="track-select" onchange="onTrackSelectChange(this.value)">
+                        <option value="all" data-i18n="track_opt_all">★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）</option>
+                        <option value="shinju_no_tsuma">『真珠の妻 (Pearl Wife)』</option>
+                        <option value="toyo_no_shinju">『東洋の真珠 (Oriental Pearl)』</option>
+                        <option value="serena_sakura">『セレナさくら (Serena Sakura)』</option>
+                        <option value="sakura_no_yusha">『さくらの勇者 (Hero of Sakura)』</option>
+                        <option value="nanai">『ナナイ (Nanay)』</option>
+                        <option value="saya">『Saya』</option>
+                        <option value="asawa_ko">『Asawa ko』</option>
+                        <option value="mahal_ko">『Mahal ko』</option>
+                        <option value="asawa_ko_serena">『asawa ko Serena』</option>
+                        <option value="sakura_to_yuri">『さくらとゆり (Sakura &amp; Yuri)』</option>
+                        <option value="jindo_shien">『人道支援の勇者とSayana』</option>
+                        <option value="sakura_no_shonin">『さくらのしょうにん』</option>
+                        <option value="mahal_na_mahal">『Mahal na mahal kita asawa ko Serena』</option>
+                        <option value="watashi_no_tenshi">『私の天使に捧ぐ歌』</option>
+                        <option value="mahal_ko_monogatari">『Mahal koと紡ぐ物語』</option>
+                        <option value="egao_no_ko_serena">『笑顔の子セレナ (YouTube Video)』</option>
+                    </select>
+                </div>
+
+                <div>
+                    <span class="lang-label" style="display: block; margin-bottom: 8px;" data-i18n="player_platform_label">② 再生する埋め込みプレイヤーを選択：</span>
+                    <ul class="platform-tabs" role="group" aria-label="Streaming Player Platform Selector">
+                        <li>
+                            <button type="button" class="platform-btn" data-platform="youtube" aria-pressed="true" onclick="setPlayerPlatform('youtube')">
+                                <span data-i18n="plat_btn_yt">▶ YouTube / YouTube Music で再生</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="platform-btn" data-platform="spotify" aria-pressed="false" onclick="setPlayerPlatform('spotify')">
+                                <span data-i18n="plat_btn_sp">▶ Spotify で再生</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="platform-btn" data-platform="amazon" aria-pressed="false" onclick="setPlayerPlatform('amazon')">
+                                <span data-i18n="plat_btn_am">▶ Amazon Music で再生</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="player-live-region" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+                <div class="embed-wrapper" id="embed-container">
+                    <iframe
+                        id="music-embed-frame"
+                        src="https://www.youtube.com/embed/videoseries?list=UUvRDAEFiy8wnjavvDv5pzHg"
+                        height="315"
+                        title="Shinji Sakiyama Official YouTube Music Player"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <ul class="direct-track-links" aria-label="Direct App Links for Selected Track">
+                    <li>
+                        <a id="direct-link-yt" class="btn-link" href="https://music.youtube.com/playlist?list=UUvRDAEFiy8wnjavvDv5pzHg" target="_blank" rel="noopener noreferrer">
+                            <span id="direct-label-yt" data-i18n="direct_open_yt">選択中の曲を YouTube Music アプリで開く</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="direct-link-sp" class="btn-link" href="https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa" target="_blank" rel="noopener noreferrer">
+                            <span id="direct-label-sp" data-i18n="direct_open_sp">選択中の曲を Spotify アプリで開く</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="direct-link-am" class="btn-link" href="https://music.amazon.co.jp/albums/B0HH4486WD?trackAsin=B0HH3V5D9Y" target="_blank" rel="noopener noreferrer">
+                            <span id="direct-label-am" data-i18n="direct_open_am">選択中の曲を Amazon Music アプリで開く</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 data-i18n="sec1_tracks_heading">主な配信楽曲（ディスコグラフィ ― 曲名を選択すると上のプレイヤーにセットされます）</h3>
             <ul class="track-list" aria-label="Featured Discography">
-                <li class="track-item">『東洋の真珠 (Oriental Pearl)』</li>
-                <li class="track-item">『真珠の妻 (Pearl Wife)』</li>
-                <li class="track-item">『セレナさくら (Serena Sakura)』</li>
-                <li class="track-item">『さくらとめぐみ (Sakura &amp; Megumi)』</li>
-                <li class="track-item">『さくらの勇者 (Hero of Sakura)』</li>
-                <li class="track-item">『人道支援の勇者とSayana』</li>
-                <li class="track-item">『Mahal koと紡ぐ物語』</li>
-                <li class="track-item">『asawa ko Serena』</li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('shinju_no_tsuma')"><span>『真珠の妻 (Pearl Wife)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('toyo_no_shinju')"><span>『東洋の真珠 (Oriental Pearl)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('serena_sakura')"><span>『セレナさくら (Serena Sakura)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_no_yusha')"><span>『さくらの勇者 (Hero of Sakura)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('nanai')"><span>『ナナイ (Nanay)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('saya')"><span>『Saya』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('asawa_ko')"><span>『Asawa ko』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_ko')"><span>『Mahal ko』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('asawa_ko_serena')"><span>『asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_to_yuri')"><span>『さくらとゆり (Sakura &amp; Yuri)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('jindo_shien')"><span>『人道支援の勇者とSayana』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_no_shonin')"><span>『さくらのしょうにん』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_na_mahal')"><span>『Mahal na mahal kita asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('watashi_no_tenshi')"><span>『私の天使に捧ぐ歌』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_ko_monogatari')"><span>『Mahal koと紡ぐ物語』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('egao_no_ko_serena')"><span>『笑顔の子セレナ』</span><span aria-hidden="true">▶</span></button></li>
             </ul>
         </section>
 
@@ -782,7 +963,18 @@
                 link_um: "UnitedMasters 公式ページ",
                 link_audiomack: "Audiomack で聴く",
                 link_github: "GitHub 公式プロフィール",
-                sec1_tracks_heading: "主な配信楽曲（ディスコグラフィ）",
+                player_heading: "埋め込み音楽プレイヤー（曲とサービスを選んでその場で再生）",
+                player_desc: "聴きたい楽曲と音楽サービス（YouTube・Spotify・Amazon Music）を選ぶと、下の埋め込みプレイヤーと直通リンクが切り替わり、このページ上でそのまま Shinji Sakiyama のアカペラ楽曲を再生できます。",
+                player_select_label: "① 再生する楽曲を選択：",
+                track_opt_all: "★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）",
+                player_platform_label: "② 再生する埋め込みプレイヤーを選択：",
+                plat_btn_yt: "▶ YouTube / YouTube Music で再生",
+                plat_btn_sp: "▶ Spotify で再生",
+                plat_btn_am: "▶ Amazon Music で再生",
+                direct_open_yt: "選択中の曲を YouTube Music で開く",
+                direct_open_sp: "選択中の曲を Spotify で開く",
+                direct_open_am: "選択中の曲を Amazon Music で開く",
+                sec1_tracks_heading: "主な配信楽曲（ディスコグラフィ ― 曲名を選択すると上のプレイヤーにセットされます）",
                 sec2_title: "2. 開発ソフトウェア（Serena Accessible Suite）",
                 sec2_desc: "全盲の当事者開発者である Shinji Sakiyama が、自身の知見と最先端のオンデバイスAI技術を結集し、世界中の視覚障害者が一切の妥協なくスマートフォンを自在に操れる「真のバリアフリー環境」を実現するオープンソース・エコシステムを開発・無償公開しています。",
                 sr_title: "① Serena Screen Reader（セレーナ・スクリーンリーダー）",
@@ -853,7 +1045,18 @@
                 link_um: "UnitedMasters Official Artist Page",
                 link_audiomack: "Listen on Audiomack",
                 link_github: "Official GitHub Profile",
-                sec1_tracks_heading: "Featured Discography & Releases",
+                player_heading: "Interactive Music Player (Select a Song & Streaming Service)",
+                player_desc: "Choose any song and your preferred streaming service (YouTube, Spotify, or Amazon Music) below to play the a cappella songs of Shinji Sakiyama right on this page.",
+                player_select_label: "1. Select a Song to Play:",
+                track_opt_all: "★ All Songs Continuous Playlist (YouTube Music / Spotify)",
+                player_platform_label: "2. Select Embedded Streaming Player:",
+                plat_btn_yt: "▶ Play on YouTube / YouTube Music",
+                plat_btn_sp: "▶ Play on Spotify",
+                plat_btn_am: "▶ Play on Amazon Music",
+                direct_open_yt: "Open Selected Song in YouTube Music",
+                direct_open_sp: "Open Selected Song in Spotify",
+                direct_open_am: "Open Selected Song in Amazon Music",
+                sec1_tracks_heading: "Featured Discography (Select any song title to load it into the player above)",
                 sec2_title: "2. Developed Software (Serena Accessible Suite)",
                 sec2_desc: "Built by totally blind software engineer Shinji Sakiyama powered by cutting-edge on-device AI, the Serena Accessible Suite is a free, open-source ecosystem empowering blind and visually impaired users worldwide with unmatched speed, dignity, and independence.",
                 sr_title: "1. Serena Screen Reader (For Android 11 – Android 17+)",
@@ -924,7 +1127,18 @@
                 link_um: "Opisyal na Pahina sa UnitedMasters",
                 link_audiomack: "Pakinggan sa Audiomack",
                 link_github: "Opisyal na GitHub Profile",
-                sec1_tracks_heading: "Mga Tampok na Awitin (Discography)",
+                player_heading: "Interactive Music Player (Pumili ng Awitin at Streaming Service)",
+                player_desc: "Pumili ng kanta at streaming service (YouTube, Spotify, o Amazon Music) sa ibaba upang mapakinggan agad ang mga a cappella na awitin ni Shinji Sakiyama dito mismo sa pahina.",
+                player_select_label: "1. Pumili ng Awitin na Patutugtugin:",
+                track_opt_all: "★ Lahat ng Awitin Playlist (YouTube Music / Spotify)",
+                player_platform_label: "2. Pumili ng Embedded Player:",
+                plat_btn_yt: "▶ Patugtugin sa YouTube / YouTube Music",
+                plat_btn_sp: "▶ Patugtugin sa Spotify",
+                plat_btn_am: "▶ Patugtugin sa Amazon Music",
+                direct_open_yt: "Buksan ang Napiling Awitin sa YouTube Music",
+                direct_open_sp: "Buksan ang Napiling Awitin sa Spotify",
+                direct_open_am: "Buksan ang Napiling Awitin sa Amazon Music",
+                sec1_tracks_heading: "Mga Tampok na Awitin (Pindutin ang pamagat upang i-load sa player sa itaas)",
                 sec2_title: "2. Mga Ginawang Software (Serena Accessible Suite)",
                 sec2_desc: "Nilikha mula sa puso at talino ng bulag na inhinyerong si Shinji Sakiyama gamit ang makabagong on-device AI, ang Serena Accessible Suite ay libreng open-source na teknolohiya upang bigyan ng bilis, dignidad, at kalayaan ang mga bulag at may kapansanan sa paningin sa buong mundo.",
                 sr_title: "1. Serena Screen Reader (Para sa Android 11 – Android 17+)",
@@ -995,7 +1209,18 @@
                 link_um: "Página Oficial en UnitedMasters",
                 link_audiomack: "Escuchar en Audiomack",
                 link_github: "Perfil Oficial de GitHub",
-                sec1_tracks_heading: "Discografía Destacada",
+                player_heading: "Reproductor Musical Interactivo (Selecciona Canción y Plataforma)",
+                player_desc: "Elige cualquier canción y tu servicio favorito (YouTube, Spotify o Amazon Music) abajo para reproducir las canciones a cappella de Shinji Sakiyama directamente en esta página.",
+                player_select_label: "1. Seleccionar Canción para Reproducir:",
+                track_opt_all: "★ Lista Continua de Todas las Canciones (YouTube Music / Spotify)",
+                player_platform_label: "2. Seleccionar Reproductor Integrado:",
+                plat_btn_yt: "▶ Reproducir en YouTube / YouTube Music",
+                plat_btn_sp: "▶ Reproducir en Spotify",
+                plat_btn_am: "▶ Reproducir en Amazon Music",
+                direct_open_yt: "Abrir Canción Seleccionada en YouTube Music",
+                direct_open_sp: "Abrir Canción Seleccionada en Spotify",
+                direct_open_am: "Abrir Canción Seleccionada en Amazon Music",
+                sec1_tracks_heading: "Discografía Destacada (Selecciona cualquier canción para cargarla en el reproductor)",
                 sec2_title: "2. Software Desarrollado (Serena Accessible Suite)",
                 sec2_desc: "Desarrollado por el ingeniero totalmente ciego Shinji Sakiyama con inteligencia artificial en el dispositivo, Serena Accessible Suite es un ecosistema gratuito y de código abierto que brinda velocidad, dignidad e independencia a las personas con discapacidad visual en todo el mundo.",
                 sr_title: "1. Serena Screen Reader (Para Android 11 – Android 17+)",
@@ -1043,6 +1268,238 @@
                 footer_note: "Diseñado para Accesibilidad Total con Lectores de Pantalla (WCAG AAA) y SEO Multilingüe Global (JA / EN / TL / ES)."
             }
         };
+
+        // Catalog of Shinji Sakiyama tracks across YouTube / YouTube Music, Spotify, and Amazon Music
+        const TRACK_CATALOG = {
+            all: {
+                title: "全曲連続再生リスト (All Songs Playlist)",
+                ytEmbed: "https://www.youtube.com/embed/videoseries?list=UUvRDAEFiy8wnjavvDv5pzHg",
+                ytLink: "https://music.youtube.com/playlist?list=UUvRDAEFiy8wnjavvDv5pzHg",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/search/Shinji+Sakiyama"
+            },
+            shinju_no_tsuma: {
+                title: "真珠の妻 (Pearl Wife)",
+                ytEmbed: "https://www.youtube.com/embed/GS769JVxH-s",
+                ytLink: "https://music.youtube.com/watch?v=GS769JVxH-s",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HJP41LPL/?id=B0HJP41LPL&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0HJNZ77L7?trackAsin=B0HJP41LPL"
+            },
+            toyo_no_shinju: {
+                title: "東洋の真珠 (Oriental Pearl)",
+                ytEmbed: "https://www.youtube.com/embed/CdQht8OBCQA",
+                ytLink: "https://music.youtube.com/watch?v=CdQht8OBCQA",
+                spEmbed: "https://open.spotify.com/embed/track/2wGePrsNLAJAv96f7yNFfM?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/2wGePrsNLAJAv96f7yNFfM",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0HH4486WD?trackAsin=B0HH3V5D9Y"
+            },
+            serena_sakura: {
+                title: "セレナさくら (Serena Sakura)",
+                ytEmbed: "https://www.youtube.com/embed/ngQVOdEXDgs",
+                ytLink: "https://music.youtube.com/watch?v=ngQVOdEXDgs",
+                spEmbed: "https://open.spotify.com/embed/track/20ALGdVqDeu3QazLRyqiMo?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/20ALGdVqDeu3QazLRyqiMo",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H89XS6LF/?id=B0H89XS6LF&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H8BJQDKP?trackAsin=B0H89XS6LF"
+            },
+            sakura_no_yusha: {
+                title: "さくらの勇者 (Hero of Sakura)",
+                ytEmbed: "https://www.youtube.com/embed/qQ9NgDZf6dA",
+                ytLink: "https://music.youtube.com/watch?v=qQ9NgDZf6dA",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HCNYWL8D/?id=B0HCNYWL8D&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0HCNXCS7H?trackAsin=B0HCNYWL8D"
+            },
+            nanai: {
+                title: "ナナイ (Nanay)",
+                ytEmbed: "https://www.youtube.com/embed/MqmCsfwndZk",
+                ytLink: "https://music.youtube.com/watch?v=MqmCsfwndZk",
+                spEmbed: "https://open.spotify.com/embed/track/2XTQZ3jDSqKbTuUWV2duUx?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/2XTQZ3jDSqKbTuUWV2duUx",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H7XW1NFF/?id=B0H7XW1NFF&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H7XR3M6F?trackAsin=B0H7XW1NFF"
+            },
+            saya: {
+                title: "Saya",
+                ytEmbed: "https://www.youtube.com/embed/AGUmoYleP4E",
+                ytLink: "https://music.youtube.com/watch?v=AGUmoYleP4E",
+                spEmbed: "https://open.spotify.com/embed/track/7kbCQ4xRPnfx0YVjuONMje?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/7kbCQ4xRPnfx0YVjuONMje",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H9M2PXFP/?id=B0H9M2PXFP&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H9M1H8CJ?trackAsin=B0H9M2PXFP"
+            },
+            asawa_ko: {
+                title: "Asawa ko",
+                ytEmbed: "https://www.youtube.com/embed/dRyR09TMQ8U",
+                ytLink: "https://music.youtube.com/watch?v=dRyR09TMQ8U",
+                spEmbed: "https://open.spotify.com/embed/track/0kqzqPSHpw4iCPQhh1dMYl?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/0kqzqPSHpw4iCPQhh1dMYl",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H9M73S3Z/?id=B0H9M73S3Z&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H9M1H8CJ?trackAsin=B0H9M73S3Z"
+            },
+            mahal_ko: {
+                title: "Mahal ko",
+                ytEmbed: "https://www.youtube.com/embed/dugivQWTVvI",
+                ytLink: "https://music.youtube.com/watch?v=dugivQWTVvI",
+                spEmbed: "https://open.spotify.com/embed/track/4hVjBttbOekk28cebRZYhJ?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/4hVjBttbOekk28cebRZYhJ",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H9LT3T8R/?id=B0H9LT3T8R&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H9M1H8CJ?trackAsin=B0H9LT3T8R"
+            },
+            asawa_ko_serena: {
+                title: "asawa ko Serena",
+                ytEmbed: "https://www.youtube.com/embed/jpy6yuzHWpE",
+                ytLink: "https://music.youtube.com/watch?v=jpy6yuzHWpE",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H8VB1LVN/?id=B0H8VB1LVN&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H8VP65MN?trackAsin=B0H8VB1LVN"
+            },
+            sakura_to_yuri: {
+                title: "さくらとゆり (Sakura & Yuri)",
+                ytEmbed: "https://www.youtube.com/embed/HON7xbHxgSY",
+                ytLink: "https://music.youtube.com/watch?v=HON7xbHxgSY",
+                spEmbed: "https://open.spotify.com/embed/track/3IUERMi2LKC6S4wnjgcYOs?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/3IUERMi2LKC6S4wnjgcYOs",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H8F5HJVJ/?id=B0H8F5HJVJ&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H8DXYWKW?trackAsin=B0H8F5HJVJ"
+            },
+            jindo_shien: {
+                title: "人道支援の勇者とSayana",
+                ytEmbed: "https://www.youtube.com/embed/x64eDR0wk74",
+                ytLink: "https://music.youtube.com/watch?v=x64eDR0wk74",
+                spEmbed: "https://open.spotify.com/embed/track/3VnKIkbfnUgEHPjTd0vZl1?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/3VnKIkbfnUgEHPjTd0vZl1",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H8D9WPKV/?id=B0H8D9WPKV&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H8DFKYHT?trackAsin=B0H8D9WPKV"
+            },
+            sakura_no_shonin: {
+                title: "さくらのしょうにん",
+                ytEmbed: "https://www.youtube.com/embed/9oXY58R5SdE",
+                ytLink: "https://music.youtube.com/watch?v=9oXY58R5SdE",
+                spEmbed: "https://open.spotify.com/embed/track/34ZpjK9fvnvwFConSKcTLK?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/34ZpjK9fvnvwFConSKcTLK",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H6T8SQ2G/?id=B0H6T8SQ2G&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H6T2T6D6?trackAsin=B0H6T8SQ2G"
+            },
+            mahal_na_mahal: {
+                title: "Mahal na mahal kita asawa ko Serena",
+                ytEmbed: "https://www.youtube.com/embed/5ZCepF0aZJ0",
+                ytLink: "https://music.youtube.com/watch?v=5ZCepF0aZJ0",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H8VB1LVN/?id=B0H8VB1LVN&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/search/Shinji+Sakiyama"
+            },
+            watashi_no_tenshi: {
+                title: "私の天使に捧ぐ歌",
+                ytEmbed: "https://www.youtube.com/embed/KnauwORefNQ",
+                ytLink: "https://music.youtube.com/watch?v=KnauwORefNQ",
+                spEmbed: "https://open.spotify.com/embed/track/7txD14BZGcb0GBl0e5Fm4E?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/track/7txD14BZGcb0GBl0e5Fm4E",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H5CPPQ18/?id=B0H5CPPQ18&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H5CKYKDB?trackAsin=B0H5CPPQ18"
+            },
+            mahal_ko_monogatari: {
+                title: "Mahal koと紡ぐ物語",
+                ytEmbed: "https://www.youtube.com/embed/ZIdIQuEBjcg",
+                ytLink: "https://music.youtube.com/watch?v=ZIdIQuEBjcg",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0H4QF4FV4/?id=B0H4QF4FV4&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0H4Q8F5K6?trackAsin=B0H4QF4FV4"
+            },
+            egao_no_ko_serena: {
+                title: "笑顔の子セレナ (YouTube Video)",
+                ytEmbed: "https://www.youtube.com/embed/kQ0C2LbZO10",
+                ytLink: "https://www.youtube.com/watch?v=kQ0C2LbZO10",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/search/Shinji+Sakiyama"
+            }
+        };
+
+        let currentTrackKey = 'all';
+        let currentPlatform = 'youtube';
+
+        function updatePlayerEmbed(announce = false) {
+            const track = TRACK_CATALOG[currentTrackKey] || TRACK_CATALOG.all;
+            const iframe = document.getElementById('music-embed-frame');
+            if (!iframe) return;
+
+            if (currentPlatform === 'spotify') {
+                iframe.src = track.spEmbed;
+                iframe.height = (currentTrackKey === 'all' || track.spEmbed.indexOf('/artist/') !== -1) ? '352' : '152';
+                iframe.title = 'Shinji Sakiyama Spotify Player - ' + track.title;
+                iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+            } else if (currentPlatform === 'amazon') {
+                iframe.src = track.amEmbed;
+                iframe.height = '250';
+                iframe.title = 'Shinji Sakiyama Amazon Music Player - ' + track.title;
+                iframe.allow = 'autoplay; encrypted-media; fullscreen';
+            } else {
+                iframe.src = track.ytEmbed;
+                iframe.height = '315';
+                iframe.title = 'Shinji Sakiyama YouTube Music Player - ' + track.title;
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            }
+
+            // Update direct app links
+            const linkYt = document.getElementById('direct-link-yt');
+            const linkSp = document.getElementById('direct-link-sp');
+            const linkAm = document.getElementById('direct-link-am');
+            if (linkYt) linkYt.href = track.ytLink;
+            if (linkSp) linkSp.href = track.spLink;
+            if (linkAm) linkAm.href = track.amLink;
+
+            // Update platform button aria-pressed states
+            document.querySelectorAll('.platform-btn').forEach(function(btn) {
+                const isSelected = btn.getAttribute('data-platform') === currentPlatform;
+                btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+            });
+
+            if (announce) {
+                const live = document.getElementById('player-live-region');
+                if (live) {
+                    const platName = currentPlatform === 'spotify' ? 'Spotify' : (currentPlatform === 'amazon' ? 'Amazon Music' : 'YouTube Music');
+                    live.textContent = track.title + ' (' + platName + ')';
+                }
+            }
+        }
+
+        function onTrackSelectChange(trackKey) {
+            currentTrackKey = trackKey;
+            updatePlayerEmbed(true);
+        }
+
+        function setPlayerPlatform(platform) {
+            currentPlatform = platform;
+            updatePlayerEmbed(true);
+        }
+
+        function selectTrackFromList(trackKey) {
+            currentTrackKey = trackKey;
+            const selectEl = document.getElementById('track-select');
+            if (selectEl) {
+                selectEl.value = trackKey;
+            }
+            updatePlayerEmbed(true);
+            const headingPlayer = document.getElementById('heading-player');
+            if (headingPlayer) {
+                headingPlayer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            const iframe = document.getElementById('music-embed-frame');
+            if (iframe) {
+                iframe.focus();
+            }
+        }
 
         let currentLang = 'ja';
 
