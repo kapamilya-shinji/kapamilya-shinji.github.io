@@ -78,7 +78,7 @@
           "name": "Serena Screen Reader",
           "operatingSystem": "Android 11+",
           "applicationCategory": "AccessibilityApplication",
-          "softwareVersion": "2.5.2",
+          "softwareVersion": "2.5.9",
           "inLanguage": ["ja", "en", "tl", "es"],
           "author": { "@id": "https://shinji5683.github.io/#artist" },
           "downloadUrl": "https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk",
@@ -537,7 +537,8 @@
             <ul class="nav-list">
                 <li><a href="#artist-section" data-i18n="nav_artist">1. プロフィール＆音楽配信リンク</a></li>
                 <li><a href="#software-section" data-i18n="nav_software">2. 開発ソフトウェア（Serenaシリーズ）</a></li>
-                <li><a href="#contact-section" data-i18n="nav_contact">3. お問い合わせフォーム</a></li>
+                <li><a href="#community-section" data-i18n="nav_community">3. 公式メーリングリスト（Serena World）</a></li>
+                <li><a href="#contact-section" data-i18n="nav_contact">4. お問い合わせフォーム</a></li>
             </ul>
         </div>
     </nav>
@@ -670,9 +671,39 @@
             </div>
         </section>
 
-        <!-- Section 3: Direct Contact Form -->
+        <!-- Section 3: Serena World Global Mailing List -->
+        <section id="community-section" aria-labelledby="heading-community">
+            <h2 id="heading-community" data-i18n="ml_title">3. 公式グローバルメーリングリスト「Serena World」</h2>
+            <p data-i18n="ml_desc">
+                歌・音楽の感想から、Serenaブランド（Serena Screen Reader / Serena Mail）の使い方や要望、Android全般の話題、さらには日常の雑談まで、スパム以外なら何でも大歓迎の公式グローバルメーリングリスト（Google グループ）です！世界中の仲間とメールで楽しく交流しましょう。
+            </p>
+
+            <div class="software-card">
+                <h3 data-i18n="ml_rules_heading">コミュニティのルール ＆ 参加方法</h3>
+                <ul class="feature-list">
+                    <li data-i18n="ml_rule_1"><strong>話題は自由（スパム厳禁）</strong>：Shinjiの楽曲・歌の話題、Serenaシリーズ、Androidの便利ワザや質問、日々の雑談まで何でもOKです（宣伝スパムや迷惑メールのみ禁止）。</li>
+                    <li data-i18n="ml_rule_2"><strong>言語は何語でもOK（音声エンジンで読めること）</strong>：日本語・英語・タガログ語・スペイン語など、スクリーンリーダーの音声エンジン（TTS）が読み上げられるテキストであれば何語での投稿も大歓迎です！</li>
+                    <li data-i18n="ml_rule_3"><strong>メール1通で誰でも簡単参加</strong>：下の「参加登録メールを送る」ボタンを押して空メール（またはそのまま送信）を送ると、Google グループから確認メールが届きます。その確認メールにそのまま「返信」して送信（または確認リンクを選択）するだけで参加完了です！</li>
+                </ul>
+
+                <a class="btn-download" href="mailto:serena-world+subscribe@googlegroups.com?subject=Subscribe%20to%20Serena%20World&amp;body=Please%20subscribe%20me%20to%20Serena%20World%20mailing%20list." data-i18n="ml_btn_subscribe">
+                    メール1通で「Serena World」に参加登録する（serena-world+subscribe@googlegroups.com）
+                </a>
+                <a class="btn-secondary" href="mailto:serena-world@googlegroups.com" data-i18n="ml_btn_post">
+                    参加メンバー用：メーリングリストへ投稿メールを送る（serena-world@googlegroups.com）
+                </a>
+                <a class="btn-secondary" href="https://groups.google.com/g/serena-world" target="_blank" rel="noopener noreferrer" data-i18n="ml_btn_web">
+                    Google グループのWebページを開く（groups.google.com/g/serena-world）
+                </a>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 12px;" data-i18n="ml_unsub_note">
+                    ※退会したい場合は、いつでも <a href="mailto:serena-world+unsubscribe@googlegroups.com" style="color: var(--accent-cyan);">serena-world+unsubscribe@googlegroups.com</a> へ空メールを送ることで自動退会できます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Direct Contact Form -->
         <section id="contact-section" aria-labelledby="heading-contact">
-            <h2 id="heading-contact" data-i18n="sec3_title">3. お問い合わせフォーム（Shinji宛て直通）</h2>
+            <h2 id="heading-contact" data-i18n="sec3_title">4. お問い合わせフォーム（Shinji宛て直通）</h2>
             <p data-i18n="sec3_desc">
                 音楽活動に関するご感想・ご依頼、Serena Screen Reader / Serena Mail に関するご質問やフィードバックなど、お気軽にメッセージをお送りください。以下のフォームに入力して送信ボタンを押すと、Shinjiの直通メールアドレス（shinjisakiyama@gmail.com）宛てのメールが起動します。
             </p>
@@ -734,7 +765,8 @@
                 hero_quote_sub: "― 最愛の婚約者（生涯の伴侶）セレナと共に新しい家族を築き、音楽とアクセシビリティの光を世界へ。",
                 nav_artist: "1. プロフィール＆音楽配信リンク",
                 nav_software: "2. 開発ソフトウェア（Serenaシリーズ）",
-                nav_contact: "3. お問い合わせフォーム",
+                nav_community: "3. 公式メーリングリスト（Serena World）",
+                nav_contact: "4. お問い合わせフォーム",
                 sec1_title: "1. アーティストプロフィール ＆ 各種音楽配信ストア",
                 sec1_desc: "Shinji Sakiyama（崎山）は、日本の全盲のソフトウェアエンジニアであり、インディーズシンガー・音楽アーティストです。最愛の婚約者（将来を誓い合った伴侶）であるセレナ（フィリピン・東洋の真珠）との深い絆や、人間愛、平和、希望をテーマにしたオリジナル楽曲を制作し、DistroKid、UnitedMasters、CD Baby、TuneCore などのグローバル・ディストリビューターを通じて全世界の主要ストリーミングストアへ配信しています。",
                 sec1_links_heading: "公式アーティストリンク（各種音楽配信ストア）",
@@ -771,7 +803,17 @@
                 mail_feat_4: "<strong>アクセシブル自動アップデーター内蔵</strong>：GitHub Releasesと直結し、アプリ内からいつでも最新バージョンへのアップデートを確認・実行可能。",
                 mail_btn_dl: "Serena Mail 最新版APKを直接ダウンロード",
                 mail_btn_repo: "Serena Accessible Suite 公式GitHubリポジトリ（shinji5683/cocoa）を見る",
-                sec3_title: "3. お問い合わせフォーム（Shinji宛て直通）",
+                ml_title: "3. 公式グローバルメーリングリスト「Serena World」",
+                ml_desc: "歌・音楽の感想から、Serenaブランド（Serena Screen Reader / Serena Mail）の使い方や要望、Android全般の話題、さらには日常の雑談まで、スパム以外なら何でも大歓迎の公式グローバルメーリングリスト（Google グループ）です！世界中の仲間とメールで楽しく交流しましょう。",
+                ml_rules_heading: "コミュニティのルール ＆ 参加方法",
+                ml_rule_1: "<strong>話題は自由（スパム厳禁）</strong>：Shinjiの楽曲・歌の話題、Serenaシリーズ、Androidの便利ワザや質問、日々の雑談まで何でもOKです（宣伝スパムや迷惑メールのみ禁止）。",
+                ml_rule_2: "<strong>言語は何語でもOK（音声エンジンで読めること）</strong>：日本語・英語・タガログ語・スペイン語など、スクリーンリーダーの音声エンジン（TTS）が読み上げられるテキストであれば何語での投稿も大歓迎です！",
+                ml_rule_3: "<strong>メール1通で誰でも簡単参加</strong>：下の「参加登録メールを送る」ボタンを押して空メール（またはそのまま送信）を送ると、Google グループから確認メールが届きます。その確認メールにそのまま「返信」して送信（または確認リンクを選択）するだけで参加完了です！",
+                ml_btn_subscribe: "メール1通で「Serena World」に参加登録する（serena-world+subscribe@googlegroups.com）",
+                ml_btn_post: "参加メンバー用：メーリングリストへ投稿メールを送る（serena-world@googlegroups.com）",
+                ml_btn_web: "Google グループのWebページを開く（groups.google.com/g/serena-world）",
+                ml_unsub_note: "※退会したい場合は、いつでも <a href=\"mailto:serena-world+unsubscribe@googlegroups.com\" style=\"color: var(--accent-cyan);\">serena-world+unsubscribe@googlegroups.com</a> へ空メールを送ることで自動退会できます。",
+                sec3_title: "4. お問い合わせフォーム（Shinji宛て直通）",
                 sec3_desc: "音楽活動に関するご感想・ご依頼、Serena Screen Reader / Serena Mail に関するご質問やフィードバックなど、お気軽にメッセージをお送りください。以下のフォームに入力して送信ボタンを押すと、Shinjiの直通メールアドレス（shinjisakiyama@gmail.com）宛てのメールが起動します。",
                 form_name_label: "お名前（必須）",
                 form_email_label: "ご自身のメールアドレス（返信をご希望の場合）",
@@ -793,7 +835,8 @@
                 hero_quote_sub: "— Building a new family with my beloved fiancée and life partner Serena, bringing music and accessibility to the world.",
                 nav_artist: "1. Artist Profile & Streaming Links",
                 nav_software: "2. Developed Software (Serena Suite)",
-                nav_contact: "3. Direct Contact Form",
+                nav_community: "3. Global Mailing List (Serena World)",
+                nav_contact: "4. Direct Contact Form",
                 sec1_title: "1. Artist Profile & Global Music Streaming Links",
                 sec1_desc: "Shinji Sakiyama is a totally blind software engineer and independent recording artist from Japan. Inspired by his unbreakable bond with his beloved fiancée and life partner Serena (from the Philippines, the Pearl of the Orient), humanity, peace, and hope, his original music is distributed worldwide via DistroKid, UnitedMasters, CD Baby, and TuneCore across all major streaming platforms.",
                 sec1_links_heading: "Official Artist Streaming Links",
@@ -830,7 +873,17 @@
                 mail_feat_4: "<strong>Built-in Accessible Auto-Updater</strong>: Directly connected to GitHub Releases for effortless one-tap version checks and updates.",
                 mail_btn_dl: "Download Serena Mail Latest APK (app-serena-mail-release.apk)",
                 mail_btn_repo: "Explore Serena Accessible Suite Repository (shinji5683/cocoa)",
-                sec3_title: "3. Direct Contact Form (Send Email to Shinji)",
+                ml_title: "3. Official Global Mailing List: 'Serena World'",
+                ml_desc: "Welcome to 'Serena World' — our official global mailing list on Google Groups! Whether you want to talk about Shinji's music and songs, Serena Screen Reader, Serena Mail, anything Android-related, or casual daily conversation, everything is welcome as long as it is not spam!",
+                ml_rules_heading: "Community Guidelines & How to Join",
+                ml_rule_1: "<strong>Open Topics (No Spam!)</strong>: Music & songs, Serena software feedback, Android tips and questions, and friendly daily chat are all welcome.",
+                ml_rule_2: "<strong>Any Language Readable by TTS</strong>: Feel free to post in Japanese, English, Tagalog, Spanish, or any language as long as screen reader text-to-speech (TTS) engines can read it aloud!",
+                ml_rule_3: "<strong>Easy 1-Click Email Subscription</strong>: Select the subscribe button below and send the email. When you receive the confirmation email from Google Groups, simply reply to it (or activate the confirmation link) to complete your membership!",
+                ml_btn_subscribe: "Subscribe via Email (serena-world+subscribe@googlegroups.com)",
+                ml_btn_post: "For Members: Post a Message to Serena World (serena-world@googlegroups.com)",
+                ml_btn_web: "Open Serena World on Google Groups Web (groups.google.com/g/serena-world)",
+                ml_unsub_note: "Note: To unsubscribe at any time, simply send an email to <a href=\"mailto:serena-world+unsubscribe@googlegroups.com\" style=\"color: var(--accent-cyan);\">serena-world+unsubscribe@googlegroups.com</a>.",
+                sec3_title: "4. Direct Contact Form (Send Email to Shinji)",
                 sec3_desc: "Feel free to reach out with thoughts on music releases, collaboration inquiries, or feedback on Serena Screen Reader and Serena Mail. Submitting this form opens an email addressed directly to Shinji (shinjisakiyama@gmail.com).",
                 form_name_label: "Your Name (Required)",
                 form_email_label: "Your Email Address (Optional, for replies)",
@@ -852,7 +905,8 @@
                 hero_quote_sub: "— Magkasama naming binubuo ng aking mahal na kasintahan at mapapangasawang si Serena ang bagong pamilya. Mabuhay at ingat lagi!",
                 nav_artist: "1. Profile ng Artist at Music Links",
                 nav_software: "2. Mga Ginawang Software (Serena Suite)",
-                nav_contact: "3. Direktang Contact Form",
+                nav_community: "3. Global Mailing List (Serena World)",
+                nav_contact: "4. Direktang Contact Form",
                 sec1_title: "1. Profile ng Artist at Mga Link sa Music Streaming",
                 sec1_desc: "Si Shinji Sakiyama ay isang ganap na bulag na software engineer at indie recording artist mula sa Japan. Inspirado ng kanyang wagas na pagmamahal sa kanyang mahal na kasintahan at mapapangasawang si Serena (mula sa Pilipinas, ang Perlas ng Silanganan), pagkakaisa, at pag-asa, ang kanyang mga awitin ay napapakinggan sa buong mundo sa pamamagitan ng DistroKid, UnitedMasters, CD Baby, at TuneCore.",
                 sec1_links_heading: "Opisyal na mga Link sa Music Streaming",
@@ -889,7 +943,17 @@
                 mail_feat_4: "<strong>May Kasamang Accessible Auto-Updater</strong>: Direktang nakakonekta sa GitHub Releases para sa madaling pag-update.",
                 mail_btn_dl: "I-download ang Serena Mail Latest APK (app-serena-mail-release.apk)",
                 mail_btn_repo: "Buksan ang GitHub Repository (shinji5683/cocoa)",
-                sec3_title: "3. Direktang Contact Form (Magpadala ng Mensahe kay Shinji)",
+                ml_title: "3. Opisyal na Global Mailing List: 'Serena World'",
+                ml_desc: "Maligayang pagdating sa 'Serena World' — ang ating opisyal na global mailing list sa Google Groups! Usapang musika at kanta man, Serena Screen Reader, Serena Mail, kahit anong tungkol sa Android, o pang-araw-araw na kwentuhan, lahat ay welcome basta't hindi spam!",
+                ml_rules_heading: "Mga Patakaran at Paano Sumali",
+                ml_rule_1: "<strong>Bukas sa Lahat ng Paksa (Bawal ang Spam!)</strong>: Kwentuhan tungkol sa mga awitin ni Shinji, Serena apps, Android tips at tanong, at masayang kamustahan.",
+                ml_rule_2: "<strong>Kahit Anong Wika na Nababasa ng TTS</strong>: Malaya kang mag-post sa Tagalog, Japanese, English, Spanish, o kahit anong wika basta't kayang basahin ng screen reader TTS engine!",
+                ml_rule_3: "<strong>Madaling Pagsali sa Pamamagitan ng Email</strong>: Pindutin ang subscribe button sa ibaba at ipadala ang email. Kapag natanggap mo ang confirmation email mula sa Google Groups, mag-reply lamang dito upang makumpleto ang iyong pagsali!",
+                ml_btn_subscribe: "Sumali sa Serena World sa Pamamagitan ng Email (serena-world+subscribe@googlegroups.com)",
+                ml_btn_post: "Para sa mga Miyembro: Magpadala ng Post sa Serena World (serena-world@googlegroups.com)",
+                ml_btn_web: "Buksan ang Serena World sa Google Groups Web (groups.google.com/g/serena-world)",
+                ml_unsub_note: "Paalala: Kung nais umalis sa listahan, magpadala lamang ng email sa <a href=\"mailto:serena-world+unsubscribe@googlegroups.com\" style=\"color: var(--accent-cyan);\">serena-world+unsubscribe@googlegroups.com</a>.",
+                sec3_title: "4. Direktang Contact Form (Magpadala ng Mensahe kay Shinji)",
                 sec3_desc: "Kung mayroon kang mensahe tungkol sa kanyang mga kanta o sa Serena Screen Reader at Serena Mail, punan lamang ang form sa ibaba upang direktang magpadala ng email kay Shinji (shinjisakiyama@gmail.com).",
                 form_name_label: "Iyong Pangalan (Kailangan)",
                 form_email_label: "Iyong Email Address (Opsyonal, para sa tugon)",
@@ -911,7 +975,8 @@
                 hero_quote_sub: "— Construyendo una nueva familia junto a mi amada prometida y compañera de vida Serena, llevando música y accesibilidad al mundo.",
                 nav_artist: "1. Perfil de Artista y Música",
                 nav_software: "2. Software Desarrollado (Suite Serena)",
-                nav_contact: "3. Formulario de Contacto Directo",
+                nav_community: "3. Lista de Correo Global (Serena World)",
+                nav_contact: "4. Formulario de Contacto Directo",
                 sec1_title: "1. Perfil de Artista y Enlaces de Streaming Musical",
                 sec1_desc: "Shinji Sakiyama es un ingeniero de software totalmente ciego y cantante independiente de Japón. Inspirado por su profundo vínculo con su amada prometida y compañera de vida Serena (Filipinas, la Perla de Oriente), el amor humano y la paz, distribuye su música original en todo el mundo a través de DistroKid, UnitedMasters, CD Baby y TuneCore.",
                 sec1_links_heading: "Enlaces Oficiales de Streaming Musical",
@@ -948,7 +1013,17 @@
                 mail_feat_4: "<strong>Actualizador Automático Accesible Integrado</strong>: Conectado directamente con GitHub Releases.",
                 mail_btn_dl: "Descargar Serena Mail Último APK (app-serena-mail-release.apk)",
                 mail_btn_repo: "Ver Repositorio Oficial en GitHub (shinji5683/cocoa)",
-                sec3_title: "3. Formulario de Contacto Directo",
+                ml_title: "3. Lista de Correo Global Oficial: 'Serena World'",
+                ml_desc: "¡Bienvenido a 'Serena World', nuestra lista de correo global oficial en Google Groups! Ya sea para hablar de las canciones y música de Shinji, Serena Screen Reader, Serena Mail, cualquier tema de Android o charla diaria, ¡todo es bienvenido mientras no sea spam!",
+                ml_rules_heading: "Reglas de la Comunidad y Cómo Unirse",
+                ml_rule_1: "<strong>Temas Libres (¡Prohibido el Spam!)</strong>: Música y canciones, comentarios sobre Serena, trucos y preguntas de Android, y conversación amistosa.",
+                ml_rule_2: "<strong>Cualquier Idioma Legible por Voz (TTS)</strong>: Puedes escribir en japonés, inglés, tagalo, español o cualquier idioma que los motores de voz de lectores de pantalla puedan leer.",
+                ml_rule_3: "<strong>Suscripción Fácil con un Solo Correo</strong>: Pulsa el botón de suscripción abajo y envía el correo. Cuando recibas el correo de confirmación de Google Groups, simplemente respóndelo para completar tu registro.",
+                ml_btn_subscribe: "Suscribirse por Correo a Serena World (serena-world+subscribe@googlegroups.com)",
+                ml_btn_post: "Para Miembros: Enviar Mensaje a la Lista (serena-world@googlegroups.com)",
+                ml_btn_web: "Abrir Serena World en Google Groups Web (groups.google.com/g/serena-world)",
+                ml_unsub_note: "Nota: Para cancelar la suscripción en cualquier momento, envía un correo a <a href=\"mailto:serena-world+unsubscribe@googlegroups.com\" style=\"color: var(--accent-cyan);\">serena-world+unsubscribe@googlegroups.com</a>.",
+                sec3_title: "4. Formulario de Contacto Directo",
                 sec3_desc: "Envía tus comentarios sobre la música o consultas sobre Serena Screen Reader y Serena Mail directamente al correo de Shinji (shinjisakiyama@gmail.com).",
                 form_name_label: "Tu Nombre (Obligatorio)",
                 form_email_label: "Tu Correo Electrónico (Opcional, para responderte)",
