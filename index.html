@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinji Sakiyama Official Website | 全盲のソフトウェア開発者・音楽アーティスト公式ポータル</title>
+    <meta name="description" content="全盲のソフトウェアエンジニア・インディーズ音楽アーティスト Shinji Sakiyama（崎山）の公式ウェブサイト。YouTube、Spotify、Amazon Music、Apple Music等の音楽配信リンク、次世代スクリーンリーダー『Serena Screen Reader』および『Serena Mail』の公式ダウンロード、直接のお問い合わせフォームを提供しています。">
+    <meta name="keywords" content="Shinji Sakiyama, 崎山, 東洋の真珠, 真珠の妻, セレナさくら, さくらの勇者, 人道支援の勇者とSayana, Mahal koと紡ぐ物語, Serena Screen Reader, セレーナスクリーンリーダー, Serena Mail, セレーナメール, 全盲開発者, アクセシビリティ, スクリーンリーダー">
+    <meta name="author" content="Shinji Sakiyama">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shinji5683.github.io/">
+
+    <!-- Open Graph / SNS Metadata -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Shinji Sakiyama Official Website | 音楽アーティスト ＆ Serena Accessible Suite 開発者">
+    <meta property="og:description" content="音楽アーティスト Shinji Sakiyama の各種配信ストアリンク（YouTube / Spotify / Amazon Music / Apple Music 他）と、視覚障害者向け次世代アプリ『Serena Screen Reader』『Serena Mail』の公式ポータルサイト。">
+    <meta property="og:url" content="https://shinji5683.github.io/">
+    <meta property="og:site_name" content="Shinji Sakiyama Official Website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5e/d4/04/5ed404e6-8cb3-914d-2e06-17fd4b2beae5/artwork.jpg/1200x630cw.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shinji Sakiyama Official Website">
+    <meta name="twitter:description" content="全盲のソフトウェア開発者・音楽アーティスト Shinji Sakiyama 公式ポータル。">
+    <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5e/d4/04/5ed404e6-8cb3-914d-2e06-17fd4b2beae5/artwork.jpg/1200x630cw.png">
+
+    <!-- JSON-LD Structured Data for Google SEO & Knowledge Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["Person", "MusicGroup"],
+          "@id": "https://shinji5683.github.io/#artist",
+          "name": "Shinji Sakiyama",
+          "alternateName": ["崎山", "shinjisakiyama", "shinji5683"],
+          "url": "https://shinji5683.github.io/",
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5e/d4/04/5ed404e6-8cb3-914d-2e06-17fd4b2beae5/artwork.jpg/486x486bb.png",
+          "jobTitle": "Totally Blind Software Engineer & Independent Recording Artist",
+          "description": "全盲のソフトウェアエンジニアおよびインディーズ音楽アーティスト。次世代Androidスクリーンリーダー『Serena Screen Reader』・アクセシブルメールクライアント『Serena Mail』の主任開発者であり、世界中の音楽プラットフォームでオリジナル楽曲を配信中。",
+          "email": "mailto:shinjisakiyama@gmail.com",
+          "sameAs": [
+            "https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa",
+            "https://music.apple.com/jp/artist/shinji-sakiyama/6785027836",
+            "https://music.youtube.com/channel/UCcGlNKi4PILBbgWYbpGTO2A",
+            "https://www.youtube.com/channel/UCcGlNKi4PILBbgWYbpGTO2A",
+            "https://www.youtube.com/@mate_sachi",
+            "https://unitedmasters.com/a/shinji-sakiyama",
+            "https://audiomack.com/shinji-sakiyama",
+            "https://instagram.com/shinji9683",
+            "https://github.com/shinji5683"
+          ],
+          "track": [
+            { "@type": "MusicRecording", "name": "東洋の真珠 (Oriental Pearl)" },
+            { "@type": "MusicRecording", "name": "真珠の妻 (Pearl Wife)" },
+            { "@type": "MusicRecording", "name": "セレナさくら (Serena Sakura)" },
+            { "@type": "MusicRecording", "name": "さくらとめぐみ" },
+            { "@type": "MusicRecording", "name": "さくらの勇者" },
+            { "@type": "MusicRecording", "name": "人道支援の勇者とSayana" },
+            { "@type": "MusicRecording", "name": "Mahal koと紡ぐ物語" },
+            { "@type": "MusicRecording", "name": "asawa ko Serena" }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Serena Screen Reader (セレーナ・スクリーンリーダー)",
+          "operatingSystem": "Android 11+",
+          "applicationCategory": "AccessibilityApplication",
+          "softwareVersion": "2.5.2",
+          "author": { "@id": "https://shinji5683.github.io/#artist" },
+          "downloadUrl": "https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk",
+          "url": "https://github.com/shinji5683/cocoa",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+          "description": "超高速ナビゲーション、Lift to Type入力、AI自己修復ラベル推論、Gemini Nano / Gemma 4による画面・写真情景説明、3D立体音響の空間ソナーエンジン、歩行ナビ、点字ディスプレイ対応を備えた次世代Androidスクリーンリーダー。"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Serena Mail (セレーナ・メール)",
+          "operatingSystem": "Android 11+",
+          "applicationCategory": "CommunicationApplication",
+          "softwareVersion": "1.0.1",
+          "author": { "@id": "https://shinji5683.github.io/#artist" },
+          "downloadUrl": "https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-mail-release.apk",
+          "url": "https://github.com/shinji5683/cocoa",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+          "description": "視覚障害者・スクリーンリーダーユーザーに特化した広告なし・高速Gmailクライアント。オンデバイスGemma 4 AIによるメール自動要約と返信下書き自動生成、自動アップデーターを搭載。"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-primary: #0B1120;
+            --bg-surface: #152238;
+            --bg-card: #1E293B;
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --accent-cyan: #38BDF8;
+            --accent-emerald: #10B981;
+            --accent-gold: #F59E0B;
+            --accent-pink: #F472B6;
+            --border-color: #334155;
+            --focus-ring: #FACC15;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Yu Gothic", sans-serif;
+            line-height: 1.75;
+            font-size: 18px;
+        }
+
+        /* Skip to main content link for Screen Reader & Keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--focus-ring);
+            color: #000000;
+            font-weight: 800;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+            outline: 4px solid #FFFFFF;
+        }
+
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 3px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+            border-bottom: 2px solid var(--border-color);
+            padding: 48px 20px 36px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .creed-quote {
+            background: rgba(255, 255, 255, 0.06);
+            border-left: 4px solid var(--accent-gold);
+            padding: 16px 20px;
+            margin: 20px auto 0;
+            max-width: 760px;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        nav {
+            background-color: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px 28px;
+        }
+
+        .nav-list a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-list a:hover {
+            background: var(--accent-cyan);
+            color: #0B1120;
+        }
+
+        main {
+            padding: 40px 0 64px;
+        }
+
+        section {
+            background-color: var(--bg-surface);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 28px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-cyan);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            margin: 28px 0 14px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .grid-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--bg-card);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 2px solid var(--accent-cyan);
+            transition: transform 0.15s ease, background-color 0.15s ease;
+        }
+
+        .btn-link:hover {
+            background-color: var(--accent-cyan);
+            color: #0B1120;
+            transform: translateY(-2px);
+        }
+
+        .btn-download {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent-emerald);
+            color: #051B11;
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 18px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin: 12px 0;
+            border: 2px solid #34D399;
+        }
+
+        .btn-download:hover {
+            background-color: #34D399;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--bg-card);
+            color: var(--accent-gold);
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            margin: 8px 0;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .software-card {
+            background-color: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .feature-list {
+            padding-left: 24px;
+            margin: 16px 0 24px;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+        }
+
+        .track-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .track-item {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--accent-pink);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        /* Accessible Contact Form */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--accent-cyan);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1rem;
+            background-color: #0F172A;
+            color: #FFFFFF;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent-gold);
+            color: #0F172A;
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #FBBF24;
+        }
+
+        .status-box {
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 10px;
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--accent-emerald);
+            color: #A7F3D0;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 36px 20px;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            background-color: #070B14;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+    <header role="banner">
+        <div class="container">
+            <h1>Shinji Sakiyama Official Website</h1>
+            <p class="subtitle">全盲のソフトウェアエンジニア ＆ インディーズ音楽アーティスト 公式ポータル</p>
+            <blockquote class="creed-quote">
+                "Together with my beloved wife, we build a new family. Sing on, whisper on, heart of the Pearl of the Orient."<br>
+                <span>― 愛する妻セレナと共に新しい家族を築き、音楽とアクセシビリティの光を世界へ。</span>
+            </blockquote>
+        </div>
+    </header>
+
+    <nav aria-label="サイト内メインナビゲーション">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#artist-section">1. プロフィール＆音楽配信リンク</a></li>
+                <li><a href="#software-section">2. 開発ソフトウェア（Serenaシリーズ）</a></li>
+                <li><a href="#contact-section">3. お問い合わせフォーム</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container">
+
+        <!-- Section 1: Artist Profile & Music Links -->
+        <section id="artist-section" aria-labelledby="heading-artist">
+            <h2 id="heading-artist">1. アーティストプロフィール ＆ 各種音楽配信ストア</h2>
+            <p>
+                <strong>Shinji Sakiyama（崎山）</strong>は、日本の全盲のソフトウェアエンジニアであり、インディーズシンガー・音楽アーティストです。
+                愛する妻セレナ（フィリピン・東洋の真珠）との深い絆や、人間愛、平和、希望をテーマにしたオリジナル楽曲を制作し、
+                DistroKid、UnitedMasters、CD Baby、TuneCore などのグローバル・ディストリビューターを通じて全世界の主要ストリーミングストアへ配信しています。
+            </p>
+
+            <h3>公式アーティストリンク（各種音楽配信ストア）</h3>
+            <p>以下のリンクから、お使いの音楽ストリーミングサービスで「Shinji Sakiyama」の楽曲をお聴きいただけます。</p>
+            <ul class="grid-links" aria-label="音楽配信ストアのアーティストリンク一覧">
+                <li>
+                    <a class="btn-link" href="https://music.youtube.com/channel/UCcGlNKi4PILBbgWYbpGTO2A" target="_blank" rel="noopener noreferrer">
+                        <span>YouTube Music で聴く</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://www.youtube.com/@mate_sachi" target="_blank" rel="noopener noreferrer">
+                        <span>YouTube 公式チャンネル</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa" target="_blank" rel="noopener noreferrer">
+                        <span>Spotify で聴く</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://music.amazon.co.jp/search/Shinji+Sakiyama" target="_blank" rel="noopener noreferrer">
+                        <span>Amazon Music で聴く</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://music.apple.com/jp/artist/shinji-sakiyama/6785027836" target="_blank" rel="noopener noreferrer">
+                        <span>Apple Music で聴く</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://unitedmasters.com/a/shinji-sakiyama" target="_blank" rel="noopener noreferrer">
+                        <span>UnitedMasters 公式ページ</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://audiomack.com/shinji-sakiyama" target="_blank" rel="noopener noreferrer">
+                        <span>Audiomack で聴く</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-link" href="https://github.com/shinji5683" target="_blank" rel="noopener noreferrer">
+                        <span>GitHub 公式プロフィール</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </li>
+            </ul>
+
+            <h3>主な配信楽曲（ディスコグラフィ）</h3>
+            <ul class="track-list" aria-label="主な配信楽曲一覧">
+                <li class="track-item">『東洋の真珠 (Oriental Pearl)』</li>
+                <li class="track-item">『真珠の妻 (Pearl Wife)』</li>
+                <li class="track-item">『セレナさくら (Serena Sakura)』</li>
+                <li class="track-item">『さくらとめぐみ』</li>
+                <li class="track-item">『さくらの勇者』</li>
+                <li class="track-item">『人道支援の勇者とSayana』</li>
+                <li class="track-item">『Mahal koと紡ぐ物語』</li>
+                <li class="track-item">『asawa ko Serena』</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: Developed Software (Serena Accessible Suite) -->
+        <section id="software-section" aria-labelledby="heading-software">
+            <h2 id="heading-software">2. 開発ソフトウェア（Serena Accessible Suite）</h2>
+            <p>
+                全盲の当事者開発者としての知見と最先端のオンデバイスAI技術を結集し、世界中の視覚障害者が一切の妥協なくスマートフォンを自在に操れる「真のバリアフリー環境」を実現するオープンソース・エコシステムを開発・無償公開しています。
+            </p>
+
+            <!-- Software 1: Serena Screen Reader -->
+            <div class="software-card">
+                <h3>① Serena Screen Reader（セレーナ・スクリーンリーダー）</h3>
+                <p>
+                    最愛の妻セレナの名を冠し、世界中の視覚障害者に圧倒的なスピードと自立を届ける次世代Androidスクリーンリーダー（Android 11〜Android 17対応）。
+                </p>
+                <h4>主な特徴・イノベーション</h4>
+                <ul class="feature-list">
+                    <li><strong>超高速リニア＆セマンティック・ナビゲーション ＆「Lift to Type」入力</strong>：リスト端でのフォーカス引っかかり（バウンス）を完全に解消した滑らかな自動スクロール。さらにソフトキーボード上で目的のキーから指を離すだけで即座に文字入力できる「Lift to Type」に完全対応。</li>
+                    <li><strong>AI自己修復アクセシビリティ（ラベルなしボタン自動推論）</strong>：視覚障害者を最も悩ませる「ラベルなしボタン」を、画面上の座標配置・リソースID・前後の文脈からリアルタイムに自動推論し、非対応アプリもアクセシブルに変換。</li>
+                    <li><strong>オンデバイスAI（Gemini Nano / Gemma 4）による画面・写真情景説明</strong>：単一のジェスチャーで画面レイアウトの要約と、写真・画像の色彩や雰囲気まで温かみのある自然な言葉で解説（完全ローカル処理でプライバシーも安心）。</li>
+                    <li><strong>空間ソナーエンジン（音響白杖）</strong>：カメラとセンサーを駆使し、前方の障害物・柱・ドア・段差を3D立体音響パルスで通知。わかりにくい時計盤表現（何時方向）を一切使わず、「正面1.5メートルにドア」「右斜め前80センチに障害物」と直感的に案内。</li>
+                    <li><strong>通り名・交差点のリアルタイム歩行ナビゲーション</strong>：OpenStreetMapおよびValhallaと連携し、現在歩いている通り名、進行方向の方角、前方の交差点や横断歩道を事前に音声通知。</li>
+                    <li><strong>点字ディスプレイ完全対応（USB ＆ Bluetooth SPP）</strong>：主要な点字ディスプレイとの自動検出・双方向通信、および画面上でのパーキンス式6点点字タッチ入力に対応。</li>
+                    <li><strong>多言語対応＆スマート着信案内</strong>：日本語・英語・タガログ語・スペイン語にネイティブ対応。電話やLINE・WhatsApp等の発信者優先読み上げと通話終了時の通話時間アナウンス機能を搭載。</li>
+                </ul>
+                <a class="btn-download" href="https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk">
+                    Serena Screen Reader 最新版APKを直接ダウンロード
+                </a>
+                <a class="btn-secondary" href="https://github.com/shinji5683/cocoa/releases" target="_blank" rel="noopener noreferrer">
+                    全リリース一覧・更新履歴（GitHub Releases）を開く
+                </a>
+            </div>
+
+            <!-- Software 2: Serena Mail -->
+            <div class="software-card">
+                <h3>② Serena Mail（セレーナ・メール）</h3>
+                <p>
+                    視覚障害者・スクリーンリーダーユーザーのために専用設計された、オンデバイスGemma 4 AI搭載の超快適・高速Gmailクライアント。
+                </p>
+                <h4>主な特徴・イノベーション</h4>
+                <ul class="feature-list">
+                    <li><strong>スクリーンリーダー特化のノイズゼロ設計</strong>：複雑なHTMLメールの崩れたレイアウトや邪魔な広告を完全に排除し、音声読み上げと素早いフォーカス移動だけに集中できる快適設計。</li>
+                    <li><strong>オンデバイスGemma 4 AIによるメール自動要約＆返信作成</strong>：長いメールもAIが瞬時に2〜3文の要点に要約して読み上げ。さらにワンタップで自然で丁寧な返信文の下書きを自動生成。</li>
+                    <li><strong>「命綱（スクリーンリーダー）」を守るプロセス分離アーキテクチャ</strong>：重いネットワーク通信やIMAP/SMTP同期、添付ファイル処理を独立したメールアプリへ分離することで、スクリーンリーダー本体のメモリを一切圧迫せず、OSによる強制終了リスクをゼロに抑制。</li>
+                    <li><strong>アクセシブル自動アップデーター内蔵</strong>：GitHub Releasesと直結し、アプリ内からいつでも最新バージョンへのアップデートを確認・実行可能。</li>
+                </ul>
+                <a class="btn-download" href="https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-mail-release.apk">
+                    Serena Mail 最新版APKを直接ダウンロード
+                </a>
+                <a class="btn-secondary" href="https://github.com/shinji5683/cocoa" target="_blank" rel="noopener noreferrer">
+                    Serena Accessible Suite 公式GitHubリポジトリ（shinji5683/cocoa）を見る
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 3: Direct Contact Form -->
+        <section id="contact-section" aria-labelledby="heading-contact">
+            <h2 id="heading-contact">3. お問い合わせフォーム（Shinji宛て直通）</h2>
+            <p>
+                音楽活動に関するご感想・ご依頼、Serena Screen Reader / Serena Mail に関するご質問やフィードバックなど、お気軽にメッセージをお送りください。
+                以下のフォームに入力して「メールを作成して送信する」ボタンを押すと、Shinjiの直通メールアドレス（<strong>shinjisakiyama@gmail.com</strong>）宛てのメールが起動します。
+            </p>
+
+            <form id="contact-form" aria-label="Shinjiへの直通お問い合わせフォーム">
+                <div class="form-group">
+                    <label for="sender-name">お名前（必須）</label>
+                    <input type="text" id="sender-name" name="name" required aria-required="true" placeholder="例：山田 太郎">
+                </div>
+
+                <div class="form-group">
+                    <label for="sender-email">ご自身のメールアドレス（返信をご希望の場合）</label>
+                    <input type="email" id="sender-email" name="email" placeholder="例：example@mail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message-subject">件名（必須）</label>
+                    <input type="text" id="message-subject" name="subject" required aria-required="true" placeholder="例：楽曲の感想 ／ Serenaについての質問">
+                </div>
+
+                <div class="form-group">
+                    <label for="message-body">メッセージ本文（必須）</label>
+                    <textarea id="message-body" name="body" required aria-required="true" placeholder="ここにメッセージを入力してください。"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    shinjisakiyama@gmail.com 宛てにメールを作成して送信する
+                </button>
+
+                <div id="form-status" class="status-box" role="status" aria-live="polite"></div>
+            </form>
+
+            <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                <h3>メールアプリから直接送る場合</h3>
+                <p>フォームを使わずに直接メールを送りたい方は、以下のリンクを選択してください。</p>
+                <a class="btn-secondary" href="mailto:shinjisakiyama@gmail.com">
+                    直通メールアドレス：shinjisakiyama@gmail.com へ直接メールを送る
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Shinji Sakiyama (<a href="https://github.com/shinji5683" style="color: var(--accent-cyan);">@shinji5683</a>). All Rights Reserved.</p>
+            <p style="font-size: 0.95rem; margin-top: 8px;">Designed for 100% Screen Reader Accessibility (WCAG AAA) &amp; Global SEO.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('sender-name').value.trim();
+            var email = document.getElementById('sender-email').value.trim();
+            var subject = document.getElementById('message-subject').value.trim();
+            var body = document.getElementById('message-body').value.trim();
+
+            var fullSubject = '【公式サイトお問い合わせ】' + subject + '（' + name + '様より）';
+            var fullBody = 'お名前: ' + name + '\r\n'
+                         + (email ? '返信先メールアドレス: ' + email + '\r\n' : '')
+                         + '\r\n--- メッセージ本文 ---\r\n'
+                         + body;
+
+            var mailtoUrl = 'mailto:shinjisakiyama@gmail.com?subject='
+                          + encodeURIComponent(fullSubject)
+                          + '&body='
+                          + encodeURIComponent(fullBody);
+
+            var statusBox = document.getElementById('form-status');
+            statusBox.style.display = 'block';
+            statusBox.textContent = 'メールアプリを起動しています。そのまま送信ボタンを押して完了してください。';
+
+            window.location.href = mailtoUrl;
+        });
+    </script>
+</body>
+</html>
