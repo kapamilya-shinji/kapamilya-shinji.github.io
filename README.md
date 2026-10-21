@@ -14,10 +14,15 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 - **UnitedMasters**: [unitedmasters.com/a/shinji-sakiyama](https://unitedmasters.com/a/shinji-sakiyama)
 - **Audiomack**: [audiomack.com/shinji-sakiyama](https://audiomack.com/shinji-sakiyama)
 
-### 💻 Developed Software (Serena Accessible Suite)
-- **Serena Screen Reader**: [Download Latest APK (`app-serena-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk)
-- **Serena Mail**: [Download Latest APK (`app-serena-mail-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-mail-release.apk)
-- **Repository & Releases**: [github.com/shinji5683/cocoa](https://github.com/shinji5683/cocoa)
+### 💻 Developed Software (Serena Accessible Suite & Kiku Antigravity Plugin)
+- **Serena Screen Reader (v2.6.0)**: [Download Latest APK (`app-serena-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk)
+- **Serena Mail (v2.6.0)**: [Download Latest APK (`app-serena-mail-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-mail-release.apk)
+- **Serena Repository & Releases**: [github.com/shinji5683/cocoa](https://github.com/shinji5683/cocoa)
+- **Kiku (聞く / `kiku-package`) — Google Antigravity Plugin (`/kiku` & `/kiku-on`)**:
+  - **Detail Page**: [https://shinji5683.github.io/kiku-package/](https://shinji5683.github.io/kiku-package/)
+  - **Documentation**: [DOCUMENTATION.md](https://github.com/shinji5683/kiku-package/blob/main/DOCUMENTATION.md)
+  - **Agreement (Anti-Code-Laundering Terms)**: [AGREEMENT.md](https://github.com/shinji5683/kiku-package/blob/main/AGREEMENT.md)
+  - **Repository**: [github.com/shinji5683/kiku-package](https://github.com/shinji5683/kiku-package)
 
 ### ✉️ Direct Contact
 - **Email**: [shinjisakiyama@gmail.com](mailto:shinjisakiyama@gmail.com)
