@@ -14,7 +14,7 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 - **UnitedMasters**: [unitedmasters.com/a/shinji-sakiyama](https://unitedmasters.com/a/shinji-sakiyama)
 - **Audiomack**: [audiomack.com/shinji-sakiyama](https://audiomack.com/shinji-sakiyama)
 
-### 💻 Developed Software (Kapamilya Serena Suite, Kiku Plugin & Kapamilya Voice for NVDA)
+### 💻 Developed Software (Kapamilya Serena Suite, Kiku Plugin, Kapamilya Voice & Kapamilya Serena for Windows)
 1. **Kapamilya Serena (`com.kapamilya.serena`)**:
    - [Download Latest APK (`app-kapamilya-serena-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-kapamilya-serena-release.apk)
 2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail`)**:
@@ -26,6 +26,9 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 4. **Kapamilya Voice for NVDA (`kapamilyaVoice` v2026.10.22)**:
    - **Direct Add-on Download**: [Download `kapamilyaVoice-2026.10.22.nvda-addon`](https://github.com/shinji5683/kapamilya-voice/releases/download/v2026.10.22/kapamilyaVoice-2026.10.22.nvda-addon)
    - **Repository & Releases**: [github.com/shinji5683/kapamilya-voice](https://github.com/shinji5683/kapamilya-voice)
+5. **Kapamilya Serena for Windows (`shinji5683/kapamilya-serena-windows` v1.0.0 — 100% Standalone Windows AI Screen Reader)**:
+   - **Direct Installer Download**: [Download `Kapamilya-Serena-Windows-Setup.exe`](https://github.com/shinji5683/kapamilya-serena-windows/releases/latest/download/Kapamilya-Serena-Windows-Setup.exe)
+   - **Repository & Releases**: [github.com/shinji5683/kapamilya-serena-windows](https://github.com/shinji5683/kapamilya-serena-windows)
 
 ### ✉️ Direct Contact
 - **Email**: [shinjisakiyama@gmail.com](mailto:shinjisakiyama@gmail.com)
