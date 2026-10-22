@@ -3,9 +3,9 @@
 🌐 **Official Portal URL**: [https://shinji5683.github.io/](https://shinji5683.github.io/)
 
 ## Overview
-Official website and global portal for **Shinji Sakiyama (崎山)** — Totally Blind Software Engineer & Independent Recording Artist.
+Official website and global portal for **Shinji Sakiyama (崎山)** — Totally Blind A Cappella Indie Singer-Songwriter & Software Engineer (`Bayanihan • Magna Carta • Kapamilya`).
 
-### 🎵 Music & Artist Links
+### 🎵 Music & Artist Links (Auto-Syncing Embedded Player on Portal)
 - **YouTube Music**: [Shinji Sakiyama Official Channel](https://music.youtube.com/channel/UCcGlNKi4PILBbgWYbpGTO2A)
 - **YouTube**: [@mate_sachi](https://www.youtube.com/@mate_sachi)
 - **Spotify**: [Shinji Sakiyama on Spotify](https://open.spotify.com/artist/6pS4jqJo9ZW5aKZ2wunsQa)
@@ -14,15 +14,18 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 - **UnitedMasters**: [unitedmasters.com/a/shinji-sakiyama](https://unitedmasters.com/a/shinji-sakiyama)
 - **Audiomack**: [audiomack.com/shinji-sakiyama](https://audiomack.com/shinji-sakiyama)
 
-### 💻 Developed Software (Serena Accessible Suite & Kiku Antigravity Plugin)
-- **Serena Screen Reader (v2.6.0)**: [Download Latest APK (`app-serena-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-release.apk)
-- **Serena Mail (v2.6.0)**: [Download Latest APK (`app-serena-mail-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-serena-mail-release.apk)
-- **Serena Repository & Releases**: [github.com/shinji5683/cocoa](https://github.com/shinji5683/cocoa)
-- **Kiku (聞く / `kiku-package`) — Google Antigravity Plugin (`/kiku` & `/kiku-on`)**:
-  - **Detail Page**: [https://shinji5683.github.io/kiku-package/](https://shinji5683.github.io/kiku-package/)
-  - **Documentation**: [DOCUMENTATION.md](https://github.com/shinji5683/kiku-package/blob/main/DOCUMENTATION.md)
-  - **Agreement (Anti-Code-Laundering Terms)**: [AGREEMENT.md](https://github.com/shinji5683/kiku-package/blob/main/AGREEMENT.md)
-  - **Repository**: [github.com/shinji5683/kiku-package](https://github.com/shinji5683/kiku-package)
+### 💻 Developed Software (Kapamilya Serena Suite, Kiku Plugin & Kapamilya Voice for NVDA)
+1. **Kapamilya Serena (`com.kapamilya.serena`)**:
+   - [Download Latest APK (`app-kapamilya-serena-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-kapamilya-serena-release.apk)
+2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail`)**:
+   - [Download Latest APK (`app-kapamilya-serena-mail-release.apk`)](https://github.com/shinji5683/cocoa/releases/latest/download/app-kapamilya-serena-mail-release.apk)
+   - **Repository & Releases**: [github.com/shinji5683/cocoa](https://github.com/shinji5683/cocoa)
+3. **Kiku (聞く / `kiku-package`) — Google Antigravity Plugin (`/kiku` & `/kiku-on`)**:
+   - **1-Click Installer**: [Download `Kiku-Plugin-Setup.exe`](https://github.com/shinji5683/kiku-package/releases/latest/download/Kiku-Plugin-Setup.exe)
+   - **Repository**: [github.com/shinji5683/kiku-package](https://github.com/shinji5683/kiku-package)
+4. **Kapamilya Voice for NVDA (`kapamilyaVoice` v2026.10.22)**:
+   - **Direct Add-on Download**: [Download `kapamilyaVoice-2026.10.22.nvda-addon`](https://github.com/shinji5683/kapamilya-voice/releases/download/v2026.10.22/kapamilyaVoice-2026.10.22.nvda-addon)
+   - **Repository & Releases**: [github.com/shinji5683/kapamilya-voice](https://github.com/shinji5683/kapamilya-voice)
 
 ### ✉️ Direct Contact
 - **Email**: [shinjisakiyama@gmail.com](mailto:shinjisakiyama@gmail.com)
