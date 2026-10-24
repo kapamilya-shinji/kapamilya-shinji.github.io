@@ -1,4 +1,4 @@
-image: alpine:latest
+image: python:3.12-alpine
 
 stages:
   - build
@@ -8,6 +8,7 @@ stages:
 build_site:
   stage: build
   script:
+    - python3 sync_music.py || true
     - mkdir -p .public
     - cp -r * .public/ 2>/dev/null || true
     - mv .public public
