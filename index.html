@@ -859,6 +859,7 @@
                     <li data-i18n="sr_feat_5"><strong>通り名・交差点のリアルタイム歩行ナビゲーション</strong>：OpenStreetMapおよびValhallaと連携し、現在歩いている通り名、進行方向の方角、前方の交差点や横断歩道を事前に音声通知。</li>
                     <li data-i18n="sr_feat_6"><strong>点字ディスプレイ完全対応（USB ＆ Bluetooth SPP）</strong>：主要な点字ディスプレイとの自動検出・双方向通信、および画面上でのパーキンス式6点点字タッチ入力に対応。</li>
                     <li data-i18n="sr_feat_7"><strong>多言語対応＆スマート着信案内</strong>：日本語・英語・タガログ語（フィリピン語）・スペイン語にネイティブ対応。電話やLINE・WhatsApp等の発信者優先読み上げと通話終了時の通話時間アナウンス機能を搭載。</li>
+                    <li data-i18n="sr_feat_8"><strong>Google TalkBack 17（Apache License 2.0）統合による全システムダイアログ・電源ボタンメニュー・クイック設定の完全突破</strong>：権限許可ダイアログ、特殊なシステムポップアップ、電源ボタンメニュー（Global Actions）、およびクイック設定パネルを確実に突破・フォーカス制御するため、Apache License, Version 2.0 の下で公開されている Google TalkBack 17（<code>https://github.com/google/talkback</code>）のソースコードおよびウィンドウ・フォーカス管理機構の一部（<code>WindowEventInterpreter</code> / <code>FocusProcessorForScreenStateChange</code> / <code>TraversalStrategyUtils</code>）を借用・統合しています（Copyright &copy; Google LLC. Android および Google TalkBack は Google LLC の商標です）。</li>
                 </ul>
                 <a class="btn-download" href="https://gitlab.com/kapamilya/serena/-/jobs/artifacts/main/raw/app-kapamilya-serena-release.apk?job=build_apk" data-i18n="sr_btn_dl">
                     Kapamilya Serena v3.0.0 最新版APK (app-kapamilya-serena-release.apk) を直接ダウンロード
@@ -1033,6 +1034,7 @@
         <div class="container">
             <p>&copy; 2026 Shinji Sakiyama (<a href="https://github.com/shinji5683" style="color: var(--accent-cyan);">@shinji5683</a>). All Rights Reserved.</p>
             <p style="font-size: 0.95rem; margin-top: 8px;" data-i18n="footer_note">Designed for 100% Screen Reader Accessibility (WCAG AAA) &amp; Global Multilingual SEO (JA / EN / TL / ES).</p>
+            <p style="font-size: 0.88rem; margin-top: 10px; color: var(--text-secondary); line-height: 1.6;" data-i18n="footer_trademark_notice">【オープンソース帰属表示・商標および著作権法に則る表記】Kapamilya Serena (Android) は、権限ダイアログ・特殊ポップアップ・電源ボタンメニュー・クイック設定等のシステムダイアログ突破機構において、Apache License, Version 2.0 に基づき Google TalkBack 17 (<a href="https://github.com/google/talkback" style="color: var(--accent-cyan);">https://github.com/google/talkback</a>, Copyright &copy; Google LLC) のソースコードの一部を借用・統合しています。また、Kapamilya Serena (Windows) は本家 Upstream NVDA (<a href="https://github.com/nvaccess/nvda" style="color: var(--accent-cyan);">NV Access Limited</a>, GNU GPL v2) の構造思想を継承しています（NVDA日本語版 nvdajp のコードは一切含みません）。Android、Google、Google TalkBack、Gemini、および Gemma は Google LLC の商標または登録商標です。</p>
         </div>
     </footer>
 
@@ -1088,6 +1090,7 @@
                 sr_feat_5: "<strong>通り名・交差点のリアルタイム歩行ナビゲーション</strong>：OpenStreetMapおよびValhallaと連携し、現在歩いている通り名、進行方向の方角、前方の交差点や横断歩道を事前に音声通知。",
                 sr_feat_6: "<strong>点字ディスプレイ完全対応（USB ＆ Bluetooth SPP）</strong>：主要な点字ディスプレイとの自動検出・双方向通信、および画面上でのパーキンス式6点点字タッチ入力に対応。",
                 sr_feat_7: "<strong>多言語対応＆スマート着信案内</strong>：日本語・英語・タガログ語（フィリピン語）・スペイン語にネイティブ対応。電話やLINE・WhatsApp等の発信者優先読み上げと通話終了時の通話時間アナウンス機能を搭載。",
+                sr_feat_8: "<strong>Google TalkBack 17（Apache License 2.0）統合による全システムダイアログ・電源ボタンメニュー・クイック設定の完全突破</strong>：権限許可ダイアログ、特殊なシステムポップアップ、電源ボタンメニュー（Global Actions）、およびクイック設定パネルを確実に突破・フォーカス制御するため、Apache License, Version 2.0 の下で公開されている Google TalkBack 17（<code>https://github.com/google/talkback</code>）のソースコードおよびウィンドウ・フォーカス管理機構の一部（<code>WindowEventInterpreter</code> / <code>FocusProcessorForScreenStateChange</code> / <code>TraversalStrategyUtils</code>）を借用・統合しています（Copyright &copy; Google LLC. Android および Google TalkBack は Google LLC の商標です）。",
                 sr_btn_dl: "Kapamilya Serena 最新版APK (app-kapamilya-serena-release.apk) を直接ダウンロード",
                 sr_btn_releases: "全リリース一覧・更新履歴（GitHub Releases）を開く",
                 mail_title: "② Kapamilya Serena Mail（カパミリャ・セレナ・メール / com.kapamilya.serena.mail）",
@@ -1149,7 +1152,8 @@
                 direct_mail_heading: "メールアプリから直接送る場合",
                 direct_mail_desc: "フォームを使わずに直接メールを送りたい方は、以下のリンクを選択してください。",
                 direct_mail_btn: "直通メールアドレス：shinjisakiyama@gmail.com へ直接メールを送る",
-                footer_note: "Designed for 100% Screen Reader Accessibility (WCAG AAA) & Global Multilingual SEO (JA / EN / TL / ES)."
+                footer_note: "Designed for 100% Screen Reader Accessibility (WCAG AAA) & Global Multilingual SEO (JA / EN / TL / ES).",
+                footer_trademark_notice: "【オープンソース帰属表示・商標および著作権法に則る表記】Kapamilya Serena (Android) は、権限ダイアログ・特殊ポップアップ・電源ボタンメニュー・クイック設定等のシステムダイアログ突破機構において、Apache License, Version 2.0 に基づき Google TalkBack 17 (https://github.com/google/talkback, Copyright &copy; Google LLC) のソースコードの一部を借用・統合しています。また、Kapamilya Serena (Windows) は本家 Upstream NVDA (NV Access Limited, GNU GPL v2) の構造思想を継承しています（NVDA日本語版 nvdajp のコードは一切含みません）。Android、Google、Google TalkBack、Gemini、および Gemma は Google LLC の商標または登録商標です。"
             },
             en: {
                 page_title: "Shinji Sakiyama Official Website | Totally Blind A Cappella Indie Singer-Songwriter & Software Engineer",
@@ -1201,6 +1205,7 @@
                 sr_feat_5: "<strong>Street & Intersection Spatial Navigator</strong>: Real-time spoken announcements of street names, walking cardinal directions, and upcoming intersections powered by OpenStreetMap & Valhalla.",
                 sr_feat_6: "<strong>Comprehensive Braille Display Support (USB & Bluetooth SPP)</strong>: Auto-discovery and bidirectional communication with major Braille displays plus Perkins-style 6-dot on-screen touch typing.",
                 sr_feat_7: "<strong>Multilingual TTS & Smart Caller ID</strong>: Native support for Japanese, English, Tagalog (Filipino), and Spanish, with prioritized caller ID and call duration summaries.",
+                sr_feat_8: "<strong>Complete System Dialog, Power Menu & Quick Settings Breakthrough (Incorporating Google TalkBack 17 under Apache License 2.0)</strong>: Incorporates portions of Google TalkBack 17 open-source code (<code>https://github.com/google/talkback</code> — <code>WindowEventInterpreter</code>, <code>FocusProcessorForScreenStateChange</code>, and <code>TraversalStrategyUtils</code>) under the Apache License, Version 2.0 to reliably break through and focus Android permission dialogs, special popups, the Power Button Menu (Global Actions), and Quick Settings (Copyright &copy; Google LLC. Android and Google TalkBack are trademarks of Google LLC).", 
                 sr_btn_dl: "Download Kapamilya Serena Latest APK (app-kapamilya-serena-release.apk)",
                 sr_btn_releases: "View All Releases & Changelog on GitHub",
                 mail_title: "2. Kapamilya Serena Mail (com.kapamilya.serena.mail — Accessible Gmail Client with Gemma 4 AI)",
@@ -1262,7 +1267,9 @@
                 direct_mail_heading: "Send Direct Email Without Form",
                 direct_mail_desc: "If you prefer to open your email app directly, select the link below:",
                 direct_mail_btn: "Direct Email: Send to shinjisakiyama@gmail.com",
-                footer_note: "Designed for 100% Screen Reader Accessibility (WCAG AAA) & Global Multilingual SEO (JA / EN / TL / ES)."
+                footer_note: "Designed for 100% Screen Reader Accessibility (WCAG AAA) & Global Multilingual SEO (JA / EN / TL / ES).",
+                footer_trademark_notice: "[Open-Source Attribution, Trademark & Copyright Notice] Kapamilya Serena (Android) incorporates portions of Google TalkBack 17 source code (https://github.com/google/talkback, Copyright &copy; Google LLC) under the Apache License, Version 2.0 for handling permission dialogs, special system popups, the Power Button Menu, and Quick Settings. Kapamilya Serena (Windows) incorporates architectural concepts from Upstream NVDA (NV Access Limited, GNU GPL v2, containing 0.0mm of nvdajp code). Android, Google, Google TalkBack, Gemini, and Gemma are trademarks of Google LLC.",
+                footer_trademark_notice: "【オープンソース帰属表示・商標および著作権法に則る表記】Kapamilya Serena (Android) は、権限ダイアログ・特殊ポップアップ・電源ボタンメニュー・クイック設定等のシステムダイアログ突破機構において、Apache License, Version 2.0 に基づき Google TalkBack 17 (https://github.com/google/talkback, Copyright &copy; Google LLC) のソースコードの一部を借用・統合しています。また、Kapamilya Serena (Windows) は本家 Upstream NVDA (NV Access Limited, GNU GPL v2) の構造思想を継承しています（NVDA日本語版 nvdajp のコードは一切含みません）。Android、Google、Google TalkBack、Gemini、および Gemma は Google LLC の商標または登録商標です。"
             },
             tl: {
                 page_title: "Shinji Sakiyama Official Website | Ganap na Bulag na A Cappella Indie Singer-Songwriter at Software Engineer",
@@ -1314,6 +1321,7 @@
                 sr_feat_5: "<strong>Gabay sa Kalye at Tawiran (Street Navigator)</strong>: Real-time na sinasabi ang pangalan ng kalsada, direksyon ng paglalakad, at paparating na tawiran gamit ang OpenStreetMap at Valhalla.",
                 sr_feat_6: "<strong>Buong Suporta sa Braille Display (USB at Bluetooth)</strong>: Awtomatikong koneksyon sa mga Braille display at 6-dot Braille touch typing sa screen.",
                 sr_feat_7: "<strong>Multilingual TTS (Tagalog, Japanese, English, Spanish) at Smart Caller ID</strong>: May lokal na suporta sa wikang Tagalog at awtomatikong pagsabi ng tumatawag at tagal ng tawag.",
+                sr_feat_8: "<strong>Ganap na Pagtawid sa System Dialogs, Power Menu at Quick Settings (Gamit ang Bahagi ng Google TalkBack 17 sa Ilalim ng Apache License 2.0)</strong>: Gumagamit ng bahagi ng open-source code ng Google TalkBack 17 (<code>https://github.com/google/talkback</code> — <code>WindowEventInterpreter</code>, <code>FocusProcessorForScreenStateChange</code>, at <code>TraversalStrategyUtils</code>) sa ilalim ng Apache License, Version 2.0 upang malampasan at mai-focus ang lahat ng permission dialogs, special popups, Power Button Menu (Global Actions), at Quick Settings (Copyright &copy; Google LLC. Ang Android at Google TalkBack ay mga trademark ng Google LLC).",
                 sr_btn_dl: "I-download ang Kapamilya Serena Latest APK (app-kapamilya-serena-release.apk)",
                 sr_btn_releases: "Tingnan ang Lahat ng Releases sa GitHub",
                 mail_title: "2. Kapamilya Serena Mail (com.kapamilya.serena.mail — Accessible Gmail Client na may Gemma 4 AI)",
@@ -1375,7 +1383,8 @@
                 direct_mail_heading: "Direktang Magpadala sa Email App",
                 direct_mail_desc: "Maaari mo ring piliin ang link sa ibaba upang direktang magpadala ng email:",
                 direct_mail_btn: "Direktang Email: shinjisakiyama@gmail.com",
-                footer_note: "Dinisenyo para sa 100% Screen Reader Accessibility (WCAG AAA) at Global Multilingual SEO (JA / EN / TL / ES)."
+                footer_note: "Dinisenyo para sa 100% Screen Reader Accessibility (WCAG AAA) at Global Multilingual SEO (JA / EN / TL / ES).",
+                footer_trademark_notice: "[Open-Source Attribution, Trademark at Copyright Notice] Ang Kapamilya Serena (Android) ay gumagamit ng bahagi ng open-source code mula sa Google TalkBack 17 (https://github.com/google/talkback, Copyright &copy; Google LLC) sa ilalim ng Apache License, Version 2.0 para sa permission dialogs, special popups, Power Button Menu, at Quick Settings. Ang Android, Google, Google TalkBack, Gemini, at Gemma ay mga trademark ng Google LLC."
             },
             es: {
                 page_title: "Shinji Sakiyama Official Website | Cantautor Indie A Cappella Totalmente Ciego e Ingeniero de Software",
@@ -1427,6 +1436,7 @@
                 sr_feat_5: "<strong>Navegador Espacial de Calles e Intersecciones</strong>: Anuncios en tiempo real del nombre de la calle, dirección cardinal y próximos cruces con OpenStreetMap y Valhalla.",
                 sr_feat_6: "<strong>Soporte Completo para Pantallas Braille (USB y Bluetooth)</strong>: Conexión bidireccional automática y escritura táctil Braille de 6 puntos en pantalla.",
                 sr_feat_7: "<strong>Soporte Multilingüe e Identificador Inteligente de Llamadas</strong>: Localización nativa en español, japonés, inglés y tagalo.",
+                sr_feat_8: "<strong>Control Total de Diálogos del Sistema, Menú de Apagado y Ajustes Rápidos (Incorporando Google TalkBack 17 bajo Apache License 2.0)</strong>: Incorpora parte del código abierto de Google TalkBack 17 (<code>https://github.com/google/talkback</code> — <code>WindowEventInterpreter</code>, <code>FocusProcessorForScreenStateChange</code> y <code>TraversalStrategyUtils</code>) bajo Apache License, Version 2.0 para enfocar diálogos de permisos, ventanas emergentes especiales, el menú del botón de encendido y Ajustes Rápidos (Copyright &copy; Google LLC. Android y Google TalkBack son marcas comerciales de Google LLC).",
                 sr_btn_dl: "Descargar Kapamilya Serena Último APK (app-kapamilya-serena-release.apk)",
                 sr_btn_releases: "Ver Todas las Versiones en GitHub Releases",
                 mail_title: "2. Kapamilya Serena Mail (com.kapamilya.serena.mail — Cliente Gmail Accesible con IA Gemma 4)",
@@ -1488,7 +1498,8 @@
                 direct_mail_heading: "Enviar Correo Directamente desde tu Aplicación",
                 direct_mail_desc: "Si prefieres abrir tu aplicación de correo directamente, selecciona el siguiente enlace:",
                 direct_mail_btn: "Correo Directo: shinjisakiyama@gmail.com",
-                footer_note: "Diseñado para Accesibilidad Total con Lectores de Pantalla (WCAG AAA) y SEO Multilingüe Global (JA / EN / TL / ES)."
+                footer_note: "Diseñado para Accesibilidad Total con Lectores de Pantalla (WCAG AAA) y SEO Multilingüe Global (JA / EN / TL / ES).",
+                footer_trademark_notice: "[Aviso de Atribución de Código Abierto, Marcas Comerciales y Derechos de Autor] Kapamilya Serena (Android) incorpora parte del código fuente de Google TalkBack 17 (https://github.com/google/talkback, Copyright &copy; Google LLC) bajo la Licencia Apache, Versión 2.0 para el manejo de diálogos de permisos, menú de encendido y ajustes rápidos. Android, Google, Google TalkBack, Gemini y Gemma son marcas comerciales de Google LLC."
             }
         };
 
