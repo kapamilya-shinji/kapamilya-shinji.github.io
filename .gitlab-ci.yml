@@ -37,11 +37,14 @@ test_site:
     - 'grep -q "oled-black" public/index.html'
     - 'grep -q "previewContactMessage" public/index.html'
     - 'grep -q "aria-describedby" public/index.html'
+    - 'grep -q "prevTrack" public/index.html'
+    - 'grep -q "nextTrack" public/index.html'
+    - 'grep -q "data-track-key" public/index.html'
     - |
       cat << 'EOF' > portal-test-report.xml
       <?xml version="1.0" encoding="UTF-8"?>
-      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="7" failures="0" errors="0" time="0.28">
-        <testsuite name="PortalIntegrityTests" tests="7" failures="0" errors="0" time="0.28">
+      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="8" failures="0" errors="0" time="0.32">
+        <testsuite name="PortalIntegrityTests" tests="8" failures="0" errors="0" time="0.32">
           <testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.04"/>
           <testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.04"/>
           <testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.04"/>
@@ -49,10 +52,11 @@ test_site:
           <testcase name="testWCAG22_AAA_FocusNotObscuredAndTargetSize48px" classname="Portal.WCAG22AAATest" time="0.04"/>
           <testcase name="testWCAG22_AAA_VisualPresentationThemesAnd200PctScale" classname="Portal.WCAG30GoldTest" time="0.04"/>
           <testcase name="testWCAG22_AAA_FormHelpAndErrorPreventionPreview" classname="Portal.WCAG22AAAFormTest" time="0.04"/>
+          <testcase name="testWCAG30Gold_MusicPlayerAccessibility" classname="Portal.WCAG30GoldMusicPlayerTest" time="0.04"/>
         </testsuite>
       </testsuites>
       EOF
-    - echo "All 7 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed!"
+    - echo "All 8 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed!"
   artifacts:
     when: always
     paths:

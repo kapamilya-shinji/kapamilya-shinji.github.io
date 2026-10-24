@@ -638,8 +638,15 @@
         }
 
         .track-item-btn:hover {
-            background-color: #26354D;
+            background-color: var(--bg-surface);
             color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        .track-item-btn[aria-pressed="true"] {
+            background-color: var(--accent-cyan);
+            color: var(--btn-active-text);
+            border-color: var(--text-primary);
         }
 
         .jukebox-card {
@@ -648,6 +655,34 @@
             border-radius: 14px;
             padding: 24px;
             margin: 28px 0;
+        }
+
+        .player-step-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0 16px;
+        }
+
+        .player-step-btn {
+            flex: 1 1 180px;
+            min-height: 48px;
+            min-width: 48px;
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            border: 2px solid var(--accent-gold);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s ease;
+        }
+
+        .player-step-btn:hover {
+            background-color: var(--accent-gold);
+            color: var(--btn-primary-text);
         }
 
         .platform-tabs {
@@ -660,7 +695,9 @@
 
         .platform-btn {
             flex: 1 1 200px;
-            background-color: #0F172A;
+            min-height: 48px;
+            min-width: 48px;
+            background-color: var(--bg-surface);
             color: var(--text-primary);
             border: 2px solid var(--border-color);
             padding: 12px 16px;
@@ -674,8 +711,8 @@
 
         .platform-btn[aria-pressed="true"] {
             background-color: var(--accent-cyan);
-            color: #070B14;
-            border-color: #FFFFFF;
+            color: var(--btn-active-text);
+            border-color: var(--text-primary);
         }
 
         .platform-btn:hover:not([aria-pressed="true"]) {
@@ -683,7 +720,7 @@
         }
 
         .embed-wrapper {
-            background-color: #070B14;
+            background-color: var(--bg-primary);
             border: 2px solid var(--border-color);
             border-radius: 12px;
             overflow: hidden;
@@ -720,10 +757,11 @@
         input[type="email"],
         textarea {
             width: 100%;
+            min-height: 48px;
             padding: 14px 16px;
             font-size: 1rem;
-            background-color: #0F172A;
-            color: #FFFFFF;
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
             border: 2px solid var(--border-color);
             border-radius: 10px;
             font-family: inherit;
@@ -979,7 +1017,8 @@
 
                 <div class="form-group" style="margin-top: 16px; margin-bottom: 14px;">
                     <label for="track-select" data-i18n="player_select_label">① 再生する楽曲を選択：</label>
-                    <select id="track-select" onchange="onTrackSelectChange(this.value)">
+                    <p id="help-track-select" class="field-help" data-i18n="help_track_select">※ ドロップダウンから曲を選ぶか、下の「前の曲へ」「次の曲へ」ボタンで1曲ずつ順番に切り替えられます。</p>
+                    <select id="track-select" aria-describedby="help-track-select" onchange="onTrackSelectChange(this.value)">
                         <option value="all" data-i18n="track_opt_all">★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）</option>
                         <option value="shinju_no_tsuma">『真珠の妻 (Pearl Wife)』</option>
                         <option value="toyo_no_shinju">『東洋の真珠 (Oriental Pearl)』</option>
@@ -998,6 +1037,10 @@
                         <option value="mahal_ko_monogatari">『Mahal koと紡ぐ物語』</option>
                         <option value="egao_no_ko_serena">『笑顔の子セレナ (YouTube Video)』</option>
                     </select>
+                    <div class="player-step-controls" role="group" aria-label="Previous and Next Track Controls">
+                        <button type="button" class="player-step-btn" onclick="prevTrack()" data-i18n="player_prev_btn">⏮ 前の曲へ (Previous Track)</button>
+                        <button type="button" class="player-step-btn" onclick="nextTrack()" data-i18n="player_next_btn">⏭ 次の曲へ (Next Track)</button>
+                    </div>
                 </div>
 
                 <div>
@@ -1060,22 +1103,22 @@
 
             <h3 data-i18n="sec1_tracks_heading">主な配信楽曲（ディスコグラフィ ― 曲名を選択すると上のプレイヤーにセットされます）</h3>
             <ul class="track-list" aria-label="Featured Discography">
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('shinju_no_tsuma')"><span>『真珠の妻 (Pearl Wife)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('toyo_no_shinju')"><span>『東洋の真珠 (Oriental Pearl)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('serena_sakura')"><span>『セレナさくら (Serena Sakura)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_no_yusha')"><span>『さくらの勇者 (Hero of Sakura)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('nanai')"><span>『ナナイ (Nanay)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('saya')"><span>『Saya』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('asawa_ko')"><span>『Asawa ko』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_ko')"><span>『Mahal ko』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('asawa_ko_serena')"><span>『asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_to_yuri')"><span>『さくらとゆり (Sakura &amp; Yuri)』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('jindo_shien')"><span>『人道支援の勇者とSayana』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('sakura_no_shonin')"><span>『さくらのしょうにん』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_na_mahal')"><span>『Mahal na mahal kita asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('watashi_no_tenshi')"><span>『私の天使に捧ぐ歌』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('mahal_ko_monogatari')"><span>『Mahal koと紡ぐ物語』</span><span aria-hidden="true">▶</span></button></li>
-                <li class="track-item"><button type="button" class="track-item-btn" onclick="selectTrackFromList('egao_no_ko_serena')"><span>『笑顔の子セレナ』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="shinju_no_tsuma" aria-pressed="false" onclick="selectTrackFromList('shinju_no_tsuma')"><span>『真珠の妻 (Pearl Wife)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="toyo_no_shinju" aria-pressed="false" onclick="selectTrackFromList('toyo_no_shinju')"><span>『東洋の真珠 (Oriental Pearl)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="serena_sakura" aria-pressed="false" onclick="selectTrackFromList('serena_sakura')"><span>『セレナさくら (Serena Sakura)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="sakura_no_yusha" aria-pressed="false" onclick="selectTrackFromList('sakura_no_yusha')"><span>『さくらの勇者 (Hero of Sakura)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="nanai" aria-pressed="false" onclick="selectTrackFromList('nanai')"><span>『ナナイ (Nanay)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="saya" aria-pressed="false" onclick="selectTrackFromList('saya')"><span>『Saya』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="asawa_ko" aria-pressed="false" onclick="selectTrackFromList('asawa_ko')"><span>『Asawa ko』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="mahal_ko" aria-pressed="false" onclick="selectTrackFromList('mahal_ko')"><span>『Mahal ko』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="asawa_ko_serena" aria-pressed="false" onclick="selectTrackFromList('asawa_ko_serena')"><span>『asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="sakura_to_yuri" aria-pressed="false" onclick="selectTrackFromList('sakura_to_yuri')"><span>『さくらとゆり (Sakura &amp; Yuri)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="jindo_shien" aria-pressed="false" onclick="selectTrackFromList('jindo_shien')"><span>『人道支援の勇者とSayana』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="sakura_no_shonin" aria-pressed="false" onclick="selectTrackFromList('sakura_no_shonin')"><span>『さくらのしょうにん』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="mahal_na_mahal" aria-pressed="false" onclick="selectTrackFromList('mahal_na_mahal')"><span>『Mahal na mahal kita asawa ko Serena』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="watashi_no_tenshi" aria-pressed="false" onclick="selectTrackFromList('watashi_no_tenshi')"><span>『私の天使に捧ぐ歌』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="mahal_ko_monogatari" aria-pressed="false" onclick="selectTrackFromList('mahal_ko_monogatari')"><span>『Mahal koと紡ぐ物語』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="egao_no_ko_serena" aria-pressed="false" onclick="selectTrackFromList('egao_no_ko_serena')"><span>『笑顔の子セレナ』</span><span aria-hidden="true">▶</span></button></li>
             </ul>
         </section>
 
@@ -1320,6 +1363,9 @@
                 player_heading: "埋め込み音楽プレイヤー（曲とサービスを選んでその場で再生）",
                 player_desc: "聴きたい楽曲と音楽サービス（YouTube・Spotify・Amazon Music）を選ぶと、下の埋め込みプレイヤーと直通リンクが切り替わり、このページ上でそのまま Shinji Sakiyama のアカペラ楽曲を再生できます。",
                 player_select_label: "① 再生する楽曲を選択：",
+                help_track_select: "※ ドロップダウンから曲を選ぶか、下の「前の曲へ」「次の曲へ」ボタンで1曲ずつ順番に切り替えられます。",
+                player_prev_btn: "⏮ 前の曲へ (Previous Track)",
+                player_next_btn: "⏭ 次の曲へ (Next Track)",
                 track_opt_all: "★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）",
                 player_platform_label: "② 再生する埋め込みプレイヤーを選択：",
                 plat_btn_yt: "▶ YouTube / YouTube Music で再生",
@@ -1435,6 +1481,9 @@
                 player_heading: "Interactive Music Player (Select a Song & Streaming Service)",
                 player_desc: "Choose any song and your preferred streaming service (YouTube, Spotify, or Amazon Music) below to play the a cappella songs of Shinji Sakiyama right on this page.",
                 player_select_label: "1. Select a Song to Play:",
+                help_track_select: "Note: Choose a song from the dropdown or use the Previous Track and Next Track buttons below to step through songs one by one.",
+                player_prev_btn: "⏮ Previous Track",
+                player_next_btn: "⏭ Next Track",
                 track_opt_all: "★ All Songs Continuous Playlist (YouTube Music / Spotify)",
                 player_platform_label: "2. Select Embedded Streaming Player:",
                 plat_btn_yt: "▶ Play on YouTube / YouTube Music",
@@ -1519,8 +1568,7 @@
                 direct_mail_desc: "If you prefer to open your email app directly, select the link below:",
                 direct_mail_btn: "Direct Email: Send to shinjisakiyama@gmail.com",
                 footer_note: "Designed for 100% Screen Reader Accessibility (WCAG AAA) & Global Multilingual SEO (JA / EN / TL / ES).",
-                footer_trademark_notice: "[Open-Source Attribution, Trademark & Copyright Notice] Kapamilya Serena (Android) incorporates portions of Google TalkBack 17 source code (https://github.com/google/talkback, Copyright &copy; Google LLC) under the Apache License, Version 2.0 for handling permission dialogs, special system popups, the Power Button Menu, and Quick Settings. Kapamilya Serena (Windows) incorporates architectural concepts from Upstream NVDA (NV Access Limited, GNU GPL v2, containing 0.0mm of nvdajp code). Android, Google, Google TalkBack, Gemini, and Gemma are trademarks of Google LLC.",
-                footer_trademark_notice: "【オープンソース帰属表示・商標および著作権法に則る表記】Kapamilya Serena (Android) は、権限ダイアログ・特殊ポップアップ・電源ボタンメニュー・クイック設定等のシステムダイアログ突破機構において、Apache License, Version 2.0 に基づき Google TalkBack 17 (https://github.com/google/talkback, Copyright &copy; Google LLC) のソースコードの一部を借用・統合しています。また、Kapamilya Serena (Windows) は本家 Upstream NVDA (NV Access Limited, GNU GPL v2) の構造思想を継承しています（NVDA日本語版 nvdajp のコードは一切含みません）。Android、Google、Google TalkBack、Gemini、および Gemma は Google LLC の商標または登録商標です。"
+                footer_trademark_notice: "[Open-Source Attribution, Trademark & Copyright Notice] Kapamilya Serena (Android) incorporates portions of Google TalkBack 17 source code (https://github.com/google/talkback, Copyright &copy; Google LLC) under the Apache License, Version 2.0 for handling permission dialogs, special system popups, the Power Button Menu, and Quick Settings. Kapamilya Serena (Windows) incorporates architectural concepts from Upstream NVDA (NV Access Limited, GNU GPL v2, containing 0.0mm of nvdajp code). Android, Google, Google TalkBack, Gemini, and Gemma are trademarks of Google LLC."
             },
             tl: {
                 page_title: "Shinji Sakiyama Official Website | Ganap na Bulag na A Cappella Indie Singer-Songwriter at Software Engineer",
@@ -1551,6 +1599,9 @@
                 player_heading: "Interactive Music Player (Pumili ng Awitin at Streaming Service)",
                 player_desc: "Pumili ng kanta at streaming service (YouTube, Spotify, o Amazon Music) sa ibaba upang mapakinggan agad ang mga a cappella na awitin ni Shinji Sakiyama dito mismo sa pahina.",
                 player_select_label: "1. Pumili ng Awitin na Patutugtugin:",
+                help_track_select: "Paalala: Pumili ng awitin mula sa listahan o gamitin ang mga button na Nakaraang Awitin at Susunod na Awitin sa ibaba.",
+                player_prev_btn: "⏮ Nakaraang Awitin (Previous Track)",
+                player_next_btn: "⏭ Susunod na Awitin (Next Track)",
                 track_opt_all: "★ Lahat ng Awitin Playlist (YouTube Music / Spotify)",
                 player_platform_label: "2. Pumili ng Embedded Player:",
                 plat_btn_yt: "▶ Patugtugin sa YouTube / YouTube Music",
@@ -1666,6 +1717,9 @@
                 player_heading: "Reproductor Musical Interactivo (Selecciona Canción y Plataforma)",
                 player_desc: "Elige cualquier canción y tu servicio favorito (YouTube, Spotify o Amazon Music) abajo para reproducir las canciones a cappella de Shinji Sakiyama directamente en esta página.",
                 player_select_label: "1. Seleccionar Canción para Reproducir:",
+                help_track_select: "Nota: Elige una canción del menú desplegable o usa los botones Canción Anterior y Siguiente Canción abajo.",
+                player_prev_btn: "⏮ Canción Anterior (Previous Track)",
+                player_next_btn: "⏭ Siguiente Canción (Next Track)",
                 track_opt_all: "★ Lista Continua de Todas las Canciones (YouTube Music / Spotify)",
                 player_platform_label: "2. Seleccionar Reproductor Integrado:",
                 plat_btn_yt: "▶ Reproducir en YouTube / YouTube Music",
@@ -1936,7 +1990,7 @@
                 iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
             }
 
-            // Update direct app links
+            // Update direct app links and WCAG 2.2 SC 2.4.9 AAA / WCAG 3.0 Gold link text with exact song title
             const linkYt = document.getElementById('direct-link-yt');
             const linkSp = document.getElementById('direct-link-sp');
             const linkAm = document.getElementById('direct-link-am');
@@ -1944,23 +1998,61 @@
             if (linkSp) linkSp.href = track.spLink;
             if (linkAm) linkAm.href = track.amLink;
 
+            const dict = (typeof translations !== 'undefined' && translations[currentLang]) ? translations[currentLang] : null;
+            const lblYt = document.getElementById('direct-label-yt');
+            const lblSp = document.getElementById('direct-label-sp');
+            const lblAm = document.getElementById('direct-label-am');
+            if (dict) {
+                if (lblYt && dict.direct_open_yt) lblYt.textContent = dict.direct_open_yt + ' (' + track.title + ')';
+                if (lblSp && dict.direct_open_sp) lblSp.textContent = dict.direct_open_sp + ' (' + track.title + ')';
+                if (lblAm && dict.direct_open_am) lblAm.textContent = dict.direct_open_am + ' (' + track.title + ')';
+            }
+
             // Update platform button aria-pressed states
             document.querySelectorAll('.platform-btn').forEach(function(btn) {
                 const isSelected = btn.getAttribute('data-platform') === currentPlatform;
                 btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
             });
 
+            // Update discography track button aria-pressed states (WCAG 3.0 Gold State Feedback)
+            document.querySelectorAll('.track-item-btn').forEach(function(btn) {
+                const isActive = btn.getAttribute('data-track-key') === currentTrackKey;
+                btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+
             if (announce) {
                 const live = document.getElementById('player-live-region');
                 if (live) {
                     const platName = currentPlatform === 'spotify' ? 'Spotify' : (currentPlatform === 'amazon' ? 'Amazon Music' : 'YouTube Music');
-                    live.textContent = track.title + ' (' + platName + ')';
+                    const selectEl = document.getElementById('track-select');
+                    const posInfo = (selectEl && selectEl.selectedIndex >= 0)
+                        ? ' [' + (selectEl.selectedIndex + 1) + '/' + selectEl.options.length + ']'
+                        : '';
+                    live.textContent = track.title + ' (' + platName + ')' + posInfo;
                 }
             }
         }
 
         function onTrackSelectChange(trackKey) {
             currentTrackKey = trackKey;
+            updatePlayerEmbed(true);
+        }
+
+        function prevTrack() {
+            const selectEl = document.getElementById('track-select');
+            if (!selectEl || !selectEl.options.length) return;
+            const prevIdx = (selectEl.selectedIndex - 1 + selectEl.options.length) % selectEl.options.length;
+            selectEl.selectedIndex = prevIdx;
+            currentTrackKey = selectEl.options[prevIdx].value;
+            updatePlayerEmbed(true);
+        }
+
+        function nextTrack() {
+            const selectEl = document.getElementById('track-select');
+            if (!selectEl || !selectEl.options.length) return;
+            const nextIdx = (selectEl.selectedIndex + 1) % selectEl.options.length;
+            selectEl.selectedIndex = nextIdx;
+            currentTrackKey = selectEl.options[nextIdx].value;
             updatePlayerEmbed(true);
         }
 
@@ -2014,6 +2106,8 @@
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'track-item-btn';
+                btn.setAttribute('data-track-key', key);
+                btn.setAttribute('aria-pressed', 'false');
                 btn.onclick = function() { selectTrackFromList(key); };
                 btn.innerHTML = '<span>『' + trackObj.title + '』</span><span aria-hidden="true">▶</span>';
                 li.appendChild(btn);
@@ -2082,6 +2176,9 @@
                     el.innerHTML = dict[key];
                 }
             });
+
+            // Sync music player direct links and active track state with the newly selected language
+            updatePlayerEmbed(false);
 
             // Update aria-pressed state on language switcher buttons
             document.querySelectorAll('.lang-btn').forEach(function(btn) {
