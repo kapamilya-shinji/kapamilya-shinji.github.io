@@ -2119,10 +2119,10 @@
         }
 
         function registerDynamicTrack(key, trackObj) {
-            if (!key || !trackObj) return;
+            if (!key || !trackObj) return false;
             if (TRACK_CATALOG[key]) {
                 mergeTrackEmbeds(TRACK_CATALOG[key], trackObj);
-                return;
+                return false;
             }
             // Check if a track with the same normalized title already exists; if so, upgrade its embed URLs!
             const normNew = normalizeSongTitle(trackObj.title);
@@ -2131,7 +2131,7 @@
                 const normEx = normalizeSongTitle(TRACK_CATALOG[existingKey].title);
                 if (normEx && normNew && (normEx === normNew || normEx.includes(normNew) || normNew.includes(normEx))) {
                     mergeTrackEmbeds(TRACK_CATALOG[existingKey], trackObj);
-                    return;
+                    return false;
                 }
             }
             TRACK_CATALOG[key] = trackObj;
@@ -2156,6 +2156,7 @@
                 li.appendChild(btn);
                 listEl.appendChild(li);
             }
+            return true;
         }
 
         window.__onItunesArtistTracks = function(data) {
@@ -2164,16 +2165,21 @@
                 localStorage.setItem('kapamilya_itunes_cache_ts', String(Date.now()));
                 localStorage.setItem('kapamilya_itunes_cache_data', JSON.stringify(data.results));
             } catch (e) {}
-            applyItunesTrackResults(data.results);
+            const hasNew = applyItunesTrackResults(data.results);
+            // STRICT GUARD: Only fetch external embed feeds if a brand-new song was actually discovered!
+            if (hasNew) {
+                syncLiveEmbedsInBrowser();
+            }
         };
 
         function applyItunesTrackResults(results) {
-            if (!Array.isArray(results)) return;
+            if (!Array.isArray(results)) return false;
+            let foundNewSong = false;
             results.forEach(function(item) {
                 if (item.wrapperType === 'track' && item.kind === 'song' && item.trackName) {
                     const key = 'itunes_' + item.trackId;
                     const q = encodeURIComponent('Shinji Sakiyama ' + item.trackName);
-                    registerDynamicTrack(key, {
+                    const isNew = registerDynamicTrack(key, {
                         title: item.trackName,
                         itunesId: item.trackId,
                         ytEmbed: 'https://www.youtube.com/embed/videoseries?list=UUvRDAEFiy8wnjavvDv5pzHg',
@@ -2183,9 +2189,11 @@
                         amEmbed: 'https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP',
                         amLink: 'https://music.amazon.co.jp/search/' + q
                     });
+                    if (isNew) foundNewSong = true;
                 }
             });
             updatePlayerEmbed(false);
+            return foundNewSong;
         }
 
         // 100% Browser-Only, 24h Rate-Limited Cross-Platform Embed Resolver (Zero GitLab CI Polling)
@@ -2296,9 +2304,20 @@
                 })
                 .catch(function() {});
 
-            // 2. Rate-limited (max once per 24 hours per browser via localStorage) Apple Music / iTunes + YouTube / Spotify Embed Resolver
+            // 2. Restore any previously resolved embeds from localStorage (zero network calls)
             try {
-                syncLiveEmbedsInBrowser();
+                const savedMapRaw = localStorage.getItem('kapamilya_live_embeds_map_v1');
+                if (savedMapRaw) {
+                    const savedMap = JSON.parse(savedMapRaw);
+                    Object.keys(savedMap).forEach(function(k) {
+                        registerDynamicTrack(k, savedMap[k]);
+                    });
+                    updatePlayerEmbed(false);
+                }
+            } catch (e) {}
+
+            // 3. Rate-limited (max once per 24 hours per browser) check; ONLY fetches embed feeds if a NEW song is found!
+            try {
                 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
                 const lastTs = parseInt(localStorage.getItem('kapamilya_itunes_cache_ts') || '0', 10);
                 const cachedJson = localStorage.getItem('kapamilya_itunes_cache_data');
