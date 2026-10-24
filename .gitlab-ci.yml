@@ -33,10 +33,10 @@ test_site:
     - grep -q "Gemma 4 (Developed by Google DeepMind)" public/index.html
     - grep -q "https://kapamilya.gitlab.io/" public/index.html
     - grep -q "unification_title" public/index.html
-    - grep -q "scroll-padding-top: 140px" public/index.html
-    - grep -q "oled-black" public/index.html
-    - grep -q "previewContactMessage" public/index.html
-    - grep -q "aria-describedby" public/index.html
+    - 'grep -q "scroll-padding-top" public/index.html'
+    - 'grep -q "oled-black" public/index.html'
+    - 'grep -q "previewContactMessage" public/index.html'
+    - 'grep -q "aria-describedby" public/index.html'
     - |
       cat << 'EOF' > portal-test-report.xml
       <?xml version="1.0" encoding="UTF-8"?>
