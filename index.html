@@ -2160,7 +2160,16 @@
 
         window.__onItunesArtistTracks = function(data) {
             if (!data || !Array.isArray(data.results)) return;
-            data.results.forEach(function(item) {
+            try {
+                localStorage.setItem('kapamilya_itunes_cache_ts', String(Date.now()));
+                localStorage.setItem('kapamilya_itunes_cache_data', JSON.stringify(data.results));
+            } catch (e) {}
+            applyItunesTrackResults(data.results);
+        };
+
+        function applyItunesTrackResults(results) {
+            if (!Array.isArray(results)) return;
+            results.forEach(function(item) {
                 if (item.wrapperType === 'track' && item.kind === 'song' && item.trackName) {
                     const key = 'itunes_' + item.trackId;
                     const q = encodeURIComponent('Shinji Sakiyama ' + item.trackName);
@@ -2176,11 +2185,11 @@
                 }
             });
             updatePlayerEmbed(false);
-        };
+        }
 
         (function initAutoSongSync() {
-            // 1. Load tracks.json (auto-updated by GitLab CI sync_music.py from YouTube/Spotify/Apple Music/Songlink)
-            fetch('tracks.json', { cache: 'no-store' })
+            // 1. Load local static tracks.json (same-origin, zero external API rate limit)
+            fetch('tracks.json')
                 .then(function(r) { return r.ok ? r.json() : null; })
                 .then(function(catalog) {
                     if (catalog && typeof catalog === 'object') {
@@ -2192,8 +2201,15 @@
                 })
                 .catch(function() {});
 
-            // 2. Live Apple Music / iTunes Lookup JSONP for Artist ID 6785027836 (Shinji Sakiyama)
+            // 2. Rate-limited (max once per 24 hours per browser via localStorage) Apple Music / iTunes Lookup JSONP
             try {
+                const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+                const lastTs = parseInt(localStorage.getItem('kapamilya_itunes_cache_ts') || '0', 10);
+                const cachedJson = localStorage.getItem('kapamilya_itunes_cache_data');
+                if (cachedJson && (Date.now() - lastTs) < CACHE_TTL_MS) {
+                    applyItunesTrackResults(JSON.parse(cachedJson));
+                    return;
+                }
                 const s = document.createElement('script');
                 s.src = 'https://itunes.apple.com/lookup?id=6785027836&entity=song&country=JP&limit=200&callback=__onItunesArtistTracks';
                 s.async = true;
