@@ -1020,6 +1020,7 @@
                     <p id="help-track-select" class="field-help" data-i18n="help_track_select">※ ドロップダウンから曲を選ぶか、下の「前の曲へ」「次の曲へ」ボタンで1曲ずつ順番に切り替えられます。</p>
                     <select id="track-select" aria-describedby="help-track-select" onchange="onTrackSelectChange(this.value)">
                         <option value="all" data-i18n="track_opt_all">★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）</option>
+                        <option value="magna_carta_no_tsugibito">『マグナカルタの継ぎ人 (Heir of Magna Carta)』</option>
                         <option value="shinju_no_tsuma">『真珠の妻 (Pearl Wife)』</option>
                         <option value="toyo_no_shinju">『東洋の真珠 (Oriental Pearl)』</option>
                         <option value="serena_sakura">『セレナさくら (Serena Sakura)』</option>
@@ -1103,6 +1104,7 @@
 
             <h3 data-i18n="sec1_tracks_heading">主な配信楽曲（ディスコグラフィ ― 曲名を選択すると上のプレイヤーにセットされます）</h3>
             <ul class="track-list" aria-label="Featured Discography">
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="magna_carta_no_tsugibito" aria-pressed="false" onclick="selectTrackFromList('magna_carta_no_tsugibito')"><span>『マグナカルタの継ぎ人 (Heir of Magna Carta)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="shinju_no_tsuma" aria-pressed="false" onclick="selectTrackFromList('shinju_no_tsuma')"><span>『真珠の妻 (Pearl Wife)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="toyo_no_shinju" aria-pressed="false" onclick="selectTrackFromList('toyo_no_shinju')"><span>『東洋の真珠 (Oriental Pearl)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="serena_sakura" aria-pressed="false" onclick="selectTrackFromList('serena_sakura')"><span>『セレナさくら (Serena Sakura)』</span><span aria-hidden="true">▶</span></button></li>
@@ -1819,6 +1821,15 @@
                 amEmbed: "https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
                 amLink: "https://music.amazon.co.jp/search/Shinji+Sakiyama"
             },
+            magna_carta_no_tsugibito: {
+                title: "マグナカルタの継ぎ人 / マグナカルタのつぎびと (Heir of Magna Carta)",
+                ytEmbed: "https://www.youtube.com/embed/8lPlI4dOzww",
+                ytLink: "https://music.youtube.com/watch?v=8lPlI4dOzww",
+                spEmbed: "https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0",
+                spLink: "https://open.spotify.com/search/Shinji%20Sakiyama%20%E3%83%9E%E3%82%B0%E3%83%8A%E3%82%AB%E3%83%AB%E3%82%BF%E3%81%AE%E3%81%A4%E3%81%8E%E3%81%B3%E3%81%A8",
+                amEmbed: "https://music.amazon.co.jp/embed/B0HP6PH6QM/?id=B0HP6PH6QM&marketplaceId=A1VC38T7YXB528&musicTerritory=JP",
+                amLink: "https://music.amazon.co.jp/albums/B0HP6JJJK5?trackAsin=B0HP6PH6QM"
+            },
             shinju_no_tsuma: {
                 title: "真珠の妻 (Pearl Wife)",
                 ytEmbed: "https://www.youtube.com/embed/GS769JVxH-s",
@@ -2079,15 +2090,47 @@
         }
 
 
-        // Automatic New-Song Discovery: dynamically fetches any newly released tracks by Shinji Sakiyama
-        // from tracks.json (updated by GitHub Actions from YouTube/Spotify/Apple Music) and Apple iTunes Lookup API (JSONP)
+        // Automatic New-Song & Embed URL Synchronization:
+        // Dynamically fetches newly released tracks and upgrades individual YouTube / Spotify / Amazon Music embed URLs
+        // from tracks.json (auto-updated by GitLab CI sync_music.py) and live platform endpoints.
+        function normalizeSongTitle(str) {
+            return (str || '')
+                .replace(/\s*[\(（][^\)）]*[\)）]/g, '')
+                .replace(/継ぎ人/g, 'つぎびと')
+                .replace(/商人/g, 'しょうにん')
+                .toLowerCase()
+                .replace(/[\s『』「」"'_\-\.,!！?？/／]/g, '');
+        }
+
+        function mergeTrackEmbeds(targetObj, sourceObj) {
+            if (!targetObj || !sourceObj) return;
+            if (sourceObj.ytEmbed && sourceObj.ytEmbed.indexOf('/embed/') !== -1 && sourceObj.ytEmbed.indexOf('videoseries') === -1) {
+                targetObj.ytEmbed = sourceObj.ytEmbed;
+                if (sourceObj.ytLink) targetObj.ytLink = sourceObj.ytLink;
+            }
+            if (sourceObj.spEmbed && sourceObj.spEmbed.indexOf('/embed/track/') !== -1) {
+                targetObj.spEmbed = sourceObj.spEmbed;
+                if (sourceObj.spLink) targetObj.spLink = sourceObj.spLink;
+            }
+            if (sourceObj.amEmbed && sourceObj.amEmbed.indexOf('/embed/') !== -1 && sourceObj.amEmbed.indexOf('B0HH3V5D9Y') === -1) {
+                targetObj.amEmbed = sourceObj.amEmbed;
+                if (sourceObj.amLink) targetObj.amLink = sourceObj.amLink;
+            }
+        }
+
         function registerDynamicTrack(key, trackObj) {
-            if (!key || TRACK_CATALOG[key]) return;
-            // Also check if a track with the same normalized title already exists
-            const normNew = (trackObj.title || '').toLowerCase().replace(/[\s『』()（）]/g, '');
+            if (!key || !trackObj) return;
+            if (TRACK_CATALOG[key]) {
+                mergeTrackEmbeds(TRACK_CATALOG[key], trackObj);
+                return;
+            }
+            // Check if a track with the same normalized title already exists; if so, upgrade its embed URLs!
+            const normNew = normalizeSongTitle(trackObj.title);
             for (const existingKey in TRACK_CATALOG) {
-                const normEx = (TRACK_CATALOG[existingKey].title || '').toLowerCase().replace(/[\s『』()（）]/g, '');
-                if (normEx && normNew && (normEx.includes(normNew) || normNew.includes(normEx))) {
+                if (existingKey === 'all') continue;
+                const normEx = normalizeSongTitle(TRACK_CATALOG[existingKey].title);
+                if (normEx && normNew && (normEx === normNew || normEx.includes(normNew) || normNew.includes(normEx))) {
+                    mergeTrackEmbeds(TRACK_CATALOG[existingKey], trackObj);
                     return;
                 }
             }
@@ -2132,10 +2175,11 @@
                     });
                 }
             });
+            updatePlayerEmbed(false);
         };
 
         (function initAutoSongSync() {
-            // 1. Load tracks.json (auto-updated by GitHub Actions from YouTube/Apple Music/Spotify)
+            // 1. Load tracks.json (auto-updated by GitLab CI sync_music.py from YouTube/Spotify/Apple Music/Songlink)
             fetch('tracks.json', { cache: 'no-store' })
                 .then(function(r) { return r.ok ? r.json() : null; })
                 .then(function(catalog) {
@@ -2143,6 +2187,7 @@
                         Object.keys(catalog).forEach(function(k) {
                             registerDynamicTrack(k, catalog[k]);
                         });
+                        updatePlayerEmbed(false);
                     }
                 })
                 .catch(function() {});

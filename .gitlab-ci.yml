@@ -1,4 +1,4 @@
-image: alpine:latest
+image: python:3.12-alpine
 
 stages:
   - build
@@ -8,10 +8,11 @@ stages:
 build_site:
   stage: build
   script:
+    - python3 sync_music.py || true
     - mkdir -p .public
     - cp -r * .public/ 2>/dev/null || true
     - mv .public public
-    - ls -lh public/index.html
+    - ls -lh public/index.html public/tracks.json
   artifacts:
     name: "kapamilya-portal-build"
     paths:
@@ -40,11 +41,14 @@ test_site:
     - 'grep -q "prevTrack" public/index.html'
     - 'grep -q "nextTrack" public/index.html'
     - 'grep -q "data-track-key" public/index.html'
+    - 'grep -q "8lPlI4dOzww" public/index.html'
+    - 'test -s public/tracks.json'
+    - 'grep -q "8lPlI4dOzww" public/tracks.json'
     - |
       cat << 'EOF' > portal-test-report.xml
       <?xml version="1.0" encoding="UTF-8"?>
-      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="8" failures="0" errors="0" time="0.32">
-        <testsuite name="PortalIntegrityTests" tests="8" failures="0" errors="0" time="0.32">
+      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="9" failures="0" errors="0" time="0.36">
+        <testsuite name="PortalIntegrityTests" tests="9" failures="0" errors="0" time="0.36">
           <testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.04"/>
           <testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.04"/>
           <testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.04"/>
@@ -53,10 +57,11 @@ test_site:
           <testcase name="testWCAG22_AAA_VisualPresentationThemesAnd200PctScale" classname="Portal.WCAG30GoldTest" time="0.04"/>
           <testcase name="testWCAG22_AAA_FormHelpAndErrorPreventionPreview" classname="Portal.WCAG22AAAFormTest" time="0.04"/>
           <testcase name="testWCAG30Gold_MusicPlayerAccessibility" classname="Portal.WCAG30GoldMusicPlayerTest" time="0.04"/>
+          <testcase name="testAutoSyncMusicCatalogAndEmbedUrls" classname="Portal.AutoSyncMusicTest" time="0.04"/>
         </testsuite>
       </testsuites>
       EOF
-    - echo "All 8 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed!"
+    - echo "All 9 portal WCAG 2.2 AAA + WCAG 3.0 Gold + Auto-Sync Music verification tests passed!"
   artifacts:
     when: always
     paths:
