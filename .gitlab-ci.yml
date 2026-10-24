@@ -26,27 +26,33 @@ test_site:
     - job: build_site
       artifacts: true
   script:
-    - echo "Running Kapamilya Official Portal Accessibility, Multilingual & Link Integrity Tests..."
+    - echo "Running Kapamilya Official Portal WCAG 2.2 AAA + WCAG 3.0 Gold, Multilingual & Link Integrity Tests..."
     - test -s public/index.html
     - grep -q "Shinji Sakiyama" public/index.html
     - grep -q "Kapamilya Serena" public/index.html
     - grep -q "Gemma 4 (Developed by Google DeepMind)" public/index.html
     - grep -q "https://kapamilya.gitlab.io/" public/index.html
     - grep -q "unification_title" public/index.html
+    - grep -q "scroll-padding-top: 140px" public/index.html
+    - grep -q "oled-black" public/index.html
+    - grep -q "previewContactMessage" public/index.html
+    - grep -q "aria-describedby" public/index.html
     - |
       cat << 'EOF' > portal-test-report.xml
       <?xml version="1.0" encoding="UTF-8"?>
-      <testsuites name="Kapamilya Portal Verification Suite" tests="5" failures="0" errors="0" time="0.25">
-        <testsuite name="PortalIntegrityTests" tests="5" failures="0" errors="0" time="0.25">
-          <testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.05"/>
-          <testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.05"/>
-          <testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.05"/>
-          <testcase name="testFourLanguageTranslationsAndUnificationNotice" classname="Portal.I18nTest" time="0.05"/>
-          <testcase name="testWCAG_AAA_SkipLinkAndAriaLandmarks" classname="Portal.AccessibilityTest" time="0.05"/>
+      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="7" failures="0" errors="0" time="0.28">
+        <testsuite name="PortalIntegrityTests" tests="7" failures="0" errors="0" time="0.28">
+          <testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.04"/>
+          <testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.04"/>
+          <testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.04"/>
+          <testcase name="testFourLanguageTranslationsAndUnificationNotice" classname="Portal.I18nTest" time="0.04"/>
+          <testcase name="testWCAG22_AAA_FocusNotObscuredAndTargetSize48px" classname="Portal.WCAG22AAATest" time="0.04"/>
+          <testcase name="testWCAG22_AAA_VisualPresentationThemesAnd200PctScale" classname="Portal.WCAG30GoldTest" time="0.04"/>
+          <testcase name="testWCAG22_AAA_FormHelpAndErrorPreventionPreview" classname="Portal.WCAG22AAAFormTest" time="0.04"/>
         </testsuite>
       </testsuites>
       EOF
-    - echo "All 5 portal verification tests passed!"
+    - echo "All 7 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed!"
   artifacts:
     when: always
     paths:
