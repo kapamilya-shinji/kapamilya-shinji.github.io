@@ -95,6 +95,8 @@ try:
         if vid_el is not None and title_el is not None and vid_el.text and title_el.text:
             vid = vid_el.text.strip()
             title = title_el.text.strip()
+            if is_non_song_video(title):
+                continue
             rec = ensure_record(title, f"yt_{vid}")
             new_yt = f"https://www.youtube.com/embed/{vid}"
             if rec["ytEmbed"] != new_yt:
