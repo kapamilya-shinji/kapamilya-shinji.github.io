@@ -2175,6 +2175,7 @@
                     const q = encodeURIComponent('Shinji Sakiyama ' + item.trackName);
                     registerDynamicTrack(key, {
                         title: item.trackName,
+                        itunesId: item.trackId,
                         ytEmbed: 'https://www.youtube.com/embed/videoseries?list=UUvRDAEFiy8wnjavvDv5pzHg',
                         ytLink: 'https://music.youtube.com/search?q=' + q,
                         spEmbed: 'https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0',
@@ -2185,6 +2186,100 @@
                 }
             });
             updatePlayerEmbed(false);
+        }
+
+        // 100% Browser-Only, 24h Rate-Limited Cross-Platform Embed Resolver (Zero GitLab CI Polling)
+        function syncLiveEmbedsInBrowser() {
+            const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+            try {
+                const savedMapRaw = localStorage.getItem('kapamilya_live_embeds_map_v1');
+                if (savedMapRaw) {
+                    const savedMap = JSON.parse(savedMapRaw);
+                    Object.keys(savedMap).forEach(function(k) {
+                        registerDynamicTrack(k, savedMap[k]);
+                    });
+                    updatePlayerEmbed(false);
+                }
+                const lastLiveTs = parseInt(localStorage.getItem('kapamilya_live_embeds_ts_v1') || '0', 10);
+                if (savedMapRaw && (Date.now() - lastLiveTs) < CACHE_TTL_MS) {
+                    return;
+                }
+            } catch (e) {}
+
+            const liveMap = {};
+            function saveLiveMapSuccess() {
+                try {
+                    if (Object.keys(liveMap).length > 0) {
+                        localStorage.setItem('kapamilya_live_embeds_map_v1', JSON.stringify(liveMap));
+                        localStorage.setItem('kapamilya_live_embeds_ts_v1', String(Date.now()));
+                    }
+                } catch (e) {}
+                updatePlayerEmbed(false);
+            }
+
+            // A) Fetch YouTube Topic Channel RSS (UCcGlNKi4PILBbgWYbpGTO2A) via CORS-safe proxy for new videoIds
+            const ytFeedUrl = encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id=UCcGlNKi4PILBbgWYbpGTO2A');
+            fetch('https://api.allorigins.win/raw?url=' + ytFeedUrl)
+                .then(function(r) { return r.ok ? r.text() : ''; })
+                .then(function(xmlText) {
+                    if (!xmlText) return;
+                    const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+                    const entries = doc.getElementsByTagName('entry');
+                    for (let i = 0; i < entries.length; i++) {
+                        const vidNode = entries[i].getElementsByTagName('yt:videoId')[0] || entries[i].getElementsByTagName('videoId')[0];
+                        const titleNode = entries[i].getElementsByTagName('title')[0];
+                        if (vidNode && titleNode && vidNode.textContent && titleNode.textContent) {
+                            const vid = vidNode.textContent.trim();
+                            const title = titleNode.textContent.trim();
+                            const q = encodeURIComponent('Shinji Sakiyama ' + title);
+                            const obj = {
+                                title: title,
+                                ytEmbed: 'https://www.youtube.com/embed/' + vid,
+                                ytLink: 'https://music.youtube.com/watch?v=' + vid,
+                                spEmbed: 'https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa?utm_source=generator&theme=0',
+                                spLink: 'https://open.spotify.com/search/' + q,
+                                amEmbed: 'https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP',
+                                amLink: 'https://music.amazon.co.jp/search/' + q
+                            };
+                            liveMap['yt_' + vid] = obj;
+                            registerDynamicTrack('yt_' + vid, obj);
+                        }
+                    }
+                    saveLiveMapSuccess();
+                })
+                .catch(function() {});
+
+            // B) Fetch Spotify Artist Embed trackList for new Spotify track IDs
+            const spEmbedUrl = encodeURIComponent('https://open.spotify.com/embed/artist/6pS4jqJo9ZW5aKZ2wunsQa');
+            fetch('https://api.allorigins.win/raw?url=' + spEmbedUrl)
+                .then(function(r) { return r.ok ? r.text() : ''; })
+                .then(function(htmlText) {
+                    if (!htmlText) return;
+                    const m = htmlText.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/);
+                    if (!m) return;
+                    const data = JSON.parse(m[1]);
+                    const list = (((((data || {}).props || {}).pageProps || {}).state || {}).data || {}).entity;
+                    const trackList = (list && list.trackList) ? list.trackList : [];
+                    trackList.forEach(function(item) {
+                        if (item.title && item.uri && item.uri.indexOf('spotify:track:') === 0) {
+                            const spId = item.uri.split(':').pop();
+                            const q = encodeURIComponent('Shinji Sakiyama ' + item.title);
+                            const obj = {
+                                title: item.title,
+                                ytEmbed: 'https://www.youtube.com/embed/videoseries?list=UUvRDAEFiy8wnjavvDv5pzHg',
+                                ytLink: 'https://music.youtube.com/search?q=' + q,
+                                spEmbed: 'https://open.spotify.com/embed/track/' + spId + '?utm_source=generator&theme=0',
+                                spLink: 'https://open.spotify.com/track/' + spId,
+                                amEmbed: 'https://music.amazon.co.jp/embed/B0HH3V5D9Y/?id=B0HH3V5D9Y&marketplaceId=A1VC38T7YXB528&musicTerritory=JP',
+                                amLink: 'https://music.amazon.co.jp/search/' + q
+                            };
+                            liveMap['sp_' + spId] = obj;
+                            registerDynamicTrack('sp_' + spId, obj);
+                        }
+                    });
+                    saveLiveMapSuccess();
+                })
+                .catch(function() {});
         }
 
         (function initAutoSongSync() {
@@ -2201,8 +2296,9 @@
                 })
                 .catch(function() {});
 
-            // 2. Rate-limited (max once per 24 hours per browser via localStorage) Apple Music / iTunes Lookup JSONP
+            // 2. Rate-limited (max once per 24 hours per browser via localStorage) Apple Music / iTunes + YouTube / Spotify Embed Resolver
             try {
+                syncLiveEmbedsInBrowser();
                 const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
                 const lastTs = parseInt(localStorage.getItem('kapamilya_itunes_cache_ts') || '0', 10);
                 const cachedJson = localStorage.getItem('kapamilya_itunes_cache_data');
