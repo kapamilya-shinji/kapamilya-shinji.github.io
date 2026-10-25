@@ -1,32 +1,16 @@
 image: python:3.12-alpine
 
 stages:
-  - build
-  - test
   - deploy
 
-build_site:
-  stage: build
+pages:
+  stage: deploy
   script:
     - python3 sync_music.py || true
     - mkdir -p .public
     - cp -r * .public/ 2>/dev/null || true
     - mv .public public
     - ls -lh public/index.html public/tracks.json
-  artifacts:
-    name: "kapamilya-portal-build"
-    paths:
-      - public
-    expire_in: 1 week
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
-test_site:
-  stage: test
-  needs:
-    - job: build_site
-      artifacts: true
-  script:
     - echo "Running Kapamilya Official Portal WCAG 2.2 AAA + WCAG 3.0 Gold, Multilingual & Link Integrity Tests..."
     - test -s public/index.html
     - grep -q "Shinji Sakiyama" public/index.html
@@ -63,26 +47,13 @@ test_site:
       EOF
     - echo "All 9 portal WCAG 2.2 AAA + WCAG 3.0 Gold + Auto-Sync Music verification tests passed!"
   artifacts:
+    name: "kapamilya-portal-build"
     when: always
     paths:
+      - public
       - portal-test-report.xml
     reports:
       junit: portal-test-report.xml
-    expire_in: 30 days
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-
-pages:
-  stage: deploy
-  needs:
-    - job: build_site
-      artifacts: true
-    - job: test_site
-      artifacts: false
-  script:
-    - ls -lh public/index.html
-  artifacts:
-    paths:
-      - public
+    expire_in: 1 week
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
