@@ -20,8 +20,9 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 1. **Kapamilya Serena (`com.kapamilya.serena` v5.0.0 — Full Universal IME Kanji Detail, Keyguard Lift-to-Type & Direct Boot Auto-Recovery)**:
    - **Direct Latest APK**: [Download `app-kapamilya-serena-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-release.apk)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
-2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.0.0)**:
-   - **Direct Latest APK**: [Download `app-kapamilya-serena-mail-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-mail-release.apk)
+2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.0.0 — Android & Windows Editions with OpenPGP Signing/Verification, Read Receipts MDN & Gemma 4 AI)**:
+   - **Direct Latest Android APK**: [Download `app-kapamilya-serena-mail-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-mail-release.apk)
+   - **Direct Latest Windows Installer (NSIS v3.13)**: [Download `Kapamilya-Serena-Mail-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Mail-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 3. **Kiku (聞く / `kiku-package` v1.0.0) — Google Antigravity Plugin (`/kiku` & `/kiku-on`)**:
    - **Direct Latest 1-Click Installer**: [Download `Kiku-Plugin-Setup.exe`](https://gitlab.com/kapamilya/kiku-package/-/releases/permalink/latest/downloads/Kiku-Plugin-Setup.exe)
