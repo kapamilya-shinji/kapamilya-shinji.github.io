@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shinji5683.github.io/sitemap.xml
+Sitemap: https://kapamilya.gitlab.io/sitemap.xml
