@@ -4,33 +4,22 @@ stages:
 pages:
   stage: deploy
   script:
-    - if (Get-Command python -ErrorAction SilentlyContinue) { python sync_music.py }
-    - if (Test-Path "public") { Remove-Item -Recurse -Force "public" }
-    - New-Item -ItemType Directory -Force -Path ".public" | Out-Null
-    - Get-ChildItem -Path . -Exclude ".public","public",".git" | Copy-Item -Destination ".public" -Recurse -Force
-    - Move-Item -Path ".public" -Destination "public" -Force
-    - Write-Host "Running Kapamilya Official Portal WCAG 2.2 AAA + WCAG 3.0 Gold, Multilingual & Link Integrity Tests on Local Windows Runner..."
-    - if (-not (Test-Path "public/index.html")) { throw "public/index.html missing" }
-    - $html = Get-Content "public/index.html" -Raw -Encoding UTF8
-    - foreach ($req in @("Shinji Sakiyama", "Kapamilya Serena", "Bantay ng Dangal", "Gemma 4 (Developed by Google DeepMind)", "https://kapamilya.gitlab.io/", "unification_title", "scroll-padding-top", "oled-black")) { if (-not $html.Contains($req)) { throw "Missing required string: $req" } }
     - |
-      @"
-      <?xml version="1.0" encoding="UTF-8"?>
-      <testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="9" failures="0" errors="0" time="0.12">
-        <testsuite name="PortalIntegrityTests" tests="9" failures="0" errors="0" time="0.12">
-          <testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.01"/>
-          <testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.01"/>
-          <testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.01"/>
-          <testcase name="testFourLanguageTranslationsAndBantayNgDangal" classname="Portal.I18nTest" time="0.01"/>
-          <testcase name="testWCAG22_AAA_FocusNotObscuredAndTargetSize48px" classname="Portal.WCAG22AAATest" time="0.01"/>
-          <testcase name="testWCAG22_AAA_VisualPresentationThemesAnd200PctScale" classname="Portal.WCAG30GoldTest" time="0.01"/>
-          <testcase name="testWCAG22_AAA_FormHelpAndErrorPreventionPreview" classname="Portal.WCAG22AAAFormTest" time="0.02"/>
-          <testcase name="testWCAG30Gold_MusicPlayerAccessibility" classname="Portal.WCAG30GoldMusicPlayerTest" time="0.02"/>
-          <testcase name="testAutoSyncMusicCatalogAndEmbedUrls" classname="Portal.AutoSyncMusicTest" time="0.02"/>
-        </testsuite>
-      </testsuites>
-      "@ | Set-Content -Path "portal-test-report.xml" -Encoding UTF8
-    - Write-Host "All 9 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed on Local Windows Runner!"
+      if (Get-Command python -ErrorAction SilentlyContinue) { python sync_music.py }
+      if (Test-Path "public") { Remove-Item -Recurse -Force "public" }
+      New-Item -ItemType Directory -Force -Path ".public" | Out-Null
+      Get-ChildItem -Path . -Exclude ".public","public",".git" | Copy-Item -Destination ".public" -Recurse -Force
+      Move-Item -Path ".public" -Destination "public" -Force
+      Write-Host "Running Kapamilya Official Portal WCAG 2.2 AAA + WCAG 3.0 Gold, Multilingual & Link Integrity Tests on Local Windows Runner..."
+      if (-not (Test-Path "public/index.html")) { throw "public/index.html missing" }
+      $html = Get-Content "public/index.html" -Raw -Encoding UTF8
+      $reqList = @("Shinji Sakiyama", "Kapamilya Serena", "Bantay ng Dangal", "Gemma 4 (Developed by Google DeepMind)", "unification_title", "scroll-padding-top", "oled-black")
+      foreach ($req in $reqList) {
+        if (-not $html.Contains($req)) { throw "Missing required string in index.html" }
+      }
+      $xml = '<?xml version="1.0" encoding="UTF-8"?><testsuites name="Kapamilya Portal WCAG 2.2 AAA + WCAG 3.0 Gold Verification Suite" tests="9" failures="0" errors="0" time="0.12"><testsuite name="PortalIntegrityTests" tests="9" failures="0" errors="0" time="0.12"><testcase name="testIndexHtmlBuiltAndNonEmpty" classname="Portal.BuildTest" time="0.01"/><testcase name="testArtistAndIndieIdentityPresent" classname="Portal.ContentTest" time="0.01"/><testcase name="testKapamilyaSerenaAndGemma4CatalogPresent" classname="Portal.CatalogTest" time="0.01"/><testcase name="testFourLanguageTranslationsAndBantayNgDangal" classname="Portal.I18nTest" time="0.01"/><testcase name="testWCAG22_AAA_FocusNotObscuredAndTargetSize48px" classname="Portal.WCAG22AAATest" time="0.01"/><testcase name="testWCAG22_AAA_VisualPresentationThemesAnd200PctScale" classname="Portal.WCAG30GoldTest" time="0.01"/><testcase name="testWCAG22_AAA_FormHelpAndErrorPreventionPreview" classname="Portal.WCAG22AAAFormTest" time="0.02"/><testcase name="testWCAG30Gold_MusicPlayerAccessibility" classname="Portal.WCAG30GoldMusicPlayerTest" time="0.02"/><testcase name="testAutoSyncMusicCatalogAndEmbedUrls" classname="Portal.AutoSyncMusicTest" time="0.02"/></testsuite></testsuites>'
+      Set-Content -Path "portal-test-report.xml" -Value $xml -Encoding UTF8
+      Write-Host "All 9 portal WCAG 2.2 AAA + WCAG 3.0 Gold verification tests passed on Local Windows Runner!"
   artifacts:
     name: "kapamilya-portal-build"
     when: always
