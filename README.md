@@ -22,7 +22,7 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.0.0 — Android & Windows Editions with OpenPGP Signing/Verification, Read Receipts MDN & Gemma 4 AI)**:
    - **Direct Latest Android APK**: [Download `app-kapamilya-serena-mail-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-mail-release.apk)
-   - **Direct Latest Windows Installer (NSIS v3.13)**: [Download `Kapamilya-Serena-Mail-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Mail-Windows-Setup.exe)
+   - **Direct Latest Windows Installer (Inno Setup 7.1.0+ Latest Commit `2527da7` with Kapamilya BGM)**: [Download `Kapamilya-Serena-Mail-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Mail-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 3. **Kiku (聞く / `kiku-package` v1.0.0) — Google Antigravity Plugin (`/kiku` & `/kiku-on`)**:
    - **Direct Latest 1-Click Installer**: [Download `Kiku-Plugin-Setup.exe`](https://gitlab.com/kapamilya/kiku-package/-/releases/permalink/latest/downloads/Kiku-Plugin-Setup.exe)
@@ -31,7 +31,7 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
    - **Direct Latest Add-on Download**: [Download `kapamilyaVoice-latest.nvda-addon`](https://gitlab.com/kapamilya/kapamilya-voice/-/releases/permalink/latest/downloads/kapamilyaVoice-latest.nvda-addon)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/kapamilya-voice/-/releases/permalink/latest)
 5. **Kapamilya Serena for Windows (v5.0.0 — 100% Standalone Windows AI Screen Reader with Full Multi-Clause / F6–F10 / Modern UIA IME & Secure Desktop / UAC Breakthrough)**:
-   - **Direct Latest Installer Download**: [Download `Kapamilya-Serena-Windows-Setup.exe`](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest/downloads/Kapamilya-Serena-Windows-Setup.exe)
+   - **Direct Latest Installer Download (Inno Setup 7.1.0+ Latest Commit `2527da7` with Kapamilya BGM)**: [Download `Kapamilya-Serena-Windows-Setup.exe`](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest/downloads/Kapamilya-Serena-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest)
 
 ### ✉️ Direct Contact
