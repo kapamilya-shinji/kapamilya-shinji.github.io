@@ -17,10 +17,10 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 - **Audiomack**: [audiomack.com/shinji-sakiyama](https://audiomack.com/shinji-sakiyama)
 
 ### 💻 Developed Software (GitLab `latest` Permalinks)
-1. **Kapamilya Serena (`com.kapamilya.serena` v5.2.0 — 5-Pillar Pure-Tagalog AI Engine, Natural Multilingual TTS, Universal IME Kanji Detail, Keyguard Lift-to-Type & Direct Boot Auto-Recovery)**:
+1. **Kapamilya Serena (`com.kapamilya.serena` v5.3.0 — 5-Pillar Pure-Tagalog AI Engine, Native Open JTalk C/C++ `libopenjtalk_jni.so`, Bundled Tagalog Neural WAV Greetings, ML Kit GenAI + MediaPipe + Google AI Edge AICore & LiteRT-LM, Universal IME Kanji Detail, Keyguard Lift-to-Type & Direct Boot Auto-Recovery)**:
    - **Direct Latest APK**: [Download `app-kapamilya-serena-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-release.apk)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
-2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.0.0 — Android & Windows Editions with OpenPGP Signing/Verification, Read Receipts MDN & Gemma 4 AI)**:
+2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.3.0 Android & v5.0.0 Windows — OpenPGP Signing/Verification, Read Receipts MDN & Gemma 4 AI)**:
    - **Direct Latest Android APK**: [Download `app-kapamilya-serena-mail-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-mail-release.apk)
    - **Direct Latest Windows Installer (Inno Setup 7.1.0+ Latest Commit `2527da7` with Kapamilya BGM)**: [Download `Kapamilya-Serena-Mail-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Mail-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
