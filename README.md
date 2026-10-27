@@ -33,6 +33,10 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 5. **Kapamilya Serena for Windows (v5.2.0 — 100% Standalone Windows AI Screen Reader with 5-Pillar Pure-Tagalog AI Engine, Natural Multilingual TTS, Full Multi-Clause / F6–F10 / Modern UIA IME & Secure Desktop / UAC Breakthrough)**:
    - **Direct Latest Installer Download (Inno Setup 7.1.0+ Latest Commit `2527da7` with Kapamilya BGM)**: [Download `Kapamilya-Serena-Windows-Setup.exe`](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest/downloads/Kapamilya-Serena-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest)
+6. **Kapamilya Serena Recorder (`com.kapamilya.serena.recorder` v5.3.0 Android & Windows — 48kHz Background Vocal Recording, NVDA/Keystroke Noise Removal, Lossless RFC 9639 FLAC / WAV / M4A Mastering & 3000×3000px Random RGB JPG Cover Art Studio)**:
+   - **Direct Latest Android APK**: [Download `app-kapamilya-serena-recorder-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-recorder-release.apk)
+   - **Direct Latest Windows Installer (Inno Setup 7.1.0+ with Kapamilya BGM)**: [Download `Kapamilya-Serena-Recorder-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Recorder-Windows-Setup.exe)
+   - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 
 ### ✉️ Direct Contact
 - **Email**: [shinjisakiyama@gmail.com](mailto:shinjisakiyama@gmail.com)

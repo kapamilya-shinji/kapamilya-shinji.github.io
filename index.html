@@ -140,6 +140,19 @@
           "url": "https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
           "description": "100% standalone native Windows AI screen reader v5.2.0 created by Shinji Sakiyama featuring the 5-Pillar AI Engine (Mata ng Kapamilya: Live Tagapagsalaysay, Tagasuri ng Paninda, Bayanihan Gabay: Tagabasa ng Dokumento at Talaan, Kapamilya Bayanihan Link), Gemma 4 AI, Upstream NVDA 22-key browse mode, Tagalog greetings, and native C# Open JTalk V4 with zero nvdajp dependency."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Kapamilya Serena Recorder",
+          "operatingSystem": "Android 11+, Windows 11, Windows 10",
+          "applicationCategory": "MultimediaApplication",
+          "softwareVersion": "5.3.0",
+          "inLanguage": ["ja", "en", "tl", "es"],
+          "author": { "@id": "https://kapamilya.gitlab.io/#artist" },
+          "downloadUrl": "https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-recorder-release.apk",
+          "url": "https://gitlab.com/kapamilya/serena/-/releases/permalink/latest",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "100% accessible acappella vocal recording, automatic NVDA/TalkBack screen-reader speech & keyboard click noise removal, lossless RFC 9639 FLAC / WAV / M4A mastering (-1.0 dBFS), and 3000x3000 px RGB JPEG random store-ready cover art studio for Android & Windows created by Shinji Sakiyama."
         }
       ]
     }
@@ -1270,6 +1283,30 @@
                     Kapamilya Serena for Windows 最新リリース・更新履歴（GitLab Releases latest）を見る
                 </a>
             </div>
+
+            <!-- Software 6: Kapamilya Serena Recorder (Android & Windows) -->
+            <div class="software-card">
+                <h3 data-i18n="rec_title">⑥ Kapamilya Serena Recorder（Android版 v5.3.0 ＆ Windows版 v5.3.0 — 48kHzバックグラウンド録音・NVDA/打鍵音除去・ロスレスFLACマスタリング＆3000pxジャケット生成）</h3>
+                <p data-i18n="rec_desc">
+                    Bayanihan • Magna Carta • Kapamilya — 全盲のアカペラ・シンガーソングライターである Shinji Sakiyama が自身の楽曲制作・世界配信（DistroKid / UnitedMasters / CD Baby / TuneCore）のために開発した、100%スクリーンリーダー完全対応のレコーディング兼ボーカルマスタリング＆3000×3000ピクセルJPGジャケット自動生成スタジオ（Android版 ＆ Windows版）。
+                </p>
+                <h4 data-i18n="rec_feat_heading">主な特徴・イノベーション</h4>
+                <ul class="feature-list">
+                    <li data-i18n="rec_feat_1"><strong>スクリーンリーダー読み上げ終了待ち同期 ＆ バックグラウンド48kHzロスレス録音・前後ノイズ自動トリミング</strong>：録音開始ボタンを押した際の NVDA / TalkBack / Kapamilya Serena の音声読み上げやボタン操作音が終わるのを自動で待ってからマイクを開き、さらに録音開始直後と停止直前の不要な読み上げ声・打鍵音を1秒RMS解析で自動カット。</li>
+                    <li data-i18n="rec_feat_2"><strong>歌唱中のキーボード打鍵音・クリック除去 ＋ 80Hzローカット ＋ 配信ストア基準音圧マスタリング（-1.0 dBFS）</strong>：80Hzゼロ位相バターワース・ハイパスフィルタ、10ミリ秒包絡線解析による突発的な打鍵音・タップ音サプレッサー、ソフトニー・ボーカルコンプレッサー、ナチュラル・ホールリバーブ、および世界配信ストア基準の <code>-1.0 dBFS</code> ノーマライズをワンタップで自動実行。</li>
+                    <li data-i18n="rec_feat_3"><strong>純正ロスレス FLAC（RFC 9639）・WAV・M4A エンコード ＆ 全主要オーディオコーデック読み込みマスタリング対応（Android 11〜17+ 権限・MediaStore完全対応）</strong>：普段 FLAC で録音・管理するクリエイターのために、MD5・Vorbis Comment・CRC-8/CRC-16 完全準拠のロスレス <code>.flac</code>、48kHz 16-bit <code>.wav</code>、AAC 256kbps <code>.m4a</code> 書き出しに対応。既存の <code>.flac</code> / <code>.wav</code> / <code>.mp3</code> / <code>.m4a</code> / <code>.ogg</code> / <code>.opus</code> ファイルを読み込んでのノイズ除去＆再マスタリング、および Android 11〜17+ のマイク・メディア権限一括確認と共有 Music / Pictures フォルダへの自動保存を搭載。</li>
+                    <li data-i18n="rec_feat_4"><strong>3000×3000ピクセル RGB JPG 配信ストア用ランダムジャケット生成（音声解説付き）</strong>：ボタン1つ（Windows版は <code>F7</code> キー）で、毎回異なる暗号論的ランダムシードによる世界に1枚だけの <code>3000 × 3000</code> ピクセル RGB <code>.jpg</code> ジャケット画像（全7テーマ・曲名＆ <code>Shinji Sakiyama</code> タイポグラフィ刻印対応）を即座に生成し、視覚障害者向けにデザインと色彩の音声解説を読み上げ。</li>
+                </ul>
+                <a class="btn-download" href="https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-recorder-release.apk" data-i18n="rec_btn_dl_android">
+                    📱 Kapamilya Serena Recorder (Android版 v5.3.0) 最新APK (app-kapamilya-serena-recorder-release.apk) を直接ダウンロード
+                </a>
+                <a class="btn-download" href="https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Recorder-Windows-Setup.exe" data-i18n="rec_btn_dl_win" style="margin-top: 10px;">
+                    💻 Kapamilya Serena Recorder for Windows (Windows版 v5.3.0 Inno Setup 7.1.0+ 最新開発ビルド・BGM付 Kapamilya-Serena-Recorder-Windows-Setup.exe) を直接ダウンロード
+                </a>
+                <a class="btn-secondary" href="https://gitlab.com/kapamilya/serena/-/releases/permalink/latest" target="_blank" rel="noopener noreferrer" data-i18n="rec_btn_repo">
+                    Kapamilya Serena Recorder 最新リリース・更新履歴（GitLab Releases latest）を見る
+                </a>
+            </div>
         </section>
 
         <!-- Section 3: Serena World Global Mailing List -->
@@ -1465,6 +1502,16 @@
                 ksw_feat_4: "<strong>起動・終了・画面ロック・AI起動時の無条件タガログ語最高音質ボイス ＆ 全言語ナチュラル音声自動ルーター</strong>：Microsoft Filipina (Blessica Neural) ボイスと純正C# Open JTalk V4 / 各言語最高音質 Natural Voice エンジンを内蔵（NVDAJPコード 0.0mm 完全排除）。",
                 ksw_btn_dl: "Kapamilya Serena for Windows v5.2.0（Inno Setup 7.1.0+ 最新開発ビルド・BGM付インストーラー Kapamilya-Serena-Windows-Setup.exe）を直接ダウンロード",
                 ksw_btn_repo: "Kapamilya Serena (Windows) 公式GitLabリポジトリを見る",
+                rec_title: "⑥ Kapamilya Serena Recorder（Android版 v5.3.0 ＆ Windows版 v5.3.0 — 48kHzバックグラウンド録音・NVDA/打鍵音除去・ロスレスFLACマスタリング＆3000pxジャケット生成）",
+                rec_desc: "Bayanihan • Magna Carta • Kapamilya — 全盲のアカペラ・シンガーソングライターである Shinji Sakiyama が自身の楽曲制作・世界配信（DistroKid / UnitedMasters / CD Baby / TuneCore）のために開発した、100%スクリーンリーダー完全対応のレコーディング兼ボーカルマスタリング＆3000×3000ピクセルJPGジャケット自動生成スタジオ（Android版 ＆ Windows版）。",
+                rec_feat_heading: "主な特徴・イノベーション",
+                rec_feat_1: "<strong>スクリーンリーダー読み上げ終了待ち同期 ＆ バックグラウンド48kHzロスレス録音・前後ノイズ自動トリミング</strong>：録音開始ボタンを押した際の NVDA / TalkBack / Kapamilya Serena の音声読み上げやボタン操作音が終わるのを自動で待ってからマイクを開き、さらに録音開始直後と停止直前の不要な読み上げ声・打鍵音を1秒RMS解析で自動カット。",
+                rec_feat_2: "<strong>歌唱中のキーボード打鍵音・クリック除去 ＋ 80Hzローカット ＋ 配信ストア基準音圧マスタリング（-1.0 dBFS）</strong>：80Hzゼロ位相バターワース・ハイパスフィルタ、10ミリ秒包絡線解析による突発的な打鍵音・タップ音サプレッサー、ソフトニー・ボーカルコンプレッサー、ナチュラル・ホールリバーブ、および世界配信ストア基準の <code>-1.0 dBFS</code> ノーマライズをワンタップで自動実行。",
+                rec_feat_3: "<strong>純正ロスレス FLAC（RFC 9639）・WAV・M4A エンコード ＆ 全主要オーディオコーデック読み込みマスタリング対応（Android 11〜17+ 権限・MediaStore完全対応）</strong>：普段 FLAC で録音・管理するクリエイターのために、MD5・Vorbis Comment・CRC-8/CRC-16 完全準拠のロスレス <code>.flac</code>、48kHz 16-bit <code>.wav</code>、AAC 256kbps <code>.m4a</code> 書き出しに対応。既存の <code>.flac</code> / <code>.wav</code> / <code>.mp3</code> / <code>.m4a</code> / <code>.ogg</code> / <code>.opus</code> ファイルを読み込んでのノイズ除去＆再マスタリング、および Android 11〜17+ のマイク・メディア権限一括確認と共有 Music / Pictures フォルダへの自動保存を搭載。",
+                rec_feat_4: "<strong>3000×3000ピクセル RGB JPG 配信ストア用ランダムジャケット生成（音声解説付き）</strong>：ボタン1つ（Windows版は <code>F7</code> キー）で、毎回異なる暗号論的ランダムシードによる世界に1枚だけの <code>3000 × 3000</code> ピクセル RGB <code>.jpg</code> ジャケット画像（全7テーマ・曲名＆ <code>Shinji Sakiyama</code> タイポグラフィ刻印対応）を即座に生成し、視覚障害者向けにデザインと色彩の音声解説を読み上げ。",
+                rec_btn_dl_android: "📱 Kapamilya Serena Recorder (Android版 v5.3.0) 最新APK (app-kapamilya-serena-recorder-release.apk) を直接ダウンロード",
+                rec_btn_dl_win: "💻 Kapamilya Serena Recorder for Windows (Windows版 v5.3.0 Inno Setup 7.1.0+ 最新開発ビルド・BGM付 Kapamilya-Serena-Recorder-Windows-Setup.exe) を直接ダウンロード",
+                rec_btn_repo: "Kapamilya Serena Recorder 最新リリース・更新履歴（GitLab Releases latest）を見る",
                 ml_title: "3. 公式グローバルメーリングリスト「Serena World」",
                 ml_desc: "Shinji Sakiyama のアカペラ楽曲・歌の感想から、Kapamilya Serena ブランド（Kapamilya Serena / Kapamilya Serena Mail）の使い方や要望、Android全般の話題、さらには日常の雑談まで、スパム以外なら何でも大歓迎の公式グローバルメーリングリスト（Google グループ）です！世界中の仲間とメールで楽しく交流しましょう。",
                 ml_rules_heading: "コミュニティのルール ＆ 参加方法",
@@ -1587,6 +1634,16 @@
                 ksw_feat_4: "<strong>Unconditional Highest-Quality Tagalog Voice &amp; All-Language Natural TTS Auto-Router</strong>: Authentic Microsoft Filipina (Blessica Neural) Tagalog voice and native C# Open JTalk V4 / Natural Voices with zero nvdajp dependency.",
                 ksw_btn_dl: "Download Kapamilya Serena for Windows v5.2.0 Inno Setup 7.1.0+ Installer with BGM (Kapamilya-Serena-Windows-Setup.exe)",
                 ksw_btn_repo: "Explore Kapamilya Serena (Windows) Official GitLab Repository",
+                rec_title: "6. Kapamilya Serena Recorder (Android v5.3.0 & Windows v5.3.0 — 48kHz Background Vocal Recording, NVDA/Keystroke Noise Removal, Lossless FLAC Mastering & 3000px Random Cover Art Studio)",
+                rec_desc: "Bayanihan • Magna Carta • Kapamilya — Created by totally blind a cappella singer-songwriter Shinji Sakiyama for global music production and distribution (DistroKid, UnitedMasters, CD Baby, TuneCore): a 100% screen-reader-accessible vocal recording, automatic screen-reader/keystroke noise removal, lossless FLAC/WAV/M4A mastering, and 3000×3000 px RGB JPEG random cover art studio for Android & Windows.",
+                rec_feat_heading: "Key Features & Innovations",
+                rec_feat_1: "<strong>Screen-Reader Silent Sync &amp; Background 48kHz Lossless Recording with Auto Start/End Noise Trimming</strong>: Waits automatically for NVDA / TalkBack / Kapamilya Serena voice announcements to finish before opening the microphone gate, and automatically trims leading and trailing TTS prompts and button taps via 1-second RMS window analysis.",
+                rec_feat_2: "<strong>Keyboard Click &amp; Tap Suppressor + 80Hz High-Pass Filter + Store-Ready Vocal Mastering (-1.0 dBFS)</strong>: Combines an 80Hz zero-phase Butterworth high-pass rumble filter, a 10ms envelope transient click suppressor, a soft-knee vocal warmth compressor, optional studio hall reverb, and <code>-1.0 dBFS</code> streaming-store normalization in a single tap.",
+                rec_feat_3: "<strong>Genuine Lossless FLAC (RFC 9639), WAV &amp; M4A Encoding + Universal Audio Import &amp; Android 11–17+ Scoped/Direct Storage</strong>: Exports RFC 9639 lossless <code>.flac</code> (with MD5, Vorbis Comments, CRC-8 &amp; CRC-16), 48kHz 16-bit <code>.wav</code>, and AAC 256kbps <code>.m4a</code>, plus imports existing <code>.flac</code>, <code>.wav</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.ogg</code>, and <code>.opus</code> files for noise removal &amp; remastering with one-tap Android 11–17+ permission management and automatic <code>MediaStore</code> saving to <code>Music/KapamilyaSerenaRecorder</code>.",
+                rec_feat_4: "<strong>3000×3000 px RGB JPEG Store-Compliant Random Cover Art Generator (with Spoken Audio Description)</strong>: Generates a 100% unique <code>3000 × 3000</code> pixel RGB <code>.jpg</code> album jacket using cryptographic random seeds across 7 artistic themes (with optional Song Title &amp; <code>Shinji Sakiyama</code> typography) and speaks a detailed visual description for blind creators.",
+                rec_btn_dl_android: "📱 Download Kapamilya Serena Recorder for Android v5.3.0 APK (app-kapamilya-serena-recorder-release.apk)",
+                rec_btn_dl_win: "💻 Download Kapamilya Serena Recorder for Windows v5.3.0 Inno Setup 7.1.0+ Installer with BGM (Kapamilya-Serena-Recorder-Windows-Setup.exe)",
+                rec_btn_repo: "View Kapamilya Serena Recorder Latest Release & Changelog on GitLab (latest)",
                 ml_title: "3. Official Global Mailing List: 'Serena World'",
                 ml_desc: "Welcome to 'Serena World' — our official global mailing list on Google Groups! Whether you want to talk about the a cappella songs and music of Shinji Sakiyama, Serena Screen Reader, Serena Mail, anything Android-related, or casual daily conversation, everything is welcome as long as it is not spam!",
                 ml_rules_heading: "Community Guidelines & How to Join",
@@ -1709,6 +1766,16 @@
                 ksw_feat_4: "<strong>Pagbati sa Tagalog at Lahat ng Wika sa Pinakamataas na Kalidad na Natural Voice</strong>: May Microsoft Filipina (Blessica Neural) Tagalog voice at C# Open JTalk V4 engine.",
                 ksw_btn_dl: "I-download ang Kapamilya Serena for Windows v5.2.0 Inno Setup 7.1.0+ Installer na may BGM (Kapamilya-Serena-Windows-Setup.exe)",
                 ksw_btn_repo: "Buksan ang Kapamilya Serena (Windows) GitLab Repository",
+                rec_title: "6. Kapamilya Serena Recorder (Android v5.3.0 at Windows v5.3.0 — 48kHz Background Vocal Recording, Pag-alis ng NVDA/Keystroke Noise, Lossless FLAC Mastering at 3000px Random Cover Art Studio)",
+                rec_desc: "Bayanihan • Magna Carta • Kapamilya — Nilikha ng bulag na a cappella singer-songwriter na si Shinji Sakiyama para sa paglikha at pamamahagi ng musika sa buong mundo (DistroKid, UnitedMasters, CD Baby, TuneCore): isang 100% accessible na vocal recorder, awtomatikong taga-alis ng ingay ng screen reader at keyboard, lossless FLAC/WAV/M4A mastering tool, at 3000×3000 px RGB JPEG random cover art generator.",
+                rec_feat_heading: "Mga Pangunahing Tampok at Inobasyon",
+                rec_feat_1: "<strong>Paghintay sa Pagtatapos ng Screen Reader at 48kHz Background Recording na may Auto-Trim</strong>: Awtomatikong hinihintay na matapos ang boses ng NVDA / TalkBack / Kapamilya Serena bago buksan ang mikropono, at awtomatikong pinuputol ang ingay sa simula at dulo ng recording.",
+                rec_feat_2: "<strong>Pag-alis ng Tunog ng Keyboard Click + 80Hz High-Pass Filter + Store-Ready Vocal Mastering (-1.0 dBFS)</strong>: May 80Hz Butterworth high-pass filter, transient click suppressor, soft-knee vocal compressor, opsyonal na studio hall reverb, at <code>-1.0 dBFS</code> normalization.",
+                rec_feat_3: "<strong>Tunay na Lossless FLAC (RFC 9639), WAV at M4A Encoding + Universal Audio Import at Buong Suporta sa Android 11–17+ Storage</strong>: Naglalabas ng lossless <code>.flac</code>, <code>.wav</code>, at <code>.m4a</code>, at kayang mag-import ng <code>.flac</code>, <code>.wav</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.ogg</code>, at <code>.opus</code> upang linisin at i-master.",
+                rec_feat_4: "<strong>3000×3000 px RGB JPEG Random Cover Art Generator (May Paliwanag sa Boses)</strong>: Gumagawa ng natatanging <code>3000 × 3000</code> pixel RGB <code>.jpg</code> album cover sa isang pindot at binabasa nang malakas ang paglalarawan ng disenyo.",
+                rec_btn_dl_android: "📱 I-download ang Kapamilya Serena Recorder para sa Android v5.3.0 APK (app-kapamilya-serena-recorder-release.apk)",
+                rec_btn_dl_win: "💻 I-download ang Kapamilya Serena Recorder para sa Windows v5.3.0 Inno Setup 7.1.0+ Installer na may BGM (Kapamilya-Serena-Recorder-Windows-Setup.exe)",
+                rec_btn_repo: "Tingnan ang Pinakabagong Release ng Kapamilya Serena Recorder sa GitLab (latest)",
                 ml_title: "3. Opisyal na Global Mailing List: 'Serena World'",
                 ml_desc: "Maligayang pagdating sa 'Serena World' — ang ating opisyal na global mailing list sa Google Groups! Usapang musika at a cappella na kanta man ni Shinji Sakiyama, Serena Screen Reader, Serena Mail, kahit anong tungkol sa Android, o pang-araw-araw na kwentuhan, lahat ay welcome basta't hindi spam!",
                 ml_rules_heading: "Mga Patakaran at Paano Sumali",
@@ -1827,6 +1894,16 @@
                 ksw_feat_4: "<strong>Saludos en Tagalo y Enrutador de Voces Naturales de Máxima Calidad en Todos los Idiomas</strong>: Voz filipina Microsoft Blessica Neural y motor C# Open JTalk V4 sin código nvdajp.",
                 ksw_btn_dl: "Descargar Kapamilya Serena for Windows v5.2.0 Instalador Inno Setup 7.1.0+ con BGM (Kapamilya-Serena-Windows-Setup.exe)",
                 ksw_btn_repo: "Ver Repositorio de Kapamilya Serena (Windows) en GitLab",
+                rec_title: "6. Kapamilya Serena Recorder (Android v5.3.0 y Windows v5.3.0 — Grabación Vocal 48kHz en Segundo Plano, Eliminación de Ruido NVDA/Teclado, Masterización FLAC Sin Pérdida y Portadas JPG 3000px)",
+                rec_desc: "Bayanihan • Magna Carta • Kapamilya — Desarrollado por el cantautor a cappella totalmente ciego Shinji Sakiyama para la producción y distribución musical global (DistroKid, UnitedMasters, CD Baby, TuneCore): estudio 100% accesible de grabación vocal, eliminación automática de voz de lector de pantalla y clics de teclado, masterización FLAC/WAV/M4A sin pérdida y generador aleatorio de portadas RGB JPEG de 3000×3000 px.",
+                rec_feat_heading: "Características Principales e Innovaciones",
+                rec_feat_1: "<strong>Sincronización Silenciosa con Lector de Pantalla y Grabación 48kHz con Recorte Automático</strong>: Espera automáticamente a que termine el anuncio de voz de NVDA / TalkBack / Kapamilya Serena antes de abrir el micrófono y recorta el ruido inicial y final.",
+                rec_feat_2: "<strong>Supresor de Clics de Teclado + Filtro Paso Alto de 80Hz + Masterización Vocal (-1.0 dBFS)</strong>: Incluye filtro Butterworth de 80Hz, supresor de clics transitorios, compresor vocal suave, reverberación de sala opcional y normalización a <code>-1.0 dBFS</code>.",
+                rec_feat_3: "<strong>Codificación FLAC Sin Pérdida (RFC 9639), WAV y M4A + Importación Universal y Almacenamiento Android 11–17+</strong>: Exporta archivos <code>.flac</code> sin pérdida, <code>.wav</code> y <code>.m4a</code>, e importa archivos <code>.flac</code>, <code>.wav</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.ogg</code> y <code>.opus</code> existentes para limpiarlos y masterizarlos.",
+                rec_feat_4: "<strong>Generador Aleatorio de Portadas RGB JPEG de 3000×3000 px (con Audiodescripción Hablada)</strong>: Genera portadas únicas de <code>3000 × 3000</code> píxeles listas para tiendas de streaming con descripción hablada del diseño.",
+                rec_btn_dl_android: "📱 Descargar Kapamilya Serena Recorder para Android v5.3.0 APK (app-kapamilya-serena-recorder-release.apk)",
+                rec_btn_dl_win: "💻 Descargar Kapamilya Serena Recorder para Windows v5.3.0 Instalador Inno Setup 7.1.0+ con BGM (Kapamilya-Serena-Recorder-Windows-Setup.exe)",
+                rec_btn_repo: "Ver Última Versión de Kapamilya Serena Recorder en GitLab Releases (latest)",
                 ml_title: "3. Lista de Correo Global Oficial: 'Serena World'",
                 ml_desc: "¡Bienvenido a 'Serena World', nuestra lista de correo global oficial en Google Groups! Ya sea para hablar de las canciones a cappella y música de Shinji Sakiyama, Serena Screen Reader, Serena Mail, cualquier tema de Android o charla diaria, ¡todo es bienvenido mientras no sea spam!",
                 ml_rules_heading: "Reglas de la Comunidad y Cómo Unirse",
