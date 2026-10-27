@@ -65,6 +65,7 @@
             "https://groups.google.com/g/serena-world"
           ],
           "track": [
+            { "@type": "MusicRecording", "name": "マグナカルタのつぎびと (Heir of Magna Carta)", "byArtist": "Shinji Sakiyama", "genre": "A Cappella" },
             { "@type": "MusicRecording", "name": "東洋の真珠 (Oriental Pearl)", "byArtist": "Shinji Sakiyama", "genre": "A Cappella" },
             { "@type": "MusicRecording", "name": "真珠の妻 (Pearl Wife)", "byArtist": "Shinji Sakiyama", "genre": "A Cappella" },
             { "@type": "MusicRecording", "name": "セレナさくら (Serena Sakura)", "byArtist": "Shinji Sakiyama", "genre": "A Cappella" },
@@ -952,9 +953,26 @@
     <main id="main-content" class="container">
 
         <!-- Welcome Banner: Heir of Magna Carta & Bantay ng Dangal -->
-        <section id="welcome-banner" aria-label="Welcome Message" style="background: rgba(255, 215, 0, 0.08); border: 2px solid var(--accent-gold); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;">
+        <section id="welcome-banner" aria-label="Welcome Message" style="background: rgba(255, 215, 0, 0.08); border: 2px solid var(--accent-gold); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; text-align: center;">
             <p data-i18n="unification_title" style="margin: 0; font-size: 1.25rem; font-weight: bold; color: var(--accent-gold); line-height: 1.8;">
                 マグナカルタの継承人と Bantay ng Dangal、その旗の下の歌うたいのウェブサイトへようこそ。
+            </p>
+        </section>
+
+        <!-- Tribute of Gratitude: Nameless Warriors Across the Sea (Bantay ng Dangal) & My Beloved Asawa ko Serena (JA / TL / EN Only — WCAG 3.0 Gold) -->
+        <section id="tribute-warriors-serena" aria-labelledby="heading-tribute-warriors" style="background: linear-gradient(135deg, rgba(16, 24, 48, 0.96), rgba(28, 20, 44, 0.96)); border: 2px solid var(--accent-gold); border-radius: 14px; padding: 1.75rem; margin-bottom: 2.25rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+            <h2 id="heading-tribute-warriors" data-i18n="tribute_heading" style="margin-top: 0; color: var(--accent-gold); font-size: 1.35rem; line-height: 1.6; border-bottom: 1px solid rgba(255, 215, 0, 0.35); padding-bottom: 0.6rem;">
+                ⚔️ 海を越えた名もなき武人たち（Bantay ng Dangal）、そして最愛の我が Asawa ko セレナへの感謝状
+            </h2>
+            <blockquote data-i18n="tribute_lyrics" style="margin: 1rem 0 1.25rem 0; padding: 1rem 1.25rem; background: rgba(255, 215, 0, 0.08); border-left: 4px solid var(--accent-gold); border-radius: 8px; font-size: 1.1rem; font-weight: bold; color: #fff8dc; line-height: 1.85;">
+                「海越え山越え丘越えて、正義を示せし尊厳の番人（Bantay ng Dangal）に栄えあれ。その一族らに光あれ。」<br>
+                <span style="font-size: 0.95rem; color: var(--accent-cyan);">—— 新曲『マグナカルタのつぎびと』オープニング歌詞より</span>
+            </blockquote>
+            <p data-i18n="tribute_body_warriors" style="line-height: 1.9; margin-bottom: 1rem;">
+                日の本の国が忘れかけた義理と人情、そして誠（まこと）の心を宿し、どこの誰からの命令にも屈することなく、海を越えて全盲の歌うたい・創作者の尊厳と権利を守り抜いてくださった東洋の真珠（フィリピン）の「名もなき武人たち（名もなき武士たち / Bantay ng Dangal）」に、魂の底からの感謝と敬意を捧げます。あなた方が示してくださった心の刃は、歴史上のいかなるクリス（宝剣）よりも鋭く、いかなる盾よりも堅く、私の創作と人生を照らす永遠の道標です。
+            </p>
+            <p data-i18n="tribute_body_serena" style="line-height: 1.9; margin-bottom: 0;">
+                そして、最愛の我が <strong>Asawa ko</strong> よ、我が <strong>Asawa ko セレナ（Serena）</strong>よ。付き合って1年、まだ一度も直接会ったことさえなく、日本のこの複雑な状況もすべては知らないはずなのに、それでもただの一度も揺らぐことなく私を支え続けてくれているのは、日本の乙女ではなく、東洋の真珠に生きるあなたでした。距離が離れすぎているため法的な結婚の手続きこそまだできてはいないけれど、私たちは法律や紙切れよりもはるかに重く、深い「愛と魂の旗」の下で結ばれた一組の夫婦——<strong>Asawa</strong> です。我が妻セレナ、あなたという存在と愛に、生涯の感謝を捧げます。
             </p>
         </section>
 
@@ -1030,7 +1048,7 @@
                     <p id="help-track-select" class="field-help" data-i18n="help_track_select">※ ドロップダウンから曲を選ぶか、下の「前の曲へ」「次の曲へ」ボタンで1曲ずつ順番に切り替えられます。</p>
                     <select id="track-select" aria-describedby="help-track-select" onchange="onTrackSelectChange(this.value)">
                         <option value="all" data-i18n="track_opt_all">★ 全曲連続再生リスト（YouTube Music / Spotify 全曲）</option>
-                        <option value="magna_carta_no_tsugibito">『マグナカルタの継ぎ人 (Heir of Magna Carta)』</option>
+                        <option value="magna_carta_no_tsugibito">『マグナカルタのつぎびと (Heir of Magna Carta)』</option>
                         <option value="shinju_no_tsuma">『真珠の妻 (Pearl Wife)』</option>
                         <option value="toyo_no_shinju">『東洋の真珠 (Oriental Pearl)』</option>
                         <option value="serena_sakura">『セレナさくら (Serena Sakura)』</option>
@@ -1114,7 +1132,7 @@
 
             <h3 data-i18n="sec1_tracks_heading">主な配信楽曲（ディスコグラフィ ― 曲名を選択すると上のプレイヤーにセットされます）</h3>
             <ul class="track-list" aria-label="Featured Discography">
-                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="magna_carta_no_tsugibito" aria-pressed="false" onclick="selectTrackFromList('magna_carta_no_tsugibito')"><span>『マグナカルタの継ぎ人 (Heir of Magna Carta)』</span><span aria-hidden="true">▶</span></button></li>
+                <li class="track-item"><button type="button" class="track-item-btn" data-track-key="magna_carta_no_tsugibito" aria-pressed="false" onclick="selectTrackFromList('magna_carta_no_tsugibito')"><span>『マグナカルタのつぎびと (Heir of Magna Carta)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="shinju_no_tsuma" aria-pressed="false" onclick="selectTrackFromList('shinju_no_tsuma')"><span>『真珠の妻 (Pearl Wife)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="toyo_no_shinju" aria-pressed="false" onclick="selectTrackFromList('toyo_no_shinju')"><span>『東洋の真珠 (Oriental Pearl)』</span><span aria-hidden="true">▶</span></button></li>
                 <li class="track-item"><button type="button" class="track-item-btn" data-track-key="serena_sakura" aria-pressed="false" onclick="selectTrackFromList('serena_sakura')"><span>『セレナさくら (Serena Sakura)』</span><span aria-hidden="true">▶</span></button></li>
@@ -1358,6 +1376,10 @@
                 hero_subtitle: "アカペラの歌を届ける全盲のインディーズシンガー・ソングライター（いわゆる歌うたい）＆ ソフトウェアエンジニア 公式ポータル",
                 hero_quote_sub: "― 最愛の婚約者（生涯の伴侶）セレナと共に新しい家族を築き、アカペラの歌とアクセシビリティの光を世界へ。",
                 unification_title: "マグナカルタの継承人と Bantay ng Dangal、その旗の下の歌うたいのウェブサイトへようこそ。",
+                tribute_heading: "⚔️ 海を越えた名もなき武人たち（Bantay ng Dangal）、そして最愛の我が Asawa ko セレナへの感謝状",
+                tribute_lyrics: "「海越え山越え丘越えて、正義を示せし尊厳の番人（Bantay ng Dangal）に栄えあれ。その一族らに光あれ。」<br><span style=\"font-size: 0.95rem; color: var(--accent-cyan);\">—— 新曲『マグナカルタのつぎびと』オープニング歌詞より</span>",
+                tribute_body_warriors: "日の本の国が忘れかけた義理と人情、そして誠（まこと）の心を宿し、どこの誰からの命令にも屈することなく、海を越えて全盲の歌うたい・創作者の尊厳と権利を守り抜いてくださった東洋の真珠（フィリピン）の「名もなき武人たち（名もなき武士たち / Bantay ng Dangal）」に、魂の底からの感謝と敬意を捧げます。あなた方が示してくださった心の刃は、歴史上のいかなるクリス（宝剣）よりも鋭く、いかなる盾よりも堅く、私の創作と人生を照らす永遠の道標です。",
+                tribute_body_serena: "そして、最愛の我が <strong>Asawa ko</strong> よ、我が <strong>Asawa ko セレナ（Serena）</strong>よ。付き合って1年、まだ一度も直接会ったことさえなく、日本のこの複雑な状況もすべては知らないはずなのに、それでもただの一度も揺らぐことなく私を支え続けてくれているのは、日本の乙女ではなく、東洋の真珠に生きるあなたでした。距離が離れすぎているため法的な結婚の手続きこそまだできてはいないけれど、私たちは法律や紙切れよりもはるかに重く、深い「愛と魂の旗」の下で結ばれた一組の夫婦——<strong>Asawa</strong> です。我が妻セレナ、あなたという存在と愛に、生涯の感謝を捧げます。",
                 nav_artist: "1. プロフィール＆音楽配信リンク",
                 nav_software: "2. 開発ソフトウェア（Kapamilya Serena シリーズ）",
                 nav_community: "3. 公式メーリングリスト（Serena World）",
@@ -1476,6 +1498,10 @@
                 hero_subtitle: "Totally Blind A Cappella Indie Singer-Songwriter & Software Engineer — Official Global Portal",
                 hero_quote_sub: "— Building a new family with my beloved fiancée and life partner Serena, bringing a cappella songs and accessibility to the world.",
                 unification_title: "Welcome to the website of the singer-songwriter under the banner of the Heir of the Magna Carta and Bantay ng Dangal.",
+                tribute_heading: "⚔️ Letter of Gratitude to the Nameless Warriors Across the Sea (Bantay ng Dangal) and to My Beloved Asawa ko Serena",
+                tribute_lyrics: "\"Across the seas, over the mountains, and beyond the hills—glory to the Guardians of Dignity (Bantay ng Dangal) who stood up for justice. May light shine forever upon their kin.\"<br><span style=\"font-size: 0.95rem; color: var(--accent-cyan);\">— Opening Lyrics of the New Song 『マグナカルタのつぎびと (Heir of Magna Carta)』</span>",
+                tribute_body_warriors: "To the \"Nameless Warriors (Bantay ng Dangal)\" of the Pearl of the Orient (the Philippines), who carry within their hearts the true honor, compassion, and sincerity (Makoto) that Japan has nearly forgotten: from the depths of my soul, I offer my eternal gratitude and respect for standing across the ocean—subordinate to no power—to defend the human dignity and creative rights of a blind singer-songwriter and creator. The blade of your spirit is sharper than any historical Kris and stronger than any shield.",
+                tribute_body_serena: "And to my most beloved <strong>Asawa ko</strong>, my <strong>Asawa ko Serena</strong>: after one full year together, without having ever met in person yet and without even knowing all the complex circumstances unfolding here in Japan, the one who has stood by me without wavering for a single moment is not a maiden of Japan, but you, living in the Pearl of the Orient. Though physical distance has kept us from completing a legal marriage registration on paper, we are husband and wife—<strong>Asawa</strong>—united under a banner of love and soul far heavier and deeper than any law. To my wife Serena, I offer my lifelong gratitude.",
                 nav_artist: "1. Artist Profile & Streaming Links",
                 nav_software: "2. Developed Software (Kapamilya Serena Suite)",
                 nav_community: "3. Global Mailing List (Serena World)",
@@ -1594,6 +1620,10 @@
                 hero_subtitle: "Ganap na Bulag na A Cappella Indie Singer-Songwriter at Software Engineer — Opisyal na Portal",
                 hero_quote_sub: "— Magkasama naming binubuo ng aking mahal na kasintahan at mapapangasawang si Serena ang bagong pamilya. Mabuhay at ingat lagi!",
                 unification_title: "Maligayang pagdating sa website ng mang-aawit sa ilalim ng bandila ng Tagapagmana ng Magna Carta at Bantay ng Dangal.",
+                tribute_heading: "⚔️ Liham ng Pasasalamat sa mga Walang-Pangalang Mandirigma sa Kabila ng Dagat (Bantay ng Dangal) at sa Aking Mahal na Asawa ko Serena",
+                tribute_lyrics: "\"Sa kabila ng dagat, bundok, at burol, mabuhay at magtagumpay nawa ang Bantay ng Dangal na nagpamalas ng katarungan. Pagpalain ng liwanag ang kanilang buong angkan.\"<br><span style=\"font-size: 0.95rem; color: var(--accent-cyan);\">— Mula sa Pambungad na Liriko ng Bagong Awit 『マグナカルタのつぎびと (Tagapagmana ng Magna Carta)』</span>",
+                tribute_body_warriors: "Sa mga \"Walang-Pangalang Mandirigma (Bantay ng Dangal)\" ng Perlas ng Silanganan (Pilipinas) na nagtataglay ng tunay na dangal, malasakit, at katapatan (Makoto) na tila nakalimutan na sa bansang Hapon: mula sa kaibuturan ng aking kaluluwa, maraming-maraming salamat sa inyong matatag na pagtatanggol sa dignidad at karapatan ng isang bulag na mang-aawit at manlilikha nang hindi yumuyukod sa anumang kapangyarihan. Ang talim ng inyong puso ay mas matalas pa sa anumang makasaysayang Kris at mas matibay pa sa anumang kalasag.",
+                tribute_body_serena: "At sa aking pinakamamahal na <strong>Asawa ko</strong>, ang aking <strong>Asawa ko Serena</strong>: sa loob ng isang taon nating pagsasama, kahit hindi pa tayo nagkikita nang personal at kahit hindi mo alam ang lahat ng masalimuot na pangyayari rito sa Japan, ikaw na dalaga ng Perlas ng Silanganan ang walang-sawang sumusuporta at nagmamahal sa akin. Bagama't hindi pa natin nagagawa ang legal na kasal dahil sa layo ng ating distansya, tayo ay isang tunay na mag-asawa—<strong>Asawa</strong>—na pinagbuklod sa ilalim ng bandila ng pag-ibig at kaluluwa na mas mabigat at mas malalim kaysa anumang batas. Sa aking asawang si Serena, habambuhay akong nagpapasalamat sa iyo.",
                 nav_artist: "1. Profile ng Artist at Music Links",
                 nav_software: "2. Mga Ginawang Software (Kapamilya Serena Suite)",
                 nav_community: "3. Global Mailing List (Serena World)",
@@ -2365,6 +2395,18 @@
                     el.innerHTML = dict[key];
                 }
             });
+
+            // Show the Tribute to Nameless Warriors (Bantay ng Dangal) & Asawa ko Serena ONLY in Japanese (ja), Tagalog (tl), and English (en)
+            const tributeSec = document.getElementById('tribute-warriors-serena');
+            if (tributeSec) {
+                if (lang === 'es') {
+                    tributeSec.style.display = 'none';
+                    tributeSec.setAttribute('aria-hidden', 'true');
+                } else {
+                    tributeSec.style.display = 'block';
+                    tributeSec.removeAttribute('aria-hidden');
+                }
+            }
 
             // Sync music player direct links and active track state with the newly selected language
             updatePlayerEmbed(false);
