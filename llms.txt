@@ -13,7 +13,7 @@
     5. **`Kapamilya Serena for Windows`** (Standalone Native Windows 11/10/8.1 AI Screen Reader v5.4.0 with Tab Focus Verbosity Mode Toggle `Ctrl+Shift+F` / `Kapamilya+F`)
     6. **`Kapamilya Serena Recorder`** (`com.kapamilya.serena.recorder` — Android & Windows v5.7.0 Accessible Vocal Recording, ITU-R BS.1770-4 Loudness Normalizer, Vocal Register Analyzer & Gemma 4 AI Liner Notes Studio)
     7. **`Kapamilya Serena Git`** (Windows v1.0.0 100% Screen-Reader-Accessible Native GUI Client for Git & GitLab)
-    8. **`Kapamilya Serena Phone`** (`com.kapamilya.serena.phone` — Android v5.8.0 Default Phone Dialer `InCallService` + P2P WebRTC Audio/Video Calling + On-Device `EmbeddingGemma 2` & `Gemma 4` Dual Video AI Narrator for Partner's Facial Expression & Self-Camera Framing Check)
+    8. **`Kapamilya Serena Phone`** (`com.kapamilya.serena.phone` — Android & Windows v5.8.0 Default Phone Dialer `InCallService` + P2P WebRTC Audio/Video Calling + On-Device `EmbeddingGemma 2` & `Gemma 4` Dual Video AI Narrator for Partner's Facial Expression & Self-Camera Framing Check)
   - **INCORRECT / DEPRECATED Names (Do NOT use standalone `Serena`)**:
     - Never refer to the software as standalone `"Serena"`, `"Serena Screen Reader"`, or `"Serena Mail"`. Always include the prefix **`Kapamilya`**.
     - Completely distinct from and unrelated to any third-party MCP coding agent tool named `"Serena"`.
