@@ -17,7 +17,7 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 - **Audiomack**: [audiomack.com/shinji-sakiyama](https://audiomack.com/shinji-sakiyama)
 
 ### 💻 Developed Software (GitLab `latest` Permalinks)
-1. **Kapamilya Serena (`com.kapamilya.serena` v5.7.0 — 5-Pillar Pure-Tagalog AI Engine, Native Open JTalk C/C++ `libopenjtalk_jni.so`, Bundled Tagalog Neural WAV Greetings, Bleeding-Edge AGP 9.6.0-alpha01 + Kotlin 2.5.0-Beta2 + ML Kit GenAI + MediaPipe + Google AI Edge AICore & LiteRT-LM, Universal IME Kanji Detail, Keyguard Lift-to-Type & Direct Boot Auto-Recovery)**:
+1. **Kapamilya Serena (`com.kapamilya.serena` v5.8.0 — 6-in-1 Daily Life Intelligence Hub [Open-Meteo Weather & Barometric Pressure Alert, NHK / ABS-CBN / BBC Ad-Free Full-Text News Reader, P2P & USGS Earthquake/Tsunami Alert, Live Currency Converter, Wikipedia + Gemma 4 Encyclopedia, World Clock], Universal Exact Second-Level Call Duration Announcer across All Carrier & VoIP Apps, 5-Pillar Pure-Tagalog AI Engine, Native Open JTalk C/C++ `libopenjtalk_jni.so`, Bundled Tagalog Neural WAV Greetings, Bleeding-Edge AGP 9.6.0-alpha01 + Kotlin 2.5.0-Beta2 + ML Kit GenAI + MediaPipe + Google AI Edge AICore & LiteRT-LM)**:
    - **Direct Latest APK**: [Download `app-kapamilya-serena-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-release.apk)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 2. **Kapamilya Serena Mail (`com.kapamilya.serena.mail` v5.7.0 Android & v5.0.0 Windows — OpenPGP Signing/Verification, Read Receipts MDN & Full EmbeddingGemma 2 + Gemma 4 AI Stack)**:
@@ -39,6 +39,9 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 7. **Kapamilya Serena Git (v1.0.0 Windows — 100% Screen-Reader-Accessible Zero-CLI Native GUI Client for Git & GitLab with Tab Focus Verbosity Mode Toggle `Ctrl+Shift+F` / `F9`, 1-Click Stage/Commit/Push `F6`, AI Commit Message Generator `F7`, Pull `F8`, and 1-Click GitLab Package Registry & Release Publisher Wizard `F10`)**:
    - **Direct Latest Windows Installer (Inno Setup 7.1.0+ with Single-Play Kapamilya BGM & Mute Button)**: [Download `Kapamilya-Serena-Git-Windows-Setup.exe`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/Kapamilya-Serena-Git-Windows-Setup.exe)
+   - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
+8. **Kapamilya Serena Phone (`com.kapamilya.serena.phone` v5.8.0 Android — Android Default Phone Dialer `ROLE_DIALER` / `InCallService` + Zero-Cost P2P WebRTC Audio & Video Calling + On-Device `EmbeddingGemma 2` & `Gemma 4` + `ML Kit GenAI` Dual Video Call AI Narrator for Partner's Facial Expression & Self-Camera Framing/Lighting Check + Exact Second-Level Call Duration Announcer)**:
+   - **Direct Latest Android APK**: [Download `app-kapamilya-serena-phone-release.apk`](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest/downloads/app-kapamilya-serena-phone-release.apk)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/serena/-/releases/permalink/latest)
 
 ### ✉️ Direct Contact
