@@ -1,4 +1,4 @@
-# Shinji Sakiyama Official Website (`kapamilya.gitlab.io`)
+﻿# Shinji Sakiyama Official Website (`kapamilya.gitlab.io`)
 
 🌐 **Official Portal URL**: [https://kapamilya.gitlab.io/](https://kapamilya.gitlab.io/)
 
@@ -30,7 +30,7 @@ Official website and global portal for **Shinji Sakiyama (崎山)** — Totally 
 4. **Kapamilya Voice for NVDA (`kapamilyaVoice` v2026.10.22)**:
    - **Direct Latest Add-on Download**: [Download `kapamilyaVoice-latest.nvda-addon`](https://gitlab.com/kapamilya/kapamilya-voice/-/releases/permalink/latest/downloads/kapamilyaVoice-latest.nvda-addon)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/kapamilya-voice/-/releases/permalink/latest)
-5. **Kapamilya Serena for Windows (v5.3.0 — 100% Standalone Windows AI Screen Reader with Tab Focus Verbosity Mode Toggle `Ctrl+Shift+F` / `Kapamilya+F`, Full Inno Setup 7.1.0+ Control/Checklist Reading, Single-Play BGM + Mute Button, 5-Pillar Pure-Tagalog AI Engine, Natural Multilingual TTS, Full Multi-Clause / F6–F10 / Modern UIA IME & Secure Desktop / UAC Breakthrough)**:
+5. **Kapamilya Serena for Windows (v5.4.0 — 100% Standalone Windows AI Screen Reader with Tab Focus Verbosity Mode Toggle `Ctrl+Shift+F` / `Kapamilya+F`, Full Inno Setup 7.1.0+ Control/Checklist Reading, Single-Play BGM + Mute Button, 5-Pillar Pure-Tagalog AI Engine, Natural Multilingual TTS, Full Multi-Clause / F6–F10 / Modern UIA IME & Secure Desktop / UAC Breakthrough)**:
    - **Direct Latest Installer Download (Inno Setup 7.1.0+ Latest Commit `2527da7` with Single-Play Kapamilya BGM & Mute Button)**: [Download `Kapamilya-Serena-Windows-Setup.exe`](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest/downloads/Kapamilya-Serena-Windows-Setup.exe)
    - **Latest Release & Changelog**: [GitLab Releases (`latest`)](https://gitlab.com/kapamilya/kapamilya-serena-windows/-/releases/permalink/latest)
 6. **Kapamilya Serena Recorder (`com.kapamilya.serena.recorder` v5.6.0 Android & Windows — Forcibly Embedded Google DeepMind `EmbeddingGemma 2` 256-dim L2 Vector + `Gemma 4` AI Vocal Producer Review & 3-Language JA/EN/TL Liner Notes, 48kHz Background Vocal Recording, ITU-R BS.1770-4 / EBU R128 Loudness Normalization `-14.0 LUFS`, On-Device Vocal Pitch `F0` & Register Spectrum Analyzer, Lossless RFC 9639 FLAC / WAV / M4A Mastering & 3000×3000px RGB JPG Cover Art Studio)**:
