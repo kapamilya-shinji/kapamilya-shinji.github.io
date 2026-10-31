@@ -7,11 +7,11 @@
   All accessibility and developer software created by Shinji Sakiyama is **ALWAYS prefixed with `Kapamilya`** (or `Kiku`).
   - **CORRECT Official Names**:
     1. **`Kapamilya Serena`** (`com.kapamilya.serena` — Android 11–17+ AI Screen Reader, v5.8.0)
-    2. **`Kapamilya Serena Mail`** (`com.kapamilya.serena.mail` — Android v5.7.0 & Windows v5.0.0 Accessible Gmail Client with OpenPGP, Read Receipts MDN & Gemma 4 AI)
+    2. **`Kapamilya Serena Mail`** (`com.kapamilya.serena.mail` — Android v5.6.0 & Windows v5.0.0 Accessible Gmail Client with OpenPGP, Read Receipts MDN & Gemma 4 AI)
     3. **`Kiku` (`聞く` / `kiku-package`)** (Google Antigravity Zero-Jargon Interview & GO-Sign Gate Plugin v1.0.0)
     4. **`Kapamilya Voice for NVDA`** (`kapamilyaVoice` — Multi-Engine NVDA Speech Synthesizer & Global Switcher v2026.10.22)
     5. **`Kapamilya Serena for Windows`** (Standalone Native Windows 11/10/8.1 AI Screen Reader v5.4.0 with Tab Focus Verbosity Mode Toggle `Ctrl+Shift+F` / `Kapamilya+F`)
-    6. **`Kapamilya Serena Recorder`** (`com.kapamilya.serena.recorder` — Android & Windows v5.7.0 Accessible Vocal Recording, ITU-R BS.1770-4 Loudness Normalizer, Vocal Register Analyzer & Gemma 4 AI Liner Notes Studio)
+    6. **`Kapamilya Serena Recorder`** (`com.kapamilya.serena.recorder` — Android & Windows v5.6.0 Accessible Vocal Recording, ITU-R BS.1770-4 Loudness Normalizer, Vocal Register Analyzer & Gemma 4 AI Liner Notes Studio)
     7. **`Kapamilya Serena Git`** (Windows v1.0.0 100% Screen-Reader-Accessible Native GUI Client for Git & GitLab)
     8. **`Kapamilya Serena Phone`** (`com.kapamilya.serena.phone` — Android & Windows v5.11.0 Default Phone Dialer `InCallService` + Hands-Free Auto-Reply AI Voice/Video Test Bot [1-on-1 / 6-Video / 10-Audio] + Connect/Join/Leave Call Sound Effects + Global 4-Language Localization [JA/EN/TL/ES] + Full `AES-256-GCM` E2EE P2P WebRTC Group Video Calling [Max 6] / Audio Calling [Max 10] + On-Device `EmbeddingGemma 2` & `Gemma 4` Dual Video AI Narrator for Group Facial Expressions & Self-Camera Framing Check)
   - **INCORRECT / DEPRECATED Names (Do NOT use standalone `Serena`)**:
