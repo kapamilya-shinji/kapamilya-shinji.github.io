@@ -1,0 +1,59 @@
+{
+  "suite_version": "5.13.0",
+  "tag_name": "v5.10.0",
+  "updated_at": "2026-11-06T00:30:00+09:00",
+  "endpoints": {
+    "gitlab_repo_manifest": "https://gitlab.com/kapamilya/serena/-/raw/main/latest.json",
+    "gitlab_pages_manifest": "https://kapamilya.gitlab.io/latest.json",
+    "gitlab_package_base": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0",
+    "gitlab_pages_base": "https://kapamilya.gitlab.io"
+  },
+  "apps": {
+    "com.kapamilya.serena": {
+      "version": "5.10.0",
+      "version_code": 83,
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-release.apk",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-release.apk",
+      "notes": "Kapamilya Serena v5.10.0 — 起動時デュアル回線高速自動選択アップデーター（GitLab Repository ＆ GitLab Pages 最速ルート自動判定）搭載"
+    },
+    "com.kapamilya.serena.mail": {
+      "version": "5.8.0",
+      "version_code": 16,
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-mail-release.apk",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-mail-release.apk",
+      "notes": "Kapamilya Serena Mail v5.8.0 — 起動時デュアル回線高速自動選択アップデーター（GitLab Repository ＆ GitLab Pages 最速ルート自動判定）搭載"
+    },
+    "com.kapamilya.serena.phone": {
+      "version": "5.13.0",
+      "version_code": 6,
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-phone-release.apk",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-phone-release.apk",
+      "notes": "Kapamilya Serena Phone v5.13.0 — 4タブUI ＋ 起動時デュアル回線高速自動選択アップデーター搭載"
+    },
+    "com.kapamilya.serena.recorder": {
+      "version": "5.8.0",
+      "version_code": 6,
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-recorder-release.apk",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/app-kapamilya-serena-recorder-release.apk",
+      "notes": "Kapamilya Serena Recorder v5.8.0 — 世界4言語対応 ＋ 起動時デュアル回線高速自動選択アップデーター搭載"
+    },
+    "kapamilya-serena-mail-windows": {
+      "version": "5.1.0",
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Mail-Windows-Setup.exe",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Mail-Windows-Setup.exe",
+      "notes": "Kapamilya Serena Mail for Windows v5.1.0 — 起動時デュアル回線高速自動選択アップデーター搭載"
+    },
+    "kapamilya-serena-phone-windows": {
+      "version": "5.13.0",
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Phone-Windows-Setup.exe",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Phone-Windows-Setup.exe",
+      "notes": "Kapamilya Serena Phone for Windows v5.13.0 — 4タブUI ＋ 起動時デュアル回線高速自動選択アップデーター搭載"
+    },
+    "kapamilya-serena-recorder-windows": {
+      "version": "5.8.0",
+      "gitlab_repo_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Recorder-Windows-Setup.exe",
+      "gitlab_pages_url": "https://gitlab.com/api/v4/projects/kapamilya%2Fserena/packages/generic/kapamilya-serena/5.13.0/Kapamilya-Serena-Recorder-Windows-Setup.exe",
+      "notes": "Kapamilya Serena Recorder for Windows v5.8.0 — 世界4言語対応 ＋ 起動時デュアル回線高速自動選択アップデーター搭載"
+    }
+  }
+}
